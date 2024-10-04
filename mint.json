@@ -41,24 +41,83 @@
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Getting Started",
       "version": "English",
       "pages": [
-        "docs/en/introduction",
-        "docs/en/quickstart",
-        "docs/en/development"
+        "docs/en/why-morph",
+        "docs/en/how-morph-works"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Workspace",
       "version": "English",
       "pages": [
-        "docs/en/essentials/markdown",
-        "docs/en/essentials/code",
-        "docs/en/essentials/images",
-        "docs/en/essentials/settings",
-        "docs/en/essentials/navigation",
-        "docs/en/essentials/reusable-snippets"
+        "docs/en/workspace/about-workspace",
+        "docs/en/workspace/filesystem",
+        "docs/en/workspace/database",
+        "docs/en/workspace/recommended-extensions",
+        "docs/en/workspace/how-to-use-github-copilot",
+        "docs/en/workspace/git",
+        "docs/en/workspace/configuration-and-usage",
+        "docs/en/workspace/template"
+      ]
+    },
+    {
+      "group": "Data Sources",
+      "version": "English",
+      "pages": [
+        "docs/en/data-sources/builtin-postgres",
+        "docs/en/data-sources/connectors"
+      ]
+    },
+    {
+      "group": "SQL & Python",
+      "version": "English",
+      "pages": [
+        "docs/en/sql-python/quickstart-sql",
+        "docs/en/sql-python/quickstart-python",
+        "docs/en/sql-python/how-to-install-pip",
+        "docs/en/sql-python/vega-visualization"
+      ]
+    },
+    {
+      "group": "Data Application",
+      "version": "English",
+      "pages": [
+        "docs/en/data-application/how-to-build-data-application",
+        "docs/en/data-application/mdx-setup"
+      ]
+    },
+    {
+      "group": "Canvas",
+      "version": "English",
+      "pages": [
+        "docs/en/canvas/about-canvas"
+      ]
+    },
+    {
+      "group": "Morph AI",
+      "version": "English",
+      "pages": [
+        "docs/en/morph-ai/features-of-morphai"
+      ]
+    },
+    {
+      "group": "Rest API",
+      "version": "English",
+      "pages": [
+        "docs/en/rest-api/overview",
+        "docs/en/rest-api/authentication",
+        "docs/en/rest-api/quickstart"
+      ]
+    },
+    {
+      "group": "Team Setting",
+      "version": "English",
+      "pages": [
+        "docs/en/team-setting/manage-members",
+        "docs/en/team-setting/credit",
+        "docs/en/team-setting/data-connection"
       ]
     },
     {
@@ -69,24 +128,83 @@
       ]
     },
     {
-      "group": "Get Started",
+      "group": "Getting Started",
       "version": "日本語",
       "pages": [
-        "docs/ja/introduction",
-        "docs/ja/quickstart",
-        "docs/ja/development"
+        "docs/ja/why-morph",
+        "docs/ja/how-morph-works"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Workspace",
       "version": "日本語",
       "pages": [
-        "docs/ja/essentials/markdown",
-        "docs/ja/essentials/code",
-        "docs/ja/essentials/images",
-        "docs/ja/essentials/settings",
-        "docs/ja/essentials/navigation",
-        "docs/ja/essentials/reusable-snippets"
+        "docs/ja/workspace/about-workspace",
+        "docs/ja/workspace/filesystem",
+        "docs/ja/workspace/database",
+        "docs/ja/workspace/recommended-extensions",
+        "docs/ja/workspace/how-to-use-github-copilot",
+        "docs/ja/workspace/git",
+        "docs/ja/workspace/configuration-and-usage",
+        "docs/ja/workspace/template"
+      ]
+    },
+    {
+      "group": "Data Sources",
+      "version": "日本語",
+      "pages": [
+        "docs/ja/data-sources/builtin-postgres",
+        "docs/ja/data-sources/connectors"
+      ]
+    },
+    {
+      "group": "SQL & Python",
+      "version": "日本語",
+      "pages": [
+        "docs/ja/sql-python/quickstart-sql",
+        "docs/ja/sql-python/quickstart-python",
+        "docs/ja/sql-python/how-to-install-pip",
+        "docs/ja/sql-python/vega-visualization"
+      ]
+    },
+    {
+      "group": "Data Application",
+      "version": "日本語",
+      "pages": [
+        "docs/ja/data-application/how-to-build-data-application",
+        "docs/ja/data-application/mdx-setup"
+      ]
+    },
+    {
+      "group": "Canvas",
+      "version": "日本語",
+      "pages": [
+        "docs/ja/canvas/about-canvas"
+      ]
+    },
+    {
+      "group": "Morph AI",
+      "version": "日本語",
+      "pages": [
+        "docs/ja/morph-ai/features-of-morphai"
+      ]
+    },
+    {
+      "group": "Rest API",
+      "version": "日本語",
+      "pages": [
+        "docs/ja/rest-api/overview",
+        "docs/ja/rest-api/authentication",
+        "docs/ja/rest-api/quickstart"
+      ]
+    },
+    {
+      "group": "Team Setting",
+      "version": "日本語",
+      "pages": [
+        "docs/ja/team-setting/manage-members",
+        "docs/ja/team-setting/credit",
+        "docs/ja/team-setting/data-connection"
       ]
     },
     {
@@ -98,8 +216,8 @@
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "x": "https://x.com/morphdbHQ",
+    "github": "https://github.com/useMorph",
+    "linkedin": "https://www.linkedin.com/company/morphdbhq"
   }
 }
