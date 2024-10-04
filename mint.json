@@ -28,8 +28,24 @@
   },
   "tabs": [
     {
+      "name": "Guides",
+      "url": "docs"
+    },
+    {
+      "name": "SQL & Python",
+      "url": "sql-python"
+    },
+    {
+      "name": "Data Application",
+      "url": "data-application"
+    },
+    {
       "name": "Examples",
       "url": "examples"
+    },
+    {
+      "name": "Integrations",
+      "url": "integrations"
     }
   ],
   "anchors": [
@@ -71,24 +87,6 @@
       ]
     },
     {
-      "group": "SQL & Python",
-      "version": "English",
-      "pages": [
-        "docs/en/sql-python/quickstart-sql",
-        "docs/en/sql-python/quickstart-python",
-        "docs/en/sql-python/how-to-install-pip",
-        "docs/en/sql-python/vega-visualization"
-      ]
-    },
-    {
-      "group": "Data Application",
-      "version": "English",
-      "pages": [
-        "docs/en/data-application/how-to-build-data-application",
-        "docs/en/data-application/mdx-setup"
-      ]
-    },
-    {
       "group": "Canvas",
       "version": "English",
       "pages": [
@@ -116,8 +114,37 @@
       "version": "English",
       "pages": [
         "docs/en/team-setting/manage-members",
-        "docs/en/team-setting/credit",
-        "docs/en/team-setting/data-connection"
+        "docs/en/team-setting/credit"
+      ]
+    },
+    {
+      "group": "SQL",
+      "version": "English",
+      "pages": [
+        "sql-python/en/quickstart-sql"
+      ]
+    },
+    {
+      "group": "Python",
+      "version": "English",
+      "pages": [
+        "sql-python/en/quickstart-python",
+        "sql-python/en/how-to-install-pip"
+      ]
+    },
+    {
+      "group": "Data Visualization",
+      "version": "English",
+      "pages": [
+        "sql-python/en/vega-visualization"
+      ]
+    },
+    {
+      "group": "Getting Started",
+      "version": "English",
+      "pages": [
+        "data-application/en/how-to-build-data-application",
+        "data-application/en/mdx-setup"
       ]
     },
     {
@@ -125,6 +152,13 @@
       "version": "English",
       "pages": [
         "examples/en/introduction"
+      ]
+    },
+    {
+      "group": "Integrations",
+      "version": "English",
+      "pages": [
+        "integrations/en/introduction"
       ]
     },
     {
@@ -155,16 +189,6 @@
       "pages": [
         "docs/ja/data-sources/builtin-postgres",
         "docs/ja/data-sources/connectors"
-      ]
-    },
-    {
-      "group": "SQL & Python",
-      "version": "日本語",
-      "pages": [
-        "docs/ja/sql-python/quickstart-sql",
-        "docs/ja/sql-python/quickstart-python",
-        "docs/ja/sql-python/how-to-install-pip",
-        "docs/ja/sql-python/vega-visualization"
       ]
     },
     {
@@ -203,8 +227,37 @@
       "version": "日本語",
       "pages": [
         "docs/ja/team-setting/manage-members",
-        "docs/ja/team-setting/credit",
-        "docs/ja/team-setting/data-connection"
+        "docs/ja/team-setting/credit"
+      ]
+    },
+    {
+      "group": "SQL",
+      "version": "日本語",
+      "pages": [
+        "sql-python/ja/quickstart-sql"
+      ]
+    },
+    {
+      "group": "Python",
+      "version": "日本語",
+      "pages": [
+        "sql-python/ja/quickstart-python",
+        "sql-python/ja/how-to-install-pip"
+      ]
+    },
+    {
+      "group": "データ可視化",
+      "version": "日本語",
+      "pages": [
+        "sql-python/ja/vega-visualization"
+      ]
+    },
+    {
+      "group": "Getting Started",
+      "version": "日本語",
+      "pages": [
+        "data-application/ja/how-to-build-data-application",
+        "data-application/ja/mdx-setup"
       ]
     },
     {
@@ -212,6 +265,12 @@
       "version": "日本語",
       "pages": [
         "examples/ja/introduction"
+      ]
+    },{
+      "group": "Integrations",
+      "version": "日本語",
+      "pages": [
+        "integrations/ja/introduction"
       ]
     }
   ],
