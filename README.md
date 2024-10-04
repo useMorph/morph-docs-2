@@ -1,32 +1,63 @@
-# Mintlify Starter Kit
+# Morph Documentation
 
-Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including
+Morph の Documentation の Repository です。
 
-- Guide pages
-- Navigation
-- Customizations
-- API Reference pages
-- Use of popular components
+[Mintlify](https://mintlify.com/docs/quickstart)というフレームワークを使用しています。
 
-### Development
+Anthropic, Perplexity, Resend, Cursor, Elevenlabs なども Minlify を使用しています。
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the documentation changes locally. To install, use the following command
+[https://mintlify.com/customers](https://mintlify.com/customers)
+
+## Development
+
+以下の手順でセットアップしてください。
+
+**1. Mintlify のインストール**
 
 ```
 npm i -g mintlify
 ```
 
-Run the following command at the root of your documentation (where mint.json is)
+**2. ローカルサーバーの立ち上げ**
 
 ```
 mintlify dev
 ```
 
-### Publishing Changes
+## ディレクトリ構造
 
-Install our Github App to auto propagate changes from your repo to your deployment. Changes will be deployed to production automatically after pushing to the default branch. Find the link to install on your dashboard. 
+- `docs/`: ドキュメントの Markdown ファイル
+- `asstes/`: 画像などの静的ファイル
+- `examples/`: サンプルコード集ページ用のファイル
 
-#### Troubleshooting
+その他、独立したページ群を作る際にはルート直下にディレクトリを切ってください。
 
-- Mintlify dev isn't running - Run `mintlify install` it'll re-install dependencies.
-- Page loads as a 404 - Make sure you are running in a folder with `mint.json`
+ここでいう「独立したページ群」は、Mintlify のタブで管理されるグループを指します。
+
+## mint.json
+
+各ページは MDX で記述することができますが、それを実際のページに反映するには、mint.json を編集する必要があります。
+
+詳しい設定は Mintlify のドキュメントを参照してください。
+
+よく使う項目については、以下で解説します。
+
+### navigation
+
+mint.json の navigation は、ページのグループを宣言するための項目で、navigation を設定することで、サイドバーやタブでそのグループを使用することができます。そのため、 **ページを追加したら必ず navigation にも設定を追加してください。**
+
+```json
+{
+  "navigation": [
+    {
+      "group": "Get Started",
+      "version": "en",
+      "pages": [
+        "docs/en/introduction",
+        "docs/en/quickstart",
+        "docs/en/development"
+      ]
+    }
+  ]
+}
+```
