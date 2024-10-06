@@ -1,0 +1,36 @@
+---
+title: 'データを可視化をする'
+---
+
+Morphでは、GUIで簡単な可視化を実現するための機能があります。
+
+棒グラフや折れ線グラフなど一般的な可視化を実現するためには、元データとなる集計をしておけば可視化結果をすぐに取得することができます。
+
+## 使い方
+
+まず、可視化をしたいデータの元データを集計したSQL, Pythonのファイルを開きます。
+
+ファイルを開くと右上に可視化機能をスタートするアイコンが表示されます。こちらを押下してください。
+
+<img
+	src="/assets/images/docs/visualization-how-to-start.png"
+	alt="vg-json-editor"
+/>
+
+ディレクトリの同じ階層に、vg.jsonの拡張子のファイルが生成されます。そのファイルを開いてください。
+
+以下のようにGUIで可視化を行うための画面が表示されます。各値を設定をすると綺麗なグラフがリアルタイムで表示されます。
+
+<img
+	src="/assets/images/docs/visualization-overview.png"
+	alt="vg-json-editor"
+/>
+
+## 可視化サンプル
+
+<iframe
+	src="https://www.loom.com/embed/9274b8d8cc214161a5d22d67516ceeda?sid=c1a9dbf7-ff99-4b3d-b6d6-60e420c4e21a"
+	controls
+	className="w-full aspect-video"
+></iframe>
+

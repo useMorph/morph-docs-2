@@ -1,0 +1,65 @@
+---
+title: 'VS Code Extensions'
+---
+
+Morphのワークスペース上での作業を効率化するためにVS Codeのエコシステムを活用することができます。
+
+## お勧めのVS Code Extensions
+
+このコマンドをWorkspace上のターミナルで実行することで以下のMorphチームの推奨VS Code Extensionsをインストールすることができます。
+
+```shell
+code-server --install-extension adamviola.parquet-explorer; \
+code-server --install-extension unifiedjs.vscode-mdx; \
+code-server --install-extension ms-python.python; \
+code-server --install-extension janisdd.vscode-edit-csv
+```
+
+### Parquet Explorer
+
+<img
+  src="/assets/images/docs/vscode-extension-parquet-explorer.png"
+  alt="Parquet Explorer"
+/>
+
+### MDX
+
+<img
+  src="/assets/images/docs/vscode-extension-mdx.png"
+  alt="MDX"
+/>
+
+### Python(ms-python)
+
+<img
+  src="/assets/images/docs/vscode-extension-python.png"
+  alt="Python"
+/>
+
+### Edit CSV
+
+<img
+  src="/assets/images/docs/vscode-extension-edit-csv.png"
+  alt="Edit CSV"
+/>
+
+## Github Copilotをインストールする手順
+
+Github Copilotをインストールするためには以下の手順を経由する必要があります。
+
+1. 後述のvsixファイルをWorkspace上のファイルシステムにアップロードする (アップロード場所は任意)
+2. ファイルを右クリックして、一番下のInstall Extension VSIXからインストール
+
+<img
+  src="/assets/images/docs/vscode-extension-github-copilot.png"
+  alt="How to installGithub Copilot"
+  width="30%"
+/>
+
+3. GitHubアカウントでログイン
+
+#### vsixファイル
+
+以下からダウンロードしてください。
+
+[Github Copilot vsixをダウンロード](/assets/GitHub.copilot-1.223.1062.vsix)

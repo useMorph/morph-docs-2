@@ -1,86 +1,31 @@
 ---
 title: 'Morph AIの機能'
-description: 'Start building awesome documentation in under 5 minutes'
 ---
 
-## Setup your development
+Morph AIは、データ分析に特化した高度なAI機能を提供し、ユーザーのデータ駆動型の意思決定を強力にサポートします。このセクションでは、Morph AIの特徴とその利点について詳しく説明します。
 
-Learn how to update your docs locally and deploy them to the public.
+---
 
-### Edit and preview
+## Morph AIが特別な理由
 
-<AccordionGroup>
-  <Accordion icon="github" title="Clone your docs locally">
-    During the onboarding process, we created a repository on your Github with
-    your docs content. You can find this repository on our
-    [dashboard](https://dashboard.mintlify.com). To clone the repository
-    locally, follow these
-    [instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-    in your terminal.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Preview changes">
-    Previewing helps you make sure your changes look as intended. We built a
-    command line interface to render these changes locally. 1. Install the
-    [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the
-    documentation changes locally with this command: ``` npm i -g mintlify ```
-    2. Run the following command at the root of your documentation (where
-    `mint.json` is): ``` mintlify dev ```
-  </Accordion>
-</AccordionGroup>
+一般のAIチャットでも分析は可能ですが、Morph AIはデータ分析用に特化してデザインされており、要求に対してより高精度な結果を提供します。以下の点で通常のAIチャットとは異なります。
 
-### Deploy your changes
+- **データのスキーマを理解している**: Morph AIは、ユーザーのデータベースのスキーマ（構造）を理解しているため、テーブル間の関係やカラムの意味を把握し、データの関連性を考慮した正確な分析が可能です。これにより、複雑なクエリでも適切な結果を迅速に得ることができます。
+- **前後のデータ処理の結果のスキーマを考慮できる**: データ処理の各ステップで生成されるスキーマを把握し、次のステップに適切に引き継ぐことができます。これにより、パイプライン全体の整合性を保ちながら、効率的にデータ処理を進めることができます。
+- **各カラムの意味などの知識を与えることができる**: ユーザーは、カラムの意味や用途に関する知識をAIに提供することができ、これによりAIはより精度の高いクエリや分析を実行します。例えば、売上データのカラムが収益を表していることを理解した上で、売上トレンドの分析を行うことができます。
 
-<AccordionGroup>
+## マルチステップのデータパイプラインを構築する
 
-<Accordion icon="message-bot" title="Install our Github app">
-  Our Github app automatically deploys your changes to your docs site, so you
-  don't need to manage deployments yourself. You can find the link to install on
-  your [dashboard](https://dashboard.mintlify.com). Once the bot has been
-  successfully installed, there should be a check mark next to the commit hash
-  of the repo.
-</Accordion>
-<Accordion icon="rocket" title="Push your changes">
-  [Commit and push your changes to
-  Git](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#about-git-push)
-  for your changes to update in your docs site. If you push and don't see that
-  the Github app successfully deployed your changes, you can also manually
-  update your docs through our [dashboard](https://dashboard.mintlify.com).
-</Accordion>
+Morph AIは、ユーザーの要求に基づいて複雑なデータパイプラインを自動で構築する能力を持っています。ユーザーが希望する分析結果を伝えるだけで、Morph AIが必要なステップを全て設計し、実行します。例えば、複数のSQLクエリやPythonスクリプトが絡む複雑なケースでも、Morph AIがスムーズにパイプラインを構築します。さらに、必要に応じて各ステップのコードを手動で修正することができるため、パイプライン全体の整合性を保ちながら微調整を行うことが可能です。
 
-</AccordionGroup>
+## コードを生成・修正する
 
-## Update your docs
+Morph AIは、各ステップのSQLコードやPythonコードを自動で生成・修正することができます。これにより、ユーザーは技術的な専門知識がなくても、高度なデータ分析を実行できます。さらに、外部のデータベースに接続している場合でも、Morph AIはデータベースのスキーマを考慮した最適なコードを生成します。例えば、新しいテーブルの追加や既存のカラムの変更があった場合でも、自動的に対応し、正確なクエリを提供します。
 
-Add content directly in your files with MDX syntax and React components. You can use any of our components, or even build your own.
+## データに関する質問をする
 
-<CardGroup>
+Morph AIは、分析結果や集計結果に対する質問に対して、迅速かつ正確に答えることができます。ユーザーは、特定のデータポイントやトレンドについての質問を投げかけることで、詳細なインサイトを得ることができます。例えば、「今月の売上トップ10の商品は何か？」や「顧客満足度の高い地域はどこか？」といった質問に対して、具体的なデータと共に回答を提供します。
 
-<Card title="Style Your Docs" icon="paintbrush" href="/settings/global">
-  Add flair to your docs with personalized branding.
-</Card>
+## レポートを生成する
 
-<Card
-  title="Add API Endpoints"
-  icon="square-code"
-  href="/api-playground/configuration"
->
-  Implement your OpenAPI spec and enable API user interaction.
-</Card>
-
-<Card
-  title="Integrate Analytics"
-  icon="chart-mixed"
-  href="/analytics/supported-integrations"
->
-  Draw insights from user interactions with your documentation.
-</Card>
-
-<Card
-  title="Host on a Custom Domain"
-  icon="browser"
-  href="/settings/custom-domain/subdomain"
->
-  Keep your docs on your own website's subdomain.
-</Card>
-
-</CardGroup>
+Morph AIは、集計や可視化の結果を基にリッチなレポートを生成します。ユーザーは、プロンプトを使ってレポートの内容をカスタマイズすることができます。例えば、「次回のマーケティング会議のアジェンダ」や「経営陣への月次報告」といった具体的なニーズに合わせて、レポートの形式や内容を設定することが可能です。生成されたレポートは、視覚的に魅力的で分かりやすく、意思決定をサポートするための強力なツールとなります。
