@@ -2,11 +2,14 @@
 title: 'データを可視化をする'
 ---
 
-Morphでは、GUIで簡単な可視化を実現するための機能があります。
+データを理解する上で可視化は非常に重要です。このセクションでは、Morphのワークスペース上でデータを可視化する方法を紹介します。
 
+## 可視化機能を使う
+
+Morphでは、vg.jsonという拡張子のファイルを作成することで、GUIで簡単な可視化を実現するための機能があります。
 棒グラフや折れ線グラフなど一般的な可視化を実現するためには、元データとなる集計をしておけば可視化結果をすぐに取得することができます。
 
-## 使い方
+### 使い方
 
 まず、可視化をしたいデータの元データを集計したSQL, Pythonのファイルを開きます。
 
@@ -26,7 +29,7 @@ Morphでは、GUIで簡単な可視化を実現するための機能がありま
 	alt="vg-json-editor"
 />
 
-## 可視化サンプル
+### 可視化サンプル
 
 <iframe
 	src="https://www.loom.com/embed/9274b8d8cc214161a5d22d67516ceeda?sid=c1a9dbf7-ff99-4b3d-b6d6-60e420c4e21a"
@@ -34,3 +37,63 @@ Morphでは、GUIで簡単な可視化を実現するための機能がありま
 	className="w-full aspect-video"
 ></iframe>
 
+## より複雑な可視化を実装する
+
+さらに複雑な可視化を実装したい場合は、Pythonの可視化ライブラリを使用して、データを可視化することができます。
+
+Morphでは、PlotlyとMatplotlibを使用してデータ可視化をすることを推奨しています。これらのライブラリで可視化用のオブジェクトを作成して返却する関数を記述して、実行を行うとMorphのCLIが自動で可視化部分を実行します。
+以下にPlotlyとMatplotlibを使用した可視化のサンプルを紹介します。
+
+**Plotly**
+
+```python
+import plotly.express as px
+
+import morph
+from morph import MorphGlobalContext
+
+@morph.func(
+    name="${MORPH_NAME}",
+    description="${MORPH_DESCRIPTION}",
+    output_paths=["_private/{name}/{now()}{ext()}"],
+    output_type="visualization",
+)
+@morph.load_data("${MORPH_PARENT_NAME}")
+def main(context: MorphGlobalContext) -> px.line:
+    data = context.data["${MORPH_PARENT_NAME}"]
+    # This is where you write your code.
+    # The `px.line` function creates a line plot using Plotly Express.
+    fig = px.line(data, x="X Axis", y="Y Axis", markers=True)
+    fig.update_layout(title="Plotly Plot")
+    return fig
+```
+
+**Matplotlib**
+
+```python
+import matplotlib.pyplot as plt
+
+import morph
+from morph import MorphGlobalContext
+
+@morph.func(
+    name="${MORPH_NAME}",
+    description="${MORPH_DESCRIPTION}",
+)
+@morph.load_data("${MORPH_PARENT_NAME}")
+def main(context: MorphGlobalContext) -> plt.Figure:
+    data = context.data["${MORPH_PARENT_NAME}"]
+    # This is where you write your code.
+    # The `plot` function creates a line plot using Matplotlib.
+    fig, ax = plt.subplots()
+    ax.plot(data["X-Axis"], data["Y-Axis"], marker="o")
+    ax.set_title("Matplotlib Plot")
+    ax.set_xlabel("X-Axis")
+    ax.set_ylabel("Y-Axis")
+    return fig
+```
+
+<Tip>
+これらの可視化では、実行結果をHTMLとPNGの2種類で出力をしています。これらの生のデータにアクセスをしたい場合は、`@morph.func`の`output_paths`で出力先を指定することができます。
+`@morph.func(output_paths=["_private/{name}/{now()}{ext()}"])`このように指定することで、`_private/{関数名}/{実行時間のタイムスタンプ}{.png, .html}`に出力されます。
+</Tip>
