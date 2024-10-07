@@ -80,7 +80,7 @@
         "docs/en/workspace/visualization",
         "docs/en/workspace/data-application",
         "docs/en/workspace/about-canvas",
-        "docs/en/workspace/job_schedule"
+        "docs/en/workspace/job-schedule"
       ]
     },
     {
@@ -200,7 +200,7 @@
         "docs/ja/workspace/visualization",
         "docs/ja/workspace/data-application",
         "docs/ja/workspace/about-canvas",
-        "docs/ja/workspace/job_schedule"
+        "docs/ja/workspace/job-schedule"
       ]
     },
     {
@@ -268,7 +268,7 @@
       ]
     },
     {
-      "group": "連携SaaSに接続する",
+      "group": "SaaSに接続する",
       "version": "日本語",
       "pages": [
         "integrations/ja/saas/attio",
