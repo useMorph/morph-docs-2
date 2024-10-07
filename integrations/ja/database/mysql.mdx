@@ -1,0 +1,59 @@
+---
+title: MySQL
+---
+
+このチャプターではMorphプラットフォームに、外部データソースとしてMySQLを連携する方法を説明します。
+
+## 設定方法
+
+<video
+  className="w-full mt-4 lg:mx-0 rounded-xl max-w-[1080px]"
+  controls
+  muted
+  playsInline
+>
+  <source src="/assets/docs/docs_connection_mysql.mp4" type="video/mp4" />
+</video>
+
+MySQLへの接続を設定するには、ホーム画面の「Connections」タブを開いて、「Create New Connection」ボタンから接続設定モーダルを開き、MySQLを選択します。
+
+
+## **接続設定項目 (Account)**
+
+> ここではAccountセクションの入力内容について説明します。必要に応じて以下の接続設定項目を入力して、サイドパネルをスクロールダウンした左下に表示されるCreateボタンを押下してください。
+
+1. **Host**
+    - データベースサーバーのIPアドレスまたはホスト名（例: db.example.com）。localhostや127.0.0.1は無効です。Morphプラットフォームの固定IPアドレス（35.79.243.33）からアクセス可能であることを確認してください。
+2. **Username**
+    - データベースサーバーに接続する際に使用するユーザー名。
+3. **Password**
+    - データベースサーバーに接続する際に使用するパスワード。
+4. **Database**
+    - 接続したいデータベースの名前。
+5. **Port**
+    - 接続したいデータベースサーバーのポート番号。
+6. **SSH Host**
+    - 踏み台サーバー（中継ホスト）を経由する場合のIPアドレスまたはホスト名。localhostや127.0.0.1は無効です。Morphプラットフォームの固定IPアドレス（35.79.243.33）からアクセス可能であることを確認してください。
+7. **SSH Username**
+    - 踏み台サーバーに接続する際に使用するユーザー名。
+8. **SSH Password**
+    - 踏み台サーバー接続する際に使用するパスワード。公開鍵認証方式で秘密鍵（SSH Private Key）を使用する場合は必要ありません。
+9. **SSH Port**
+    - 踏み台サーバーのポート番号。
+10. **SSH Private Key**
+    - 踏み台サーバー接続する際に使用するプライベートキー。パスワードを使用する場合は必要ありません。
+11. **SSH Passphrase**
+    - 秘密鍵（SSH Private Key）にパスフレーズが設定されている場合は入力します。パスワードを使用する場合は必要ありません。
+
+### 接続設定を完了する
+
+> Accountセクションの入力が終わって画面左下のCreateボタンを押下したら、次はConnection slugを入力して、接続設定を完了してください。
+
+1. **Connection slug**
+    - 外部データソースへの接続を一意に識別するもので、空にすることはできません。文字、数字、アンダースコアのみで任意に設定してください。
+
+![MySQL Slug](/assets/docs/mysqlslug.png)
+
+Connections一覧に接続設定が表示されたら設定完了となります。
+
+![MySQL Complete](/assets/docs/mysqlcomplete.png)

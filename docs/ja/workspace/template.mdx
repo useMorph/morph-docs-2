@@ -1,71 +1,146 @@
 ---
 title: 'テンプレート'
-description: 'Welcome to the home of your new documentation'
 ---
 
-<img
-  className="block dark:hidden"
-  src="assets/images/hero-light.svg"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="assets/images/hero-dark.svg"
-  alt="Hero Dark"
-/>
+`templates`フォルダでは、ユーザー定義のテンプレートファイルを作成して管理することができます。
 
-## Setting up
+作成したテンプレートから`morph create`コマンドで新規ファイルを作ることができます。また`morph search`コマンドで検索することもできます。
 
-The first step to world-class documentation is setting up your editing environments.
+## テンプレートの作成手順
 
-<CardGroup cols={2}>
-  <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
-  >
-    Get your docs set up locally for easy development
-  </Card>
-  <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
-  >
-    Preview your changes before you push to make sure they're perfect
-  </Card>
-</CardGroup>
+**(手順1) テンプレートファイルの作成**
 
-## Make it yours
+テンプレートファイルはtemplatesディレクトリ配下に作成します。
 
-Update your docs to your brand and add valuable content for the best user conversion.
+作成時には以下のプレースホルダーを定義できます。（プレースホルダーで定義した値は後述するmorph createコマンドのオプションで指定することで、置換してファイルが作成されます。）
 
-<CardGroup cols={2}>
-  <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
-  >
-    Customize your docs to your company's colors and brands
-  </Card>
-  <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
-  >
-    Automatically generate endpoints from an OpenAPI spec
-  </Card>
-  <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/components/accordion"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
-  >
-    Check out our showcase of our favorite documentation
-  </Card>
-</CardGroup>
+- `${MORPH_NAME}`: テンプレート名(旧エイリアス)に置換されます。（`morph create`コマンドの`--name`オプションの指定）
+- `${MORPH_DESCRIPTION}`: テンプレート説明に置換されます。（`morph create`コマンドの`—-description`オプションの指定）
+
+E.g.)
+
+```python
+import pandas as pd
+
+import morph
+from morph import MorphGlobalContext
+
+# morph.func is a decorator that takes in the following parameters:
+# name: The identifier for the file alias. The function name will be used if not provided.
+# description: The description for the function.
+# output_paths: The destination paths for the output.
+# output_type: The return type of the function
+@morph.func(
+    name="${MORPH_NAME}",
+    description="${MORPH_DESCRIPTION}",
+    output_paths=["_private/{name}/{now()}{ext()}"],
+    output_type="dataframe",
+)
+def main(context: MorphGlobalContext) -> pd.DataFrame:
+    return pd.DataFrame({{"key1": [3, 2, 1], "key2": [5, 4, 3]}})
+```
+
+**(手順2) template.yamlの編集**
+
+templatesフォルダ直下のtemplate.yamlを編集します。Syntaxは以下の例を参考にしてください。
+
+※srcはフルパスまたはtemplate.yamlからの相対パスで定義します。
+
+E.g.)
+
+```yaml
+# [Description]
+# This file is used to manage your local templates.
+#
+# [Syntax]
+# This file is written in YAML format. The following is an example of the syntax.
+#   E.g.)
+#     templates:
+#       - name: <template_name> [required]
+#         title: <template_title>
+#         description: <template_description>
+#         src: <template_source> [required]
+#         language: <template_language> [required|options:"python", "sql"]
+#
+# [Compiling]
+# After editing this file, you need to compile it using the following command.
+# This command will validate the syntax of the file and make sure your templates are available.
+#   E.g.)
+#     $ morph template compile
+
+templates:
+  - name: test
+    title: Test Template
+    description: This is a test template.
+    src: ./python/test.py
+    language: python
+```
+
+**(手順3) コンパイル**
+
+以下のコマンドでtemplate.yamlの妥当性をチェックすることができます。テンプレートファイルを作成してtemplate.yamlの編集まで終わったら、VSコードのターミナルから以下のコマンドを叩いてください。
+
+```bash
+$ morph template compile
+$ # 実行して何も表示がなければ成功です🎉
+```
+
+## テンプレートの利用方法
+
+以下のコマンドで作成できます。
+
+※`<テンプレート名>`はtemplate.yamlで定義したnameを指定します。また、[テンプレートAPI](https://queue-inc.stoplight.io/docs/morph-api-document/fhs6hbxyjjtxu-no-auth-search-template) が返却するnameを指定することで、グローバルのテンプレートを利用することもできます。
+
+```bash
+# morph create <作成するファイル> —template <テンプレート名>
+$ morph create src/test.py --template test
+```
+
+その他のオプションについては以下を参考にしてください。
+
+```bash
+$ morph create -h
+Usage: morph create [OPTIONS] FILENAME
+
+  Morph-cli create command.
+
+Options:
+  --template TEXT                 Specify the template name.
+  --name TEXT                     Specify the function name.
+  --description TEXT              Specify the function description.
+  --parent-name TEXT              Specify the parent function name.
+  -v, --verbose                   Enable verbose mode.
+  --log-format [text|debug|json|default]
+                                  Specify the format of logging to the console
+                                  and the log file. Use --log-format-file to
+                                  configure the format for the log file
+                                  differently than the console.
+  -h, --help                      Show this message and exit.
+```
+
+## テンプレートの検索
+
+ユーザー定義のテンプレートは以下のコマンドで検索することができます。
+
+直接このコマンドを叩く用途はあまりないかもしれませんが、VMのAPIでユーザー定義のテンプレートをフロント側に返すための実装となっています。
+
+```bash
+$ morph template search -h
+Usage: morph template search [OPTIONS]
+
+  Search templates.
+
+Options:
+  --name TEXT                     Specify the local template name.
+  --language TEXT                 Specify the local template language.
+  --query TEXT                    Specify the search query.
+  --limit INTEGER                 Specify the limit. [default: 20]
+  --skip INTEGER                  Specify the skip. [default: 0]
+  --log-format [text|debug|json|default]
+                                  Specify the format of logging to the console
+                                  and the log file. Use --log-format-file to
+                                  configure the format for the log file
+                                  differently than the console.
+  -v, --verbose                   Enable verbose mode.
+  -h, --help                      Show this message and exit.
+```

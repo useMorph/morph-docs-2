@@ -1,0 +1,58 @@
+---
+title: 'Data Application'
+---
+
+ワークスペースには、全てそれぞれのVirtual Machineが割り当てられているため各ユーザーは自分だけの完全に切り離された作業空間を手に入れることができます。
+
+同じチームでもユーザーごとに完全に切り離されたVMが立ち上がるので作業がコンフリクトすることはありません。エンジニア同志のコラボレーション可能にするために各種VMからはマネージドなGitLabに接続をされています。
+
+## プロジェクトを立ち上げる
+
+### Example
+
+```json
+source_paths:
+	- ./src
+knowledge_paths:
+	- ./knowledge
+template_paths:
+	- ./templates
+default_connection:
+	type: morph
+	database_id: xxxx-xxxx-xxx-xxxx
+	connection_slug: xxxxxx
+
+```
+
+### 項目解説
+
+#### source_paths
+
+morphのフレームワーク上実行の対象となるPython, SQLファイルが配置される場所の親ディレクトリ.
+
+#### knowledge_paths
+
+Morph AIが問合せ時に参照する顧客・ドメイン知識のドキュメントが配置される場所のディレクトリ.
+
+#### template_paths
+
+テンプレートが配置される場所の親ディレクトリ.
+
+#### default_connection
+
+SQL実行時にconnectionの指定のない場合問い合わせを行うDBのconnection slug.
+
+指定のない場合やnullの場合、Morphのbuilt-in DBへの問い合わせがデフォルトで行われる.
+
+## Gitの利用
+
+CodeではVM内に自動でビルトインのGitをインストールしています。そのため、ワークスペース上での作業を他のメンバーと共有したい場合はGitに対してコミットをしてください。
+
+同一のワークスペースは同じGitlabのプロジェクトに紐づいているため、コードをコミットすることによって他のメンバーと作業を共有することができます。
+
+VS CodeのデフォルトのGit操作機能、もしくはターミナルからGitの操作を行うことができます。もちろん、VS Code Extensionであなたの好みのGit操作用拡張をインストールすることも可能です。
+
+<img
+  src="/assets/images/docs/workspace-git.png"
+  alt="Workspace Overview"
+/>

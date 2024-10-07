@@ -1,0 +1,44 @@
+---
+title: '認証'
+---
+
+MorphのAPIを利用するには、APIキーをリクエストのヘッダーに含める必要があります。APIキーはMorphのダッシュボードから取得でき、セキュアなアクセスを保証します。
+
+<video
+	className="w-full mt-4 mx-[-24px] lg:mx-0 rounded-xl max-w-[1080px]"
+	autoPlay
+	loop
+	muted
+	playsInline
+>
+	<source src="/assets/docs/restapi_video.mp4" type="video/mp4" />
+</video>
+
+## APIキーの取得方法
+
+1. Home画面から「Secrets」タブを押下して下記のページを表示します。
+2. 次に「Create Secret」のボタンを押下し、Secret nameとSource IPを入力して「Create」ボタンで確定します。
+※Source IPを空欄にすると全部のIPが許可されます。Source IPを限定する場合はカンマ区切りで入力してください。
+3. 作成したAPIキーが不要になった場合は「Delete」ボタンから削除することができます。
+4. 出現した削除確認モーダルから「Delete」ボタンを押下すると、APIキーは完全に削除されます。
+**[NB!] この操作は取り消すことができません。一度削除すると復旧できないため十分にご注意ください。**
+
+## API URL
+
+APIのURLは以下のような形式となります。
+
+BaseURL: `https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/`
+
+**データベースID(`[Your_DatabaseID]`)の確認方法**
+
+Morphのワークスペース画面内で、 `/workspace` に続いて表示されているのがデータベースIDです。
+
+`https://beta-app.morphdb.io/workspace/[database_id]?selected...`
+
+**テーブル名(`[**Your_Table_Name**]`)の確認方法**
+
+データベーススキーマ内の特定のテーブルに対するクエリを行う場合は、APIのURLは以下のような形式となります。
+
+URL: `https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/[Your_Table_Name]`
+
+サイドメニューの Built-in Tables の中に表示されているのがテーブル名です。テーブルを選択した際に、エディターのタブに表示されるのもテーブル名です。

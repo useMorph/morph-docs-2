@@ -1,71 +1,64 @@
 ---
-title: 'コネクター - DB / DWH / SaaS'
-description: 'Welcome to the home of your new documentation'
+title: 'コネクター: DB / DWH / SaaS'
 ---
 
+Morphは、様々なデータソースと連携することで、ユーザーが一元的にデータを管理・分析できる環境を提供します。このセクションでは、Morphがサポートする主要なデータソースを紹介します。
+
+---
+
+## SQLデータベース
+
+Morphでは、さまざまな外部データソースとの連携が可能です。これにより、ユーザーは以下のデータベースやデータウェアハウスから直接SQLを使用してクエリを実行することができます。
+
+1. **MySQL**: オープンソースのリレーショナルデータベース管理システムで、世界中の多くのアプリケーションで広く使用されています。
+2. **PostgreSQL**: 強力なオープンソースのオブジェクトリレーショナルデータベースシステムで、信頼性、機能の豊富さ、パフォーマンスが特徴です。
+3. **BigQuery**: Google Cloudのサーバーレス、高スケーラビリティを持つデータウェアハウスで、大量のデータに対する迅速なSQLクエリをサポートします。
+4. **Snowflake**: クラウドベースのデータウェアハウスサービスで、データの共有やスケーラビリティに優れ、多様なデータワークロードをサポートします。
+5. **Redshift**: Amazon Web Servicesによるクラウドデータウェアハウスで、大規模なデータセットの分析を高速で行うことができます。
+
+これらのデータソースをMorphに接続することで、異なるプラットフォームやツール間でデータを統合し、効率的にデータ分析やビジネスインテリジェンスのタスクを行うことが可能になります。Morphのインターフェースを通じて簡単に接続を設定し、データを直接クエリすることができます。
+
+## SaaS
+
+Morphでは、一部のSaaSとの連携を用意しています。これにより、ユーザーは認証周りの実装を全てMorphに任せてビジネスロジックの実装に集中をすることができます。
+
+以下のようにConnectionsのタブからIntegrationを作成することで、すぐにSaaS内のデータの分析を始めることができます。
+
 <img
-  className="block dark:hidden"
-  src="assets/images/hero-light.svg"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="assets/images/hero-dark.svg"
-  alt="Hero Dark"
+  src="/assets/images/docs/integrations.png"
+  alt="Integrations"
 />
 
-## Setting up
+Pythonで作成したIntegrationからaccess_tokenを取得します。
 
-The first step to world-class documentation is setting up your editing environments.
+```python
+import pandas as pd
 
-<CardGroup cols={2}>
-  <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
-  >
-    Get your docs set up locally for easy development
-  </Card>
-  <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
-  >
-    Preview your changes before you push to make sure they're perfect
-  </Card>
-</CardGroup>
+import morph
+from morph import MorphGlobalContext
+from morphdb_utils.api import get_auth_token # ← access_tokenを取得する関数
 
-## Make it yours
+@morph.func(
+    name="freee_get_balance",
+    description="Freee Preprocess",
+    output_paths=["_private/{name}/{now()}{ext()}"],
+    output_type="dataframe",
+)
+def freee_get_balance(context: MorphGlobalContext) -> pd.DataFrame:
+    access_token = get_auth_token("Freee")
 
-Update your docs to your brand and add valuable content for the best user conversion.
+    # ↓↓↓ call API with access_token ↓↓↓
+```
 
-<CardGroup cols={2}>
-  <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
-  >
-    Customize your docs to your company's colors and brands
-  </Card>
-  <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
-  >
-    Automatically generate endpoints from an OpenAPI spec
-  </Card>
-  <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/components/accordion"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
-  >
-    Check out our showcase of our favorite documentation
-  </Card>
-</CardGroup>
+
+## 非SQLデータベース
+
+Morphは、NoSQLデータベースやその他の非SQLデータベースとも連携可能です。これには、MongoDBやCassandraなどが含まれ、これらのデータベースに対してPythonを使用してデータを取得し、分析することができます。Pythonの強力なライブラリを活用することで、データの操作や変換が容易になり、非SQLデータベースからも効果的にインサイトを引き出すことができます。
+
+## APIによる連携
+
+Morphは、様々な外部サービスやアプリケーションとAPIを通じて連携することも可能です。これにより、例えばウェブサービスからリアルタイムのデータを取得したり、他のクラウドサービスと統合したりすることができます。ユーザーはPythonスクリプトを使用してAPIからデータを取得し、Morph内で直接処理・分析を行うことができます。これにより、柔軟でカスタマイズ可能なデータ連携が実現します。
+
+## ファイルアップロード
+
+Morphは、ローカルファイルからのデータアップロードもサポートしています。ユーザーはCSV、JSON、Excelファイルなどを簡単にアップロードし、Workspaceにインポートすることができます。アップロードされたデータはすぐに利用可能で、Morphのツールを使って分析や可視化を行うことができます。

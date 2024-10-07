@@ -1,0 +1,44 @@
+---
+title: 'Authentication'
+---
+
+To use the Morph API, you need to include the API key in the request header to ensure secure access. The API key can be obtained from the Morph dashboard.
+
+<video
+	className="w-full mt-4 mx-[-24px] lg:mx-0 rounded-xl max-w-[1080px]"
+	autoPlay
+	loop
+	muted
+	playsInline
+>
+	<source src="/assets/docs/restapi_video.mp4" type="video/mp4" />
+</video>
+
+## How to Obtain the API Key
+
+1. From the Home screen, click on the "Secrets" tab to display the following page.
+2. Next, click the "Create Secret" button, enter the Secret name and Source IP, and confirm by clicking the "Create" button.
+※ Leaving the Source IP field blank will allow all IPs. If you want to restrict access to specific IPs, enter them separated by commas.
+3. If the created API key is no longer needed, you can delete it by clicking the "Delete" button.
+4. In the confirmation modal that appears, click the "Delete" button to permanently delete the API key.
+**[NB!] This action cannot be undone. Once deleted, it cannot be recovered, so please proceed with caution.**
+
+## API URL
+
+The URL for the API is in the following format:
+
+BaseURL: `https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/`
+
+**How to check the database ID [Your_DatabaseID]:**
+
+Check your browser's URL bar on the top page of the Morph screen: the database ID appears following `/workspace`.
+
+`https://beta-app.morphdb.io/workspace/[database_id]`
+
+**How to Check Your Table Name:**
+
+To query a specific table within the database schema, the API URL format is as follows:
+
+URL: `https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/[Your_Table_Name]`
+
+The table names are displayed in the Built-in Tables section of the side menu. When you select a table, the name is also displayed in the editor tab.

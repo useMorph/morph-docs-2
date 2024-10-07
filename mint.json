@@ -46,6 +46,10 @@
     {
       "name": "Integrations",
       "url": "integrations"
+    },
+    {
+      "name": "CLI & API",
+      "url": "cli-api"
     }
   ],
   "anchors": [
@@ -60,8 +64,8 @@
       "group": "Getting Started",
       "version": "English",
       "pages": [
-        "docs/en/why-morph",
-        "docs/en/how-morph-works"
+        "docs/en/getting-started/why-morph",
+        "docs/en/getting-started/how-morph-works"
       ]
     },
     {
@@ -69,13 +73,14 @@
       "version": "English",
       "pages": [
         "docs/en/workspace/about-workspace",
-        "docs/en/workspace/filesystem",
-        "docs/en/workspace/database",
-        "docs/en/workspace/recommended-extensions",
-        "docs/en/workspace/how-to-use-github-copilot",
-        "docs/en/workspace/git",
-        "docs/en/workspace/configuration-and-usage",
-        "docs/en/workspace/template"
+        "docs/en/workspace/environment",
+        "docs/en/workspace/vscode-extensions",
+        "docs/en/workspace/sql-python",
+        "docs/en/workspace/template",
+        "docs/en/workspace/visualization",
+        "docs/en/workspace/data-application",
+        "docs/en/workspace/about-canvas",
+        "docs/en/workspace/job_schedule"
       ]
     },
     {
@@ -87,13 +92,6 @@
       ]
     },
     {
-      "group": "Canvas",
-      "version": "English",
-      "pages": [
-        "docs/en/canvas/about-canvas"
-      ]
-    },
-    {
       "group": "Morph AI",
       "version": "English",
       "pages": [
@@ -101,20 +99,11 @@
       ]
     },
     {
-      "group": "Rest API",
-      "version": "English",
-      "pages": [
-        "docs/en/rest-api/overview",
-        "docs/en/rest-api/authentication",
-        "docs/en/rest-api/quickstart"
-      ]
-    },
-    {
       "group": "Team Setting",
       "version": "English",
       "pages": [
-        "docs/en/team-setting/manage-members",
-        "docs/en/team-setting/credit"
+        "docs/en/team-setting/credit",
+        "docs/en/team-setting/manage-members"
       ]
     },
     {
@@ -133,13 +122,6 @@
       ]
     },
     {
-      "group": "Data Visualization",
-      "version": "English",
-      "pages": [
-        "sql-python/en/vega-visualization"
-      ]
-    },
-    {
       "group": "Getting Started",
       "version": "English",
       "pages": [
@@ -155,18 +137,55 @@
       ]
     },
     {
-      "group": "Integrations",
+      "group": "Connect an SQL connector",
       "version": "English",
       "pages": [
-        "integrations/en/introduction"
+        "integrations/en/database/snowflake",
+        "integrations/en/database/bigquery",
+        "integrations/en/database/redshift",
+        "integrations/en/database/mysql",
+        "integrations/en/database/postgresql"
+      ]
+    },
+    {
+      "group": "Connect an SaaS integration",
+      "version": "English",
+      "pages": [
+        "integrations/en/saas/attio",
+        "integrations/en/saas/mailchimp",
+        "integrations/en/saas/airtable",
+        "integrations/en/saas/freee",
+        "integrations/en/saas/hubspot",
+        "integrations/en/saas/intercom",
+        "integrations/en/saas/linear",
+        "integrations/en/saas/notion",
+        "integrations/en/saas/salesforce",
+        "integrations/en/saas/stripe"
+      ]
+    },
+    {
+      "group": "Morph CLI",
+      "version": "English",
+      "pages": [
+        "cli-api/en/cli/overview",
+        "cli-api/en/cli/morph-project"
+      ]
+    },
+    {
+      "group": "Rest API",
+      "version": "English",
+      "pages": [
+        "cli-api/en/rest-api/overview",
+        "cli-api/en/rest-api/authentication",
+        "cli-api/en/rest-api/quickstart"
       ]
     },
     {
       "group": "Getting Started",
       "version": "日本語",
       "pages": [
-        "docs/ja/why-morph",
-        "docs/ja/how-morph-works"
+        "docs/ja/getting-started/why-morph",
+        "docs/ja/getting-started/how-morph-works"
       ]
     },
     {
@@ -174,13 +193,14 @@
       "version": "日本語",
       "pages": [
         "docs/ja/workspace/about-workspace",
-        "docs/ja/workspace/filesystem",
-        "docs/ja/workspace/database",
-        "docs/ja/workspace/recommended-extensions",
-        "docs/ja/workspace/how-to-use-github-copilot",
-        "docs/ja/workspace/git",
-        "docs/ja/workspace/configuration-and-usage",
-        "docs/ja/workspace/template"
+        "docs/ja/workspace/environment",
+        "docs/ja/workspace/vscode-extensions",
+        "docs/ja/workspace/sql-python",
+        "docs/ja/workspace/template",
+        "docs/ja/workspace/visualization",
+        "docs/ja/workspace/data-application",
+        "docs/ja/workspace/about-canvas",
+        "docs/ja/workspace/job_schedule"
       ]
     },
     {
@@ -192,21 +212,6 @@
       ]
     },
     {
-      "group": "Data Application",
-      "version": "日本語",
-      "pages": [
-        "docs/ja/data-application/how-to-build-data-application",
-        "docs/ja/data-application/mdx-setup"
-      ]
-    },
-    {
-      "group": "Canvas",
-      "version": "日本語",
-      "pages": [
-        "docs/ja/canvas/about-canvas"
-      ]
-    },
-    {
       "group": "Morph AI",
       "version": "日本語",
       "pages": [
@@ -214,20 +219,11 @@
       ]
     },
     {
-      "group": "Rest API",
-      "version": "日本語",
-      "pages": [
-        "docs/ja/rest-api/overview",
-        "docs/ja/rest-api/authentication",
-        "docs/ja/rest-api/quickstart"
-      ]
-    },
-    {
       "group": "Team Setting",
       "version": "日本語",
       "pages": [
-        "docs/ja/team-setting/manage-members",
-        "docs/ja/team-setting/credit"
+        "docs/ja/team-setting/credit",
+        "docs/ja/team-setting/manage-members"
       ]
     },
     {
@@ -246,13 +242,6 @@
       ]
     },
     {
-      "group": "データ可視化",
-      "version": "日本語",
-      "pages": [
-        "sql-python/ja/vega-visualization"
-      ]
-    },
-    {
       "group": "Getting Started",
       "version": "日本語",
       "pages": [
@@ -266,11 +255,49 @@
       "pages": [
         "examples/ja/introduction"
       ]
-    },{
-      "group": "Integrations",
+    },
+    {
+      "group": "SQLデータベースに接続する",
       "version": "日本語",
       "pages": [
-        "integrations/ja/introduction"
+        "integrations/ja/database/snowflake",
+        "integrations/ja/database/bigquery",
+        "integrations/ja/database/redshift",
+        "integrations/ja/database/mysql",
+        "integrations/ja/database/postgresql"
+      ]
+    },
+    {
+      "group": "連携SaaSに接続する",
+      "version": "日本語",
+      "pages": [
+        "integrations/ja/saas/attio",
+        "integrations/ja/saas/mailchimp",
+        "integrations/ja/saas/airtable",
+        "integrations/ja/saas/freee",
+        "integrations/ja/saas/hubspot",
+        "integrations/ja/saas/intercom",
+        "integrations/ja/saas/linear",
+        "integrations/ja/saas/notion",
+        "integrations/ja/saas/salesforce",
+        "integrations/ja/saas/stripe"
+      ]
+    },
+    {
+      "group": "Morph CLI",
+      "version": "日本語",
+      "pages": [
+        "cli-api/ja/cli/overview",
+        "cli-api/ja/cli/morph-project"
+      ]
+    },
+    {
+      "group": "Rest API",
+      "version": "日本語",
+      "pages": [
+        "cli-api/ja/rest-api/overview",
+        "cli-api/ja/rest-api/authentication",
+        "cli-api/ja/rest-api/quickstart"
       ]
     }
   ],

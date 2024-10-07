@@ -1,71 +1,30 @@
 ---
 title: 'ワークスペースの概要'
-description: 'Welcome to the home of your new documentation'
 ---
 
+# ワークスペースについて
+
+Morphのワークスペースは、以下の3つのセクションから構成されます。
+
+- Code: VS Codeベースのエディターと独自のフレームワークにより、データアプリケーションの構築、データ分析を高速に実施できます。
+- Database: Built-inのPostgreSQLを使用することができます。分析の過程やデータアプリケーションの中で使用したいデータマートを構築しより柔軟なデータ活用を実現できます。
+- Connections: RDB / データウェアハウス / SaaSとの連携を作成し、煩わしい認証用のコードを書くことなくすぐに分析業務を始めることができます。
+
 <img
-  className="block dark:hidden"
-  src="assets/images/hero-light.svg"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="assets/images/hero-dark.svg"
-  alt="Hero Dark"
+  src="/assets/images/docs/workspace-overview.png"
+  alt="Workspace Overview"
 />
 
-## Setting up
-
-The first step to world-class documentation is setting up your editing environments.
+以下の各ページにて、各セクションの詳細を確認することができます。
 
 <CardGroup cols={2}>
-  <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
-  >
-    Get your docs set up locally for easy development
+  <Card title="Code" icon="square-1" href="/docs/ja/workspace/environment">
+    Codeセクションで行うデータ分析やデータアプリケーションの構築について、その概要を説明します。
   </Card>
-  <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
-  >
-    Preview your changes before you push to make sure they're perfect
+  <Card title="Database" icon="square-2" href="/docs/ja/data-sources/builtin-postgres">
+    Databaseセクションで使用できるBuilt-inのPostgreSQLについてその使用方法を説明します。
   </Card>
-</CardGroup>
-
-## Make it yours
-
-Update your docs to your brand and add valuable content for the best user conversion.
-
-<CardGroup cols={2}>
-  <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
-  >
-    Customize your docs to your company's colors and brands
-  </Card>
-  <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
-  >
-    Automatically generate endpoints from an OpenAPI spec
-  </Card>
-  <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/components/accordion"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
-  >
-    Check out our showcase of our favorite documentation
+  <Card title="Connections" icon="square-3" href="/docs/ja/data-sources/connectors">
+    Connectionsセクションでの、連携の作成方法とその使用方法を説明します。
   </Card>
 </CardGroup>

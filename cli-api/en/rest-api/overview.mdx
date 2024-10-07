@@ -1,0 +1,41 @@
+---
+title: 'Overview'
+---
+
+Morph automatically generates and provides an API based on the database schema created. This allows data integration and application building using Morph's database through the API without the need to implement additional code.
+
+The API is designed in a RESTful format and can be accessed securely via an API key created from within the Morph dashboard.
+
+## Features
+
+Morph's database API is provided by [PostgREST](https://postgrest.org/) and offers the following benefits:
+
+- **Efficient development and collaboration**:
+    - The API is generated directly from the database schema, significantly reducing back-end development time and costs.
+- **Automatic updates/immediacy**:.
+    - Changes to the database schema are immediately reflected in the API, eliminating the need for manual synchronization and maintenance.
+- **Performance**
+    - Lightweight, stateless design enables direct execution of SQL queries for extremely fast data access.
+- **Flexibility**
+    - In addition to simple CRUD operations, complex operations such as query combination, filtering and sorting can be easily performed.
+- **Security**
+    - Strict type checking and automatic escaping of query parameters provide a high level of protection against attacks such as SQL injection.
+
+## RESTful architecture
+
+The API employs standard HTTP methods and provides intuitive and easy-to-use CRUD operations based on a RESTful architecture. This design allows developers to easily integrate the system with a wide range of different programming languages and applications.
+
+In addition, the following advanced features are provided:
+
+- **Filtering and searching**:
+    - Complex query parameters can be used to precisely extract only those records that match specific criteria.
+- **Sorting and Pagination**
+    - Sort the result set and use pagination to provide smaller chunks of data.
+- **Relational query**
+    - Allows data from multiple related tables to be retrieved in a single query. This enables data retrieval by utilizing relational database relationships without the need for multiple API calls.
+- **Aggregation**:
+    - Aggregation functions such as grouping, counting, averaging, maximum and minimum values can be included in the query.
+- **Batch requests**:
+    - Multiple API calls can be performed in a single HTTP request, reducing network latency and ensuring efficient data processing.
+
+In addition to these, various other functions are provided by [PostgREST](https://postgrest.org/). For more information, please see the following reference documents.
