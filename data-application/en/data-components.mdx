@@ -1,0 +1,50 @@
+---
+title: 'データコンポーネント'
+---
+
+Morphのデータを利用するには、専用のコンポーネントを用いて、Python関数やSQLファイルの name をプロパティとして渡します。
+
+以下は、Pythonの実行結果のDataFrameをテーブル表示する例です。
+
+```tsx index.mdx
+
+export const name = 'index';
+export const title = 'Top page';
+
+# Top page
+
+This is the top page of the data application.
+
+import { DataTable } from '@use-morph/page';
+
+<div className="h-[600px] w-full">
+  <DataTable alias="aggregate_py" />
+</div>
+
+```
+
+以下で、データ表示用のコンポーネントを紹介します。
+
+## DataTable
+
+DataTableコンポーネントは、Python関数やSQLファイルの実行結果をテーブル表示します。
+
+```tsx
+import { DataTable } from '@use-morph/page';
+
+<DataTable alias="aggregate_py" />
+```
+
+## Embed
+
+Embedコンポーネントは、Python関数の実行結果がHTMLの場合に、そのHTMLを表示します。
+
+```tsx
+
+import { Embed } from '@use-morph/page';
+
+<Embed alias="plotly_py" />
+```
+
+
+
