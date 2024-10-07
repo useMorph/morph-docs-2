@@ -151,7 +151,16 @@
       "group": "Connect an SaaS integration",
       "version": "English",
       "pages": [
-        "integrations/en/saas/attio"
+        "integrations/en/saas/attio",
+        "integrations/en/saas/mailchimp",
+        "integrations/en/saas/airtable",
+        "integrations/en/saas/freee",
+        "integrations/en/saas/hubspot",
+        "integrations/en/saas/intercom",
+        "integrations/en/saas/linear",
+        "integrations/en/saas/notion",
+        "integrations/en/saas/salesforce",
+        "integrations/en/saas/stripe"
       ]
     },
     {
@@ -262,7 +271,16 @@
       "group": "連携SaaSに接続する",
       "version": "日本語",
       "pages": [
-        "integrations/ja/saas/attio"
+        "integrations/ja/saas/attio",
+        "integrations/ja/saas/mailchimp",
+        "integrations/ja/saas/airtable",
+        "integrations/ja/saas/freee",
+        "integrations/ja/saas/hubspot",
+        "integrations/ja/saas/intercom",
+        "integrations/ja/saas/linear",
+        "integrations/ja/saas/notion",
+        "integrations/ja/saas/salesforce",
+        "integrations/ja/saas/stripe"
       ]
     },
     {

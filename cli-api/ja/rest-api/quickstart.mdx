@@ -1,3 +1,68 @@
 ---
 title: 'クイックスタート'
 ---
+
+このチャプターでは、MorphのAPIを使用して基本的なCRUD操作（作成、読み取り、更新、削除）を実行する方法をステップバイステップで説明します。このチュートリアルを通じて、Morphのデータベースとの連携を簡単に始めることができます。
+
+この例ではcURLコマンドを用いてAPIを呼び出しますので、お手元のターミナル環境や[Postman](https://www.postman.com/)などのAPIクライアントツールにコマンドをペーストしてお試しください。
+
+### API呼び出し
+
+*※**`[**Your_DatabaseID**]`,** `[Your_Table_Slug]`, **`[Your_API_Key]`** は置換してご利用ください。*
+
+**作成 (Create)**:
+
+データを新しく作成するには、POSTメソッドを使用します。
+
+```sh
+curl --location --request POST 'https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/[Your_Table_Slug]' \
+--header 'x-api-key: [Your_API_Key]' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "column1": "value1",
+    "column2": "value2"
+}'
+```
+
+**読み取り (Read)**:
+
+テーブルからデータを読み取るには、GETメソッドを使用します。
+
+```sh
+curl --location 'https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/[Your_Table_Slug]' \
+--header 'x-api-key: [Your_API_Key]'
+
+```
+**更新 (Update)**:
+
+既存のデータを更新するには、PUTメソッドを使用します。
+
+```sh
+curl --location --request PUT 'https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/[Your_Table_Slug]' \
+--header 'x-api-key: [Your_API_Key]' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "column1": "new_value1"
+}'
+```
+
+**削除 (Delete)**:
+
+データを削除するには、DELETEメソッドを使用します。
+
+```sh
+curl --location --request DELETE 'https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/[Your_Table_Slug]' \
+--header 'x-api-key: [Your_API_Key]' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "column1": "value_to_delete"
+}'
+
+```
+
+これら以外にも、[PostgREST](https://postgrest.org/)によりお客様の用途に応じて様々なクエリパターンを実現することができます。詳しくは下記の参考資料をご確認ください。
+
+### **参考資料**
+
+- [PostgREST 公式ドキュメント](https://postgrest.org/en/v12/)
+- [PostgREST ソースコード](https://github.com/PostgREST/postgrest)

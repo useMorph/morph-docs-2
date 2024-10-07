@@ -1,3 +1,58 @@
 ---
 title: BigQuery
 ---
+
+このチャプターではMorphプラットフォームに、外部データソースとしてBigQueryを連携する方法を説明します。
+
+## 設定方法
+
+<video
+  className="w-full mt-4 lg:mx-0 rounded-xl max-w-[1080px]"
+  controls
+  muted
+  playsInline
+>
+  <source src="/assets/docs/docs_connection_bigquery.mp4" type="video/mp4" />
+</video>
+
+BigQueryへの接続を設定するには、ホーム画面の「Connections」タブを開いて、「Create New Connection」ボタンから接続設定モーダルを開き、BigQueryを選択します。
+
+
+## **認証方式**
+
+BigQueryへの接続には、Service AccountまたはOAuth2認証の二つの方法が利用可能です。どちらの方法も安全にBigQueryデータにアクセスするためのもので、用途に応じて選択することができます。
+
+**OAuth2認証**
+
+OAuth2は、ユーザーが自身のGoogleアカウントの資格情報を直接使用せずに、第三者アプリケーションがGoogleサービスに安全にアクセスするための方法です。
+
+**Service Account認証**
+
+Service Accountは、アプリケーションがユーザーの介入なしにGoogle Cloudサービスにアクセスするために使用します。これは主にバックエンドシステムや自動化スクリプトで使用されます。
+
+### **OAuth2認証を使用したBigQuery連携**
+
+**設定手順**:
+
+1. Morphの設定で「OAuth2」を選択し、「Sign in with Google」ボタンを使用してGoogleアカウントで認証します。
+2. Sign in with GoogleからGoogle Cloud Platform側の画面に遷移したらMorphの接続要求を許可してください。許可するとMorph画面にリダイレクトされて設定は完了です。
+
+### **Service Accountを使用したBigQuery連携**
+
+**設定手順**:
+
+1. Google Cloud PlatformでService Accountを作成し、そのJSONキーを取得します。[参考: [サービス アカウント キーの作成と管理](https://cloud.google.com/iam/docs/creating-managing-service-account-keys?hl=ja)]
+2. Morphの設定で「Service Account」を選択し、ダウンロードしたJSONキーを指定するフィールドにアップロードします。
+
+### 接続設定を完了する
+
+> Accountセクションの入力が終わって画面左下のCreateボタンを押下したら、次はConnection slugを入力して、接続設定を完了してください。
+
+1. **Connection slug**
+    - 外部データソースへの接続を一意に識別するもので、空にすることはできません。文字、数字、アンダースコアのみで任意に設定してください。
+
+![BigQuery Slug](/assets/docs/bigqueryslug.png)
+
+Connections一覧に接続設定が表示されたら設定完了となります。
+
+![BigQuery Complete](/assets/docs/bigquerycomplete.png)
