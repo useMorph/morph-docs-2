@@ -46,10 +46,6 @@
     {
       "name": "Integrations",
       "url": "integrations"
-    },
-    {
-      "name": "CLI & API",
-      "url": "cli-api"
     }
   ],
   "anchors": [
@@ -99,6 +95,15 @@
       ]
     },
     {
+      "group": "Rest API",
+      "version": "English",
+      "pages": [
+        "docs/en/rest-api/overview",
+        "docs/en/rest-api/authentication",
+        "docs/en/rest-api/quickstart"
+      ]
+    },
+    {
       "group": "Team Setting",
       "version": "English",
       "pages": [
@@ -110,15 +115,23 @@
       "group": "SQL",
       "version": "English",
       "pages": [
-        "sql-python/en/quickstart-sql"
+        "sql-python/en/sql/quickstart-sql"
       ]
     },
     {
       "group": "Python",
       "version": "English",
       "pages": [
-        "sql-python/en/quickstart-python",
-        "sql-python/en/how-to-install-pip"
+        "sql-python/en/python/quickstart-python",
+        "sql-python/en/python/how-to-install-pip"
+      ]
+    },
+    {
+      "group": "Morph CLI",
+      "version": "English",
+      "pages": [
+        "sql-python/en/cli/overview",
+        "sql-python/en/cli/morph-project"
       ]
     },
     {
@@ -164,23 +177,6 @@
       ]
     },
     {
-      "group": "Morph CLI",
-      "version": "English",
-      "pages": [
-        "cli-api/en/cli/overview",
-        "cli-api/en/cli/morph-project"
-      ]
-    },
-    {
-      "group": "Rest API",
-      "version": "English",
-      "pages": [
-        "cli-api/en/rest-api/overview",
-        "cli-api/en/rest-api/authentication",
-        "cli-api/en/rest-api/quickstart"
-      ]
-    },
-    {
       "group": "Getting Started",
       "version": "日本語",
       "pages": [
@@ -219,6 +215,15 @@
       ]
     },
     {
+      "group": "Rest API",
+      "version": "日本語",
+      "pages": [
+        "docs/ja/rest-api/overview",
+        "docs/ja/rest-api/authentication",
+        "docs/ja/rest-api/quickstart"
+      ]
+    },
+    {
       "group": "Team Setting",
       "version": "日本語",
       "pages": [
@@ -230,15 +235,23 @@
       "group": "SQL",
       "version": "日本語",
       "pages": [
-        "sql-python/ja/quickstart-sql"
+        "sql-python/ja/sql/quickstart-sql"
       ]
     },
     {
       "group": "Python",
       "version": "日本語",
       "pages": [
-        "sql-python/ja/quickstart-python",
-        "sql-python/ja/how-to-install-pip"
+        "sql-python/ja/python/quickstart-python",
+        "sql-python/ja/python/how-to-install-pip"
+      ]
+    },
+    {
+      "group": "Morph CLI",
+      "version": "日本語",
+      "pages": [
+        "sql-python/ja/cli/overview",
+        "sql-python/ja/cli/morph-project"
       ]
     },
     {
@@ -281,23 +294,6 @@
         "integrations/ja/saas/notion",
         "integrations/ja/saas/salesforce",
         "integrations/ja/saas/stripe"
-      ]
-    },
-    {
-      "group": "Morph CLI",
-      "version": "日本語",
-      "pages": [
-        "cli-api/ja/cli/overview",
-        "cli-api/ja/cli/morph-project"
-      ]
-    },
-    {
-      "group": "Rest API",
-      "version": "日本語",
-      "pages": [
-        "cli-api/ja/rest-api/overview",
-        "cli-api/ja/rest-api/authentication",
-        "cli-api/ja/rest-api/quickstart"
       ]
     }
   ],
