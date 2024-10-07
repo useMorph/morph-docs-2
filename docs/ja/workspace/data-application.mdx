@@ -2,3 +2,87 @@
 title: 'データアプリケーションを構築する'
 ---
 
+Morphでは、マークダウン形式とReactコンポーネントを組み合わせて、リッチなデータアプリケーションを簡単に作成することができます。
+
+このセクションでは、データアプリケーションを構築するための手順を説明します。
+
+## MDX
+
+Morphでデータアプリケーションを構築する際には、[MDX (https://mdxjs.com/) ](https://mdxjs.com/)を使用します。MDXの詳しい使い方については、[MDXの公式ドキュメント](https://mdxjs.com/)を参照してください。
+
+## 0. セットアップ
+
+{/* <Warning>通常この手順は、ワークスペースのシステムが自動で実行するため、スキップして構いません。どうしても起動がうまくいかない場合に試してください。</Warning> */}
+
+データアプリケーションを構築するためには、まずMorphのワークスペースを開いて、以下のコマンドを実行してください。これは数分かかる場合があります。
+
+```bash
+npm i -S @use-morph/page-build && npx morph-page init
+```
+
+
+## 1. mdxファイルを作成する
+
+<video
+  controls
+  className="w-full aspect-video"
+  src="/assets/images/docs/mdx-1.mp4"
+></video>
+
+まず、データアプリケーションのコンテンツを記述するためのmdxファイルを作成します。mdxファイルは、マークダウン形式で記述されたテキストとReactコンポーネントを組み合わせて、リッチなコンテンツを作成するためのファイルです。
+ワークスペースのホームディレクトリの `src` ディレクトリにmdxファイルを作成してください。
+
+## 2. mdxファイルを編集する
+
+mdxファイルを作成したら、内容を編集していきます。
+
+とても重要な要素として、2つの変数をexportする必要があります。
+
+- name ... これは、このファイルのページのパス名です。例えば、nameが`index`の場合は`/`となり、nameが`about`の場合は`/about`となります。
+
+- title ... これは、このファイルのページのタイトルです。画面内のメニューやタイトルに表示されます。
+
+以下は、`index.mdx`ファイルの例です。
+
+```tsx index.mdx
+
+export const name = 'index';
+export const title = 'Top page';
+
+# Top page
+
+This is the top page of the data application.
+
+```
+
+通常のマークダウン記法を使用することができます。
+
+## 3. Morphのデータを利用する
+
+Morphのデータを利用するには、専用のコンポーネントを用いて、Python関数やSQLファイルの name をプロパティとして渡します。
+
+以下は、Pythonの実行結果のDataFrameをテーブル表示する例です。
+
+```tsx index.mdx
+
+export const name = 'index';
+export const title = 'Top page';
+
+# Top page
+
+This is the top page of the data application.
+
+import { DataTable } from '@use-morph/page';
+
+<div className="h-[600px] w-full">
+  <DataTable alias="aggregate_py" />
+</div>
+
+```
+
+Morphのコンポーネントの詳しい仕様は、[Data Applicationのページ](/data-application/ja/how-to-build-data-application)を参照してください。
+
+## 4. データアプリケーションの起動
+
+データアプリケーションを起動するには、mdxファイルの編集画面右上にある Preview ボタンをクリックしてください。
+
