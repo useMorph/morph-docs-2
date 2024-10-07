@@ -235,7 +235,10 @@
       "group": "SQL",
       "version": "日本語",
       "pages": [
-        "sql-python/ja/sql/quickstart-sql"
+        "sql-python/ja/sql/quickstart-sql",
+        "sql-python/ja/sql/config",
+        "sql-python/ja/sql/load_data",
+        "sql-python/ja/sql/variables"
       ]
     },
     {
@@ -243,15 +246,35 @@
       "version": "日本語",
       "pages": [
         "sql-python/ja/python/quickstart-python",
-        "sql-python/ja/python/how-to-install-pip"
+        "sql-python/ja/python/how-to-install-pip",
+        "sql-python/ja/python/env-vars",
+        "sql-python/ja/python/morph-global-context",
+        "sql-python/ja/python/morph-func",
+        "sql-python/ja/python/morph-load_data",
+        "sql-python/ja/python/morph-variables"
       ]
     },
     {
-      "group": "Morph CLI",
+      "group": "Framework",
       "version": "日本語",
       "pages": [
         "sql-python/ja/cli/overview",
+        "sql-python/ja/cli/cli",
         "sql-python/ja/cli/morph-project"
+      ]
+    },
+    {
+      "group": "CLI Commands",
+      "version": "日本語",
+      "pages": [
+        "sql-python/ja/cli-commands/run",
+        "sql-python/ja/cli-commands/create",
+        "sql-python/ja/cli-commands/compile",
+        "sql-python/ja/cli-commands/clean",
+        "sql-python/ja/cli-commands/template",
+        "sql-python/ja/cli-commands/init",
+        "sql-python/ja/cli-commands/new",
+        "sql-python/ja/cli-commands/print"
       ]
     },
     {
