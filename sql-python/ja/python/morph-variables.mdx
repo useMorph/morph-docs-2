@@ -2,39 +2,20 @@
 title: '@morph.variables'
 ---
 
-@funcのアノテーションをつけることでmorphで実行できる関数として登録ができます。
+`@morph.variables`のアノテーションで外部から渡す変数を宣言することができます。
 
 ```python
-@morph.func(
-    name="example_python_cell",
-    description="Example Python cell",
-    output_paths=["_public/{name}/{now()}{ext()}"],
-    output_type="dataframe",
-)
-@morph.load_data("example_sql_cell")
-@morph.arguments("var1")
+@morph.func
+@morph.variables("var1")
 def get_data_from_database(context):
-	sql_result_df = context.data["example_sql_cell"]
-	name = context.arguments["name"]
-	var1_data = context.var["var1"]
+	var1_data = context.vars["var1"]
+    # write your code here using var1_data
 	return pd.DataFrame({})
 ```
 
-引数として値を渡してSQLと同様に設定値を追加することができます。
-
-**@funcの引数**
+**@morph.variablesの引数**
 
 | カラム | 説明 |
 | --- | --- |
-| name | 処理名, 他のファイルから呼び出す時のエイリアスとしても使える |
-| description | 処理の説明を残す |
-| output_paths | 結果ファイルの出力先 |
-| output_type | “dataframe”, “visualization”, “markdown”, “json” |
+| name | 関数の実行時の引数を追加できる。<br/>mdxファイルから引数を渡したり、コマンド実行時に引数を指定できます。 |
 
-**他のannotationの種類**
-
-| カラム | 説明 |
-| --- | --- |
-| @morph.load_data(name: str) | nameで指定した関数の出力結果をcontext.dataに格納する |
-| @morph.arguments(name: str) | 関数の実行時の引数を追加できる。
-mdxファイルから引数を渡したり、コマンド実行時に引数を指定できます。 |
