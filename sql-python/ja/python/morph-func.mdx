@@ -1,0 +1,28 @@
+---
+title: '@morph.func'
+---
+
+`@morph.func`のアノテーションをつけることでmorphで実行できる関数として登録ができます。
+
+```python
+@morph.func(
+    name="example_python_cell",
+    description="Example Python cell",
+)
+def get_data_from_database(context):
+    # write your code here
+	return pd.DataFrame({
+        "name": ["John", "Doe"],
+        "age": [20, 30],
+    })
+```
+
+**@morph.funcの引数**
+
+| カラム | 説明 |
+| --- | --- |
+| name | 処理名, 他のファイルから呼び出す時のエイリアスとしても使える |
+| description | 処理の説明を残す |
+| output_paths | 結果ファイルの出力先 |
+| output_type | “dataframe”, “visualization”, “markdown”, “json” |
+

@@ -2,16 +2,15 @@
 title: 'クイックスタート - SQL'
 ---
 
-以下のようにSQLの中にjinjaで設定値を書くことができます。
+Morph上では、接続しているデータベースに対するSQLを記述することでデータの取り出しを行うことができます。
+
+SQL上では、`config`関数を活用し、connectionを指定することで、簡単にConnectionsで接続したデータベースに対してSQLを発行することができます。
 
 ```sql
 {{
 	config(
 		name="test",
 		description="this is test sql statement",
-		output_paths=[
-			"_private/{name}/{now()}{ext()}"
-		],
 		connection="your_connection_slug"
 	)
 }}
@@ -19,78 +18,13 @@ title: 'クイックスタート - SQL'
 select 1 as test
 ```
 
-**Configの設定値**
+<Warning>SQLではstatementの最後にセミコロンをつけることが一般的ですが、一つのファイルに複数のSQLを書かれることを防止するためにセミコロンの使用を禁止しています。</Warning>
 
-| カラム | 説明 |
-| --- | --- |
-| name | 処理名, 他のファイルから呼び出す時のエイリアスとしても使える |
-| description | 処理の説明を残す |
-| output_paths | 結果ファイルの出力先 |
-| connection | 画面で登録したbuiltin以外のconnectionの向き先 (optional)
-※ 指定をしない場合はbuilt-in postgresqlに設定されます。 |
+## Jinja
 
-**Jinja**
+
+Morph上のSQLファイルでは、Jinjaによる柔軟な記述を行うことができます。Jinjaを使用することでSQL内にplaceholderやif文などの条件分岐を記述することができます。
 
 リンク: [https://jinja.palletsprojects.com/en/2.10.x/templates/#synopsis](https://jinja.palletsprojects.com/en/2.10.x/templates/#synopsis)
 
-Jinjaを使用することでSQL内にplaceholderやif文などの条件分岐を記述することができます。
-
-基本的な文法のif、variables以外のものは上記のリンクから参照できます。
-
-`if` & `variables`
-
-Jinjaの記法でif文を記述します。また`{{ }}`で囲うとvariablesとみなされrunした際の引数がここに入るようになっています。
-
-`morph run user -d user_type=admin`
-
--dでvariablesを指定することができます。
-
-```sql
-{{
-	config(
-		name="user",
-		description="User",
-		output_paths=[
-			"_private/{name}/{now()}{ext()}"
-		]
-	)
-}}
-
-{% if user_type %}
-# user_typeが送られたときに発行されるSQL
-# 通常のSQLと同様に指定の値はシングルクオートで囲む必要あり(dbの文法による)
-select * from user where user_type = '{{ user_type }}'
-{% else %}
-# user_typeの指定がないときに発行されるSQL
-select * from user
-{% endif %}
-```
-
-morph独自のJinja関数であるload_dataの使い方
-
-`load_data(”参照する他のcell名”)`
-
-load_data関数を使用することで他のcellの結果をテーブルのように扱うことができます。
-
-以下のように記述した場合`user_cache` のcellを実行したあとの結果ファイルをテーブルとしてアクセスすることができます。
-
-※ 参照するcellの結果ファイルはcsvである必要があるため注意してください
-
-```sql
-{{
-	config(
-		name="user",
-		description="User",
-		output_paths=[
-			"_private/{name}/{now()}{ext()}"
-		]
-	)
-}}
-
-select
-	*
-from
-	{{ load_data("user_cache") }}
-```
-
-<Warning>SQLではstatementの最後にセミコロンをつけることが一般的ですが、一つのファイルに複数のSQLを書かれることを防止するためにセミコロンの使用を禁止しています。</Warning>
+またJinjaを活用して、よりデータ分析を簡単に行うための関数を用意しています。それについては、`config`や、`load_data`などの関数を参照してください。

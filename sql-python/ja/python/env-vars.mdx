@@ -1,0 +1,32 @@
+---
+title: '環境変数'
+---
+
+ワークスペースを立ち上げるとプロジェクトのルートに`.env`というファイルが作成されます。
+
+このファイルに環境変数を定義することで、Pythonファイルの実行時に自動的に環境変数がセットされます。
+
+<img
+    src="/assets/images/python-sql/python-env.png"
+    alt="env-vars"
+/>
+
+
+環境変数へのアクセスは通常のPythonのコードと同じように行うことができます。
+
+```python
+import os
+import pandas as pd
+
+import morph
+from morph import MorphGlobalContext
+
+@morph.func(
+    name="example_python_cell",
+    description="Example Python cell",
+)
+def get_data_from_database(context: MorphGlobalContext):
+    # get env variable named "ENV_NAME"
+    env_name = os.environ["ENV_NAME"]
+	return pd.DataFrame({})
+```

@@ -1,0 +1,21 @@
+---
+title: '@morph.variables'
+---
+
+`@morph.variables`のアノテーションで外部から渡す変数を宣言することができます。
+
+```python
+@morph.func
+@morph.variables("var1")
+def get_data_from_database(context):
+	var1_data = context.vars["var1"]
+    # write your code here using var1_data
+	return pd.DataFrame({})
+```
+
+**@morph.variablesの引数**
+
+| カラム | 説明 |
+| --- | --- |
+| name | 関数の実行時の引数を追加できる。<br/>mdxファイルから引数を渡したり、コマンド実行時に引数を指定できます。 |
+

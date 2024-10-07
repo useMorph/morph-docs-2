@@ -55,8 +55,6 @@ from morph import MorphGlobalContext
 @morph.func(
     name="${MORPH_NAME}",
     description="${MORPH_DESCRIPTION}",
-    output_paths=["_private/{name}/{now()}{ext()}"],
-    output_type="visualization",
 )
 @morph.load_data("${MORPH_PARENT_NAME}")
 def main(context: MorphGlobalContext) -> px.line:
