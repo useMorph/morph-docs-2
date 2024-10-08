@@ -115,7 +115,10 @@
       "group": "SQL",
       "version": "English",
       "pages": [
-        "sql-python/en/sql/quickstart-sql"
+        "sql-python/en/sql/quickstart-sql",
+        "sql-python/en/sql/config",
+        "sql-python/en/sql/load_data",
+        "sql-python/en/sql/variables"
       ]
     },
     {
@@ -123,7 +126,12 @@
       "version": "English",
       "pages": [
         "sql-python/en/python/quickstart-python",
-        "sql-python/en/python/how-to-install-pip"
+        "sql-python/en/python/how-to-install-pip",
+        "sql-python/en/python/env-vars",
+        "sql-python/en/python/morph-global-context",
+        "sql-python/en/python/morph-func",
+        "sql-python/en/python/morph-load_data",
+        "sql-python/en/python/morph-variables"
       ]
     },
     {
@@ -132,7 +140,7 @@
       "pages": [
         "sql-python/en/framework/overview",
         "sql-python/en/framework/morph-project",
-        "sql-python/ja/framework/output-paths"
+        "sql-python/en/framework/output-paths"
       ]
     },
     {
@@ -182,13 +190,13 @@
       "group": "Connect an SaaS integration",
       "version": "English",
       "pages": [
-        "integrations/en/saas/attio",
-        "integrations/en/saas/mailchimp",
         "integrations/en/saas/airtable",
+        "integrations/en/saas/attio",
         "integrations/en/saas/freee",
         "integrations/en/saas/hubspot",
         "integrations/en/saas/intercom",
         "integrations/en/saas/linear",
+        "integrations/en/saas/mailchimp",
         "integrations/en/saas/notion",
         "integrations/en/saas/salesforce",
         "integrations/en/saas/stripe"
@@ -321,13 +329,13 @@
       "group": "SaaSに接続する",
       "version": "日本語",
       "pages": [
-        "integrations/ja/saas/attio",
-        "integrations/ja/saas/mailchimp",
         "integrations/ja/saas/airtable",
+        "integrations/ja/saas/attio",
         "integrations/ja/saas/freee",
         "integrations/ja/saas/hubspot",
         "integrations/ja/saas/intercom",
         "integrations/ja/saas/linear",
+        "integrations/ja/saas/mailchimp",
         "integrations/ja/saas/notion",
         "integrations/ja/saas/salesforce",
         "integrations/ja/saas/stripe"
