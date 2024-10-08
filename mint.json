@@ -40,12 +40,12 @@
       "url": "data-application"
     },
     {
-      "name": "Examples",
-      "url": "examples"
-    },
-    {
       "name": "Integrations",
       "url": "integrations"
+    },
+    {
+      "name": "Examples",
+      "url": "examples"
     }
   ],
   "anchors": [
@@ -127,11 +127,26 @@
       ]
     },
     {
-      "group": "Morph CLI",
+      "group": "Framework",
       "version": "English",
       "pages": [
-        "sql-python/en/cli/overview",
-        "sql-python/en/cli/morph-project"
+        "sql-python/en/framework/overview",
+        "sql-python/en/framework/morph-project",
+        "sql-python/ja/framework/output-paths"
+      ]
+    },
+    {
+      "group": "CLI Commands",
+      "version": "English",
+      "pages": [
+        "sql-python/en/cli-commands/run",
+        "sql-python/en/cli-commands/create",
+        "sql-python/en/cli-commands/compile",
+        "sql-python/en/cli-commands/clean",
+        "sql-python/en/cli-commands/template",
+        "sql-python/en/cli-commands/init",
+        "sql-python/en/cli-commands/new",
+        "sql-python/en/cli-commands/print"
       ]
     },
     {
@@ -261,9 +276,9 @@
       "group": "Framework",
       "version": "日本語",
       "pages": [
-        "sql-python/ja/cli/overview",
-        "sql-python/ja/cli/cli",
-        "sql-python/ja/cli/morph-project"
+        "sql-python/ja/framework/overview",
+        "sql-python/ja/framework/morph-project",
+        "sql-python/ja/framework/output-paths"
       ]
     },
     {
@@ -292,13 +307,6 @@
       ]
     },
     {
-      "group": "Examples",
-      "version": "日本語",
-      "pages": [
-        "examples/ja/introduction"
-      ]
-    },
-    {
       "group": "SQLデータベースに接続する",
       "version": "日本語",
       "pages": [
@@ -323,6 +331,13 @@
         "integrations/ja/saas/notion",
         "integrations/ja/saas/salesforce",
         "integrations/ja/saas/stripe"
+      ]
+    },
+    {
+      "group": "Examples",
+      "version": "日本語",
+      "pages": [
+        "examples/ja/introduction"
       ]
     }
   ],

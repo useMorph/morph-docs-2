@@ -13,9 +13,10 @@ def get_data_from_database(context):
 	return pd.DataFrame({})
 ```
 
-**@morph.variablesの引数**
+## Parameters
 
-| カラム | 説明 |
-| --- | --- |
-| name | 関数の実行時の引数を追加できる。<br/>mdxファイルから引数を渡したり、コマンド実行時に引数を指定できます。 |
+<ParamField body="name" type="string" required>
+関数の実行時の引数を追加できる。
 
+mdxファイルから引数を渡したり、コマンド実行時に引数を指定できます。
+</ParamField>

@@ -1,0 +1,34 @@
+---
+title: 'morph_project.yml'
+---
+
+`morph_project.yml`は、Morphのフレームワークを実行時に使用される設定ファイルです。Morphのプロジェクトを立ち上げると自動的にデフォルトの値が設定されたファイルが作成されます。
+
+```yaml
+default_connection: MORPH_BUILTIN_DB
+source_paths:
+- src
+template_paths:
+- templates
+
+```
+
+## Parameters
+
+<ParamField body="default_connection" type="string" default="MORPH_BUILTIN_DB">
+デフォルトのDB接続を指定します。SQLファイルでconfig関数の中でconnectionを指定しなかった場合は自動的にこの接続が使用されます。
+
+設定をする場合は、configのconnectionに設定と同様にコネクション名を設定してください。
+</ParamField>
+
+<ParamField body="source_paths" type="string" default="src">
+ソースパスを指定します。
+
+ソースパスとして指定をしたディレクトリ以下にあるファイルがMorph上で実行可能なソースコードとして扱われます。
+</ParamField>
+
+<ParamField body="template_paths" type="string" default="templates">
+テンプレートパスを指定します。
+
+テンプレートの使い方については、[こちらのドキュメント](/docs/ja/workspace/template)を参照してください。
+</ParamField>

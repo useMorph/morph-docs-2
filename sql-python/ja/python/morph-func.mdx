@@ -17,12 +17,24 @@ def get_data_from_database(context):
     })
 ```
 
-**@morph.funcの引数**
+## Parameters
 
-| カラム | 説明 |
-| --- | --- |
-| name | 処理名, 他のファイルから呼び出す時のエイリアスとしても使える |
-| description | 処理の説明を残す |
-| output_paths | 結果ファイルの出力先 |
-| output_type | “dataframe”, “visualization”, “markdown”, “json” |
+<ParamField body="name" type="string" default="関数名">
+処理名, 他のファイルから呼び出す時のエイリアスとしても使える。
+</ParamField>
 
+<ParamField body="description" type="string">
+処理の説明を記述できる
+</ParamField>
+
+<ParamField body="output_paths" type="array: string" default="['_private/{name}/{now()}{ext()}']">
+結果ファイルの出力先。
+
+記述方法は[こちら](/sql-python/ja/framework/output-paths)を参照してください。
+</ParamField>
+
+<ParamField body="output_type" type="string">
+出力結果の形式の指定。指定をしない場合はシステムで自動で推定をします。
+
+Values: `dataframe`, `visualization`, `markdown`, `json`
+</ParamField>
