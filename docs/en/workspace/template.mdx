@@ -2,69 +2,138 @@
 title: 'Template'
 ---
 
+Morphには、SQLやPythonのコードをより簡単に記述するためにテンプレートの機能があります。
+テンプレートには2種類存在しています。
+
+## 標準で用意されているテンプレート　 (Built-in Template)
+
+ソースコードをワークスペース上で開くとMorphチームが作成した標準のテンプレートが右のサイドバーから確認することができます。
+このテンプレートは、Morphのフレームワークのスニペットの役割をしており、コピーをすることですぐに分析部分の実装を開始することができます。
+
 <img
-  className="block dark:hidden"
-  src="assets/images/hero-light.svg"
-  alt="Hero Light"
+  src="/assets/images/docs/workspace-template.png"
+  alt="Workspace Template"
 />
+
+<Note>
+テンプレートの要望がある場合には、`shibata@morphdb.io`まで是非リクエストください！
+</Note>
+
+## 自作テンプレート (Custom Template)
+
+`templates`フォルダでは、ユーザー定義のテンプレートファイルを作成して管理することができます。
+
+作成したテンプレートから`morph create`コマンドで新規ファイルを作ることができます。また`morph search`コマンドで検索することもできます。
+
+### テンプレートの作成手順
+
+**(手順1) テンプレートファイルの作成**
+
+テンプレートファイルはtemplatesディレクトリ配下に作成します。
+
+作成時には以下のプレースホルダーを定義できます。（プレースホルダーで定義した値は後述するmorph createコマンドのオプションで指定することで、置換してファイルが作成されます。）
+
+- `${MORPH_NAME}`: テンプレート名(旧エイリアス)に置換されます。（`morph create`コマンドの`--name`オプションの指定）
+- `${MORPH_DESCRIPTION}`: テンプレート説明に置換されます。（`morph create`コマンドの`—-description`オプションの指定）
+
+E.g.)
+
+```python
+import pandas as pd
+
+import morph
+from morph import MorphGlobalContext
+
+# morph.func is a decorator that takes in the following parameters:
+# name: The identifier for the file alias. The function name will be used if not provided.
+# description: The description for the function.
+# output_paths: The destination paths for the output.
+# output_type: The return type of the function
+@morph.func(
+    name="${MORPH_NAME}",
+    description="${MORPH_DESCRIPTION}",
+    output_paths=["_private/{name}/{now()}{ext()}"],
+    output_type="dataframe",
+)
+def main(context: MorphGlobalContext) -> pd.DataFrame:
+    return pd.DataFrame({{"key1": [3, 2, 1], "key2": [5, 4, 3]}})
+```
+
+**(手順2) template.yamlの編集**
+
+templatesフォルダ直下のtemplate.yamlを編集します。Syntaxは以下の例を参考にしてください。
+
+※srcはフルパスまたはtemplate.yamlからの相対パスで定義します。
+
+E.g.)
+
+```yaml
+# [Description]
+# This file is used to manage your local templates.
+#
+# [Syntax]
+# This file is written in YAML format. The following is an example of the syntax.
+#   E.g.)
+#     templates:
+#       - name: <template_name> [required]
+#         title: <template_title>
+#         description: <template_description>
+#         src: <template_source> [required]
+#         language: <template_language> [required|options:"python", "sql"]
+#
+# [Compiling]
+# After editing this file, you need to compile it using the following command.
+# This command will validate the syntax of the file and make sure your templates are available.
+#   E.g.)
+#     $ morph template compile
+
+templates:
+  - name: test
+    title: Test Template
+    description: This is a test template.
+    src: ./python/test.py
+    language: python
+```
+
+**(手順3) コンパイル**
+
+以下のコマンドでtemplate.yamlの妥当性をチェックすることができます。テンプレートファイルを作成してtemplate.yamlの編集まで終わったら、VSコードのターミナルから以下のコマンドを叩いてください。
+
+```bash
+$ morph template compile
+$ # 実行して何も表示がなければ成功です🎉
+```
+
+## テンプレートの利用方法
+
+設定をしたテンプレートはワークスペースの右側のメニューやキャンバス内の新規作成時に使用することができます。
+
+**テンプレート一覧から選択**
+
 <img
-  className="hidden dark:block"
-  src="assets/images/hero-dark.svg"
-  alt="Hero Dark"
+  src="/assets/images/docs/workspace-template-menu.png"
+  alt="Workspace Template Menu"
 />
 
-## Setting up
+**キャンバスから選択**
+<img
+  src="/assets/images/docs/workspace-template-canvas.png"
+  alt="Workspace Template Canvas"
+/>
 
-The first step to world-class documentation is setting up your editing environments.
+### CLIからテンプレートを利用する方法
 
-<CardGroup cols={2}>
-  <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
-  >
-    Get your docs set up locally for easy development
-  </Card>
-  <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
-  >
-    Preview your changes before you push to make sure they're perfect
-  </Card>
-</CardGroup>
+以下のコマンドで作成できます。
 
-## Make it yours
+※`<テンプレート名>`はtemplate.yamlで定義したnameを指定します。また、[テンプレートAPI](https://queue-inc.stoplight.io/docs/morph-api-document/fhs6hbxyjjtxu-no-auth-search-template) が返却するnameを指定することで、グローバルのテンプレートを利用することもできます。
 
-Update your docs to your brand and add valuable content for the best user conversion.
+```bash
+# morph create <作成するファイル> —template <テンプレート名>
+$ morph create src/test.py --template test
+```
 
-<CardGroup cols={2}>
-  <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
-  >
-    Customize your docs to your company's colors and brands
-  </Card>
-  <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
-  >
-    Automatically generate endpoints from an OpenAPI spec
-  </Card>
-  <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/components/accordion"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
-  >
-    Check out our showcase of our favorite documentation
-  </Card>
+<CardGroup cols={1}>
+    <Card title="CLI: morph create" href="/sql-python/ja/cli-commands/create">
+        CLIを使用して、テンプレートからファイルを作成する。
+    </Card>
 </CardGroup>

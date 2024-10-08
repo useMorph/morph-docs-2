@@ -1,3 +1,71 @@
 ---
 title: Snowflake
 ---
+
+このチャプターではMorphプラットフォームに、外部データソースとしてSnowflakeを連携する方法を説明します。
+
+## 設定方法
+
+<video
+  className="w-full mt-4 lg:mx-0 rounded-xl max-w-[1080px]"
+  controls
+  muted
+  playsInline
+>
+  <source src="/assets/videos/integrations/docs_connection_snowflake.mp4" type="video/mp4" />
+</video>
+
+Snowflakeへの接続を設定するには、ホーム画面の「Connections」タブを開いて、「Create New Connection」ボタンから接続設定モーダルを開き、Snowflakeを選択します。
+
+
+## **認証方式**
+
+Snowflakeへの接続に使用できる認証方法には、「OAuth2」と「Service Account」の二種類があります。それぞれの方法は異なるユースケースに適しています。
+
+**OAuth2認証**
+
+OAuth2は、セキュアな第三者認証のための業界標準プロトコルです。この方法を用いると、ユーザーは自身のSnowflakeアカウントの資格情報を直接公開することなく、安全にデータアクセスを許可できます。このプロセスでは、Snowflake内でOAuthクライアントを設定し、そのクライアントIDとシークレットをMorphに提供することが求められます。これにより、API経由での安全なデータアクセスが可能になります。
+
+**Service Account認証**
+
+Service Account認証は、自動化されたプロセスやシステムサービスが人間の介入なしにデータベースにアクセスする際に使用します。SnowflakeでService Accountを設定し、そのアカウントのユーザー名とパスワード（またはプライベートキー）をMorphの設定に入力します。これにより、スクリプトやバックエンドアプリケーションが直接、セキュアにデータベースを操作できるようになります。
+
+これらの認証方法を利用することで、Snowflakeへの接続がよりセキュアで柔軟になり、さまざまなアプリケーションのニーズに応じたデータアクセスが可能になります。
+
+### **OAuth2認証を使用したSnowflake連携**
+
+1. **AccountとOAuth Serverの設定**:
+    - SnowflakeインスタンスのURLを指定します。例: **`https://<account_name>.snowflakecomputing.com`**
+2. **Client IDの取得**:
+    - Snowflakeアカウントでセキュリティインテグレーション [参考: [CREATE SECURITY INTEGRATION （Snowflake OAuth）](https://docs.snowflake.com/ja/sql-reference/sql/create-security-integration-oauth-snowflake)]を作成します。これにより、OAuth2認証で使用するClient IDが生成されます。
+3. **Client Secretの取得**:
+    - Client IDを生成したときと同じ方法でClient Secretを取得します。このSecretは接続を認証する際に必要です。
+4. **Morph画面で設定**:
+    - Morphの接続設定ページで「OAuth2」を選択し、取得したClient IDとClient Secretを入力して、Sign in Snowflakeのボタンを押下して実際のOAuth連携に進みます。
+    - Sign in SnowflakeからSnowflake側の画面に遷移したらMorphの接続要求を許可してください。許可するとMorph画面にリダイレクトされて設定は完了です。
+
+### **Service Accountを使用したSnowflake連携**
+
+**設定手順**:
+
+1. **AccountとServerの設定**:
+    - SnowflakeインスタンスのURLを指定します。例: **`https://<account_name>.snowflakecomputing.com`**
+2. **Usernameの設定**:
+    - Snowflakeで使用するユーザー名を入力します。このユーザー名は、Snowflakeに事前に設定されたService Accountのものでなければなりません。[参考: [キーペア認証とキーペアローテーション](https://docs.snowflake.com/ja/user-guide/key-pair-auth)]
+3. **Private Keyの設定**:
+    - SnowflakeでService Accountユーザーを認証するために使用するPrivate Keyを入力します。
+4. **Morph画面で設定**:
+    - Morphの接続設定ページで「Service Account」を選択し、設定したServer URL、Username、およびPrivate Keyを入力します。
+
+### 接続設定を完了する
+
+> Accountセクションの入力が終わって画面左下のCreateボタンを押下したら、次はConnection slugを入力して、接続設定を完了してください。
+
+1. **Connection slug**
+    - 外部データソースへの接続を一意に識別するもので、空にすることはできません。文字、数字、アンダースコアのみで任意に設定してください。
+
+![Snowflake Slug](/assets/images/integrations/snowflakeslug.png)
+
+Connections一覧に接続設定が表示されたら設定完了となります。
+
+![Snowflake Complete](/assets/images/integrations/snowflakecomplete.png)

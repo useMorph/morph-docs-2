@@ -2,84 +2,38 @@
 title: 'How Morph Works'
 ---
 
-## Setup your development
+Morphは、データのインポートから分析、可視化、そして共有まで、データ駆動型の意思決定を支援する包括的なツールです。このセクションでは、Morphがどのように機能するかをステップごとに説明します。これにより、ユーザーは簡単にデータを扱い、迅速にインサイトを得ることができます。
 
-Learn how to update your docs locally and deploy them to the public.
+---
 
-### Edit and preview
-
-<AccordionGroup>
-  <Accordion icon="github" title="Clone your docs locally">
-    During the onboarding process, we created a repository on your Github with
-    your docs content. You can find this repository on our
-    [dashboard](https://dashboard.mintlify.com). To clone the repository
-    locally, follow these
-    [instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-    in your terminal.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Preview changes">
-    Previewing helps you make sure your changes look as intended. We built a
-    command line interface to render these changes locally. 1. Install the
-    [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the
-    documentation changes locally with this command: ``` npm i -g mintlify ```
-    2. Run the following command at the root of your documentation (where
-    `mint.json` is): ``` mintlify dev ```
-  </Accordion>
-</AccordionGroup>
-
-### Deploy your changes
-
-<AccordionGroup>
-
-<Accordion icon="message-bot" title="Install our Github app">
-  Our Github app automatically deploys your changes to your docs site, so you
-  don't need to manage deployments yourself. You can find the link to install on
-  your [dashboard](https://dashboard.mintlify.com). Once the bot has been
-  successfully installed, there should be a check mark next to the commit hash
-  of the repo.
-</Accordion>
-<Accordion icon="rocket" title="Push your changes">
-  [Commit and push your changes to
-  Git](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#about-git-push)
-  for your changes to update in your docs site. If you push and don't see that
-  the Github app successfully deployed your changes, you can also manually
-  update your docs through our [dashboard](https://dashboard.mintlify.com).
-</Accordion>
-
-</AccordionGroup>
-
-## Update your docs
-
-Add content directly in your files with MDX syntax and React components. You can use any of our components, or even build your own.
-
-<CardGroup>
-
-<Card title="Style Your Docs" icon="paintbrush" href="/settings/global">
-  Add flair to your docs with personalized branding.
-</Card>
-
-<Card
-  title="Add API Endpoints"
-  icon="square-code"
-  href="/api-playground/configuration"
+{/* TODO 動画を埋め込む */}
+{/* <video
+  className="w-full rounded-xl max-w-[1080px]"
+  autoPlay
+  loop
+  muted
+  playsInline
 >
-  Implement your OpenAPI spec and enable API user interaction.
-</Card>
+  <source src="/assets/docs/doc_canvas_walkthrough.mp4" type="video/mp4" />
+</video> */}
 
-<Card
-  title="Integrate Analytics"
-  icon="chart-mixed"
-  href="/analytics/supported-integrations"
->
-  Draw insights from user interactions with your documentation.
-</Card>
 
-<Card
-  title="Host on a Custom Domain"
-  icon="browser"
-  href="/settings/custom-domain/subdomain"
->
-  Keep your docs on your own website's subdomain.
-</Card>
+## 1. ワークスペースにデータをインポートする
 
-</CardGroup>
+Morphでは、様々なデータソースから簡単にデータをワークスペースにインポートできます。ユーザーは、CSV、JSON、Excelファイルなど、さまざまなファイル形式に対応したインポート機能を活用できます。さらに、クラウドストレージやデータベースから直接データを取り込むことも可能です。
+
+## 2. キャンバスでデータパイプラインを構築する
+
+データがワークスペースにインポートされた後、キャンバス上でデータパイプラインを構築します。Morph AIは、データのクリーニング、変換、統合を自動化し、効率的なデータ処理を実現します。ユーザーはドラッグ＆ドロップ操作でパイプラインを構築でき、AIが最適な処理方法を提案します。
+
+## 3. コードを編集する
+
+Morphは、SQLやPythonを用いてデータのクエリや分析を行うための強力なエディタを提供します。ユーザーは、Morph上のコードエディターを使ってコードを編集し、必要なデータを抽出したり、複雑な分析を実行することができます。また、リアルタイムでコードの実行結果を確認できるため、迅速にフィードバックを得ることができます。
+
+## 4. 可視化やレポートを生成する
+
+分析が完了したら、Morphの豊富な可視化ツールを使ってデータを視覚化します。様々なグラフやチャートを簡単に作成でき、インタラクティブなダッシュボードを構築することも可能です。生成した可視化は、レポートとしてエクスポートしたり、リアルタイムで共有したりすることができます。これにより、データのインサイトを効果的に伝えることができます。
+
+## 5. チームにシェアする
+
+Morphでは、作成したデータ、パイプライン、コード、可視化を簡単にチームメンバーと共有できます。これにより、チーム全体でのコラボレーションが促進され、効率的にデータ駆動型の意思決定を行うことができます。

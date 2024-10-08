@@ -42,10 +42,6 @@
     {
       "name": "Integrations",
       "url": "integrations"
-    },
-    {
-      "name": "Examples",
-      "url": "examples"
     }
   ],
   "anchors": [
@@ -166,13 +162,6 @@
         "data-application/en/data-components",
         "data-application/en/use-variables",
         "data-application/en/custom-components"
-      ]
-    },
-    {
-      "group": "Examples",
-      "version": "English",
-      "pages": [
-        "examples/en/introduction"
       ]
     },
     {
@@ -339,13 +328,6 @@
         "integrations/ja/saas/notion",
         "integrations/ja/saas/salesforce",
         "integrations/ja/saas/stripe"
-      ]
-    },
-    {
-      "group": "Examples",
-      "version": "日本語",
-      "pages": [
-        "examples/ja/introduction"
       ]
     }
   ],
