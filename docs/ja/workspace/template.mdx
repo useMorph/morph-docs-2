@@ -115,51 +115,8 @@ $ # 実行して何も表示がなければ成功です🎉
 $ morph create src/test.py --template test
 ```
 
-その他のオプションについては以下を参考にしてください。
-
-```bash
-$ morph create -h
-Usage: morph create [OPTIONS] FILENAME
-
-  Morph-cli create command.
-
-Options:
-  --template TEXT                 Specify the template name.
-  --name TEXT                     Specify the function name.
-  --description TEXT              Specify the function description.
-  --parent-name TEXT              Specify the parent function name.
-  -v, --verbose                   Enable verbose mode.
-  --log-format [text|debug|json|default]
-                                  Specify the format of logging to the console
-                                  and the log file. Use --log-format-file to
-                                  configure the format for the log file
-                                  differently than the console.
-  -h, --help                      Show this message and exit.
-```
-
-### テンプレートの検索
-
-ユーザー定義のテンプレートは以下のコマンドで検索することができます。
-
-直接このコマンドを叩く用途はあまりないかもしれませんが、VMのAPIでユーザー定義のテンプレートをフロント側に返すための実装となっています。
-
-```bash
-$ morph template search -h
-Usage: morph template search [OPTIONS]
-
-  Search templates.
-
-Options:
-  --name TEXT                     Specify the local template name.
-  --language TEXT                 Specify the local template language.
-  --query TEXT                    Specify the search query.
-  --limit INTEGER                 Specify the limit. [default: 20]
-  --skip INTEGER                  Specify the skip. [default: 0]
-  --log-format [text|debug|json|default]
-                                  Specify the format of logging to the console
-                                  and the log file. Use --log-format-file to
-                                  configure the format for the log file
-                                  differently than the console.
-  -v, --verbose                   Enable verbose mode.
-  -h, --help                      Show this message and exit.
-```
+<CardGroup cols={1}>
+    <Card title="CLI: morph create" href="/sql-python/ja/cli-commands/create">
+        CLIを使用して、テンプレートからファイルを作成する。
+    </Card>
+</CardGroup>
