@@ -5,7 +5,7 @@ title: 'テンプレート'
 Morphには、SQLやPythonのコードをより簡単に記述するためにテンプレートの機能があります。
 テンプレートには2種類存在しています。
 
-## 標準で用意されているテンプレート
+## 標準で用意されているテンプレート　 (Built-in Template)
 
 ソースコードをワークスペース上で開くとMorphチームが作成した標準のテンプレートが右のサイドバーから確認することができます。
 このテンプレートは、Morphのフレームワークのスニペットの役割をしており、コピーをすることですぐに分析部分の実装を開始することができます。
@@ -19,7 +19,7 @@ Morphには、SQLやPythonのコードをより簡単に記述するためにテ
 テンプレートの要望がある場合には、`shibata@morphdb.io`まで是非リクエストください！
 </Note>
 
-## 自作テンプレート
+## 自作テンプレート (Custom Template)
 
 `templates`フォルダでは、ユーザー定義のテンプレートファイルを作成して管理することができます。
 
@@ -104,7 +104,24 @@ $ morph template compile
 $ # 実行して何も表示がなければ成功です🎉
 ```
 
-### テンプレートの利用方法
+## テンプレートの利用方法
+
+設定をしたテンプレートはワークスペースの右側のメニューやキャンバス内の新規作成時に使用することができます。
+
+**テンプレート一覧から選択**
+
+<img
+  src="/assets/images/docs/workspace-template-menu.png"
+  alt="Workspace Template Menu"
+/>
+
+**キャンバスから選択**
+<img
+  src="/assets/images/docs/workspace-template-canvas.png"
+  alt="Workspace Template Canvas"
+/>
+
+### CLIからテンプレートを利用する方法
 
 以下のコマンドで作成できます。
 
