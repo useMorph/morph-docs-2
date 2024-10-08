@@ -2,18 +2,17 @@
 title: 'Quickstart'
 ---
 
-This section provides step-by-step instructions on how to perform basic CRUD operations (create, read, update and delete) using Morph's API. Through this tutorial, you can easily start working with Morph's database.
+このチャプターでは、MorphのAPIを使用して基本的なCRUD操作（作成、読み取り、更新、削除）を実行する方法をステップバイステップで説明します。このチュートリアルを通じて、Morphのデータベースとの連携を簡単に始めることができます。
 
-In this example, the API is invoked using the cURL command, so try it out by pasting the command into your terminal environment or an API client tool such as [Postman](https://www.postman.com/).
+この例ではcURLコマンドを用いてAPIを呼び出しますので、お手元のターミナル環境や[Postman](https://www.postman.com/)などのAPIクライアントツールにコマンドをペーストしてお試しください。
 
+### API呼び出し
 
-## API Calls
+*※**`[**Your_DatabaseID**]`,** `[Your_Table_Slug]`, **`[Your_API_Key]`** は置換してご利用ください。*
 
-> Replace `[Your_DatabaseID]`, `[Your_Table_Slug]`, and `[Your_API_Key]` with your own values!
+**作成 (Create)**:
 
-### Create
-
-To create new data, use the POST method.
+データを新しく作成するには、POSTメソッドを使用します。
 
 ```sh
 curl --location --request POST 'https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/[Your_Table_Slug]' \
@@ -25,19 +24,19 @@ curl --location --request POST 'https://beta-api.morphdb.io/v0/rest/[Your_Databa
 }'
 ```
 
-### Read
+**読み取り (Read)**:
 
-Use the GET method to read data from a table.
+テーブルからデータを読み取るには、GETメソッドを使用します。
 
 ```sh
 curl --location 'https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/[Your_Table_Slug]' \
 --header 'x-api-key: [Your_API_Key]'
 
 ```
+**更新 (Update)**:
 
-### Update
+既存のデータを更新するには、PUTメソッドを使用します。
 
-Use the PUT method to update existing data.
 ```sh
 curl --location --request PUT 'https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/[Your_Table_Slug]' \
 --header 'x-api-key: [Your_API_Key]' \
@@ -47,10 +46,9 @@ curl --location --request PUT 'https://beta-api.morphdb.io/v0/rest/[Your_Databas
 }'
 ```
 
+**削除 (Delete)**:
 
-### Delete
-
-Use the DELETE method to delete data.
+データを削除するには、DELETEメソッドを使用します。
 
 ```sh
 curl --location --request DELETE 'https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/[Your_Table_Slug]' \
@@ -62,11 +60,9 @@ curl --location --request DELETE 'https://beta-api.morphdb.io/v0/rest/[Your_Data
 
 ```
 
-## Reference
+これら以外にも、[PostgREST](https://postgrest.org/)によりお客様の用途に応じて様々なクエリパターンを実現することができます。詳しくは下記の参考資料をご確認ください。
 
-In addition to these, [PostgREST](<https://postgrest.org/>) allows various query patterns to be realized for customer applications. For more information, please see the following reference documents.
+### **参考資料**
 
-### Reference material
-
-- [Official PostgREST documentation](<https://postgrest.org/en/v12/>)
-- [PostgREST source code](<https://github.com/PostgREST/postgrest>)
+- [PostgREST 公式ドキュメント](https://postgrest.org/en/v12/)
+- [PostgREST ソースコード](https://github.com/PostgREST/postgrest)

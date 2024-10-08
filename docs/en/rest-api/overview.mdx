@@ -2,40 +2,45 @@
 title: 'Overview'
 ---
 
-Morph automatically generates and provides an API based on the database schema created. This allows data integration and application building using Morph's database through the API without the need to implement additional code.
+Morphでは、作成されたデータベーススキーマに基づいて自動的にAPIを生成し、提供しています。これにより、追加のコードを実装することなく、APIを通じてMorphのデータベースを利用したデータ連携やアプリケーション構築が可能です。
 
-The API is designed in a RESTful format and can be accessed securely via an API key created from within the Morph dashboard.
+APIはRESTful形式で設計されており、Morphのダッシュボード上から作成したAPIキーを利用してセキュアにアクセスできます。
 
-## Features
+### **特徴**
 
-Morph's database API is provided by [PostgREST](https://postgrest.org/) and offers the following benefits:
+MorphのデータベースAPIは、[PostgREST](https://postgrest.org/)によって提供され、以下のようなメリットを提供します：
 
-- **Efficient development and collaboration**:
-    - The API is generated directly from the database schema, significantly reducing back-end development time and costs.
-- **Automatic updates/immediacy**:.
-    - Changes to the database schema are immediately reflected in the API, eliminating the need for manual synchronization and maintenance.
-- **Performance**
-    - Lightweight, stateless design enables direct execution of SQL queries for extremely fast data access.
-- **Flexibility**
-    - In addition to simple CRUD operations, complex operations such as query combination, filtering and sorting can be easily performed.
-- **Security**
-    - Strict type checking and automatic escaping of query parameters provide a high level of protection against attacks such as SQL injection.
+- **効率的な開発および連携**:
+    - データベーススキーマから直接APIが生成されるため、バックエンド開発の時間とコストを大幅に削減します。
+- **自動更新/即時性**:
+    - データベーススキーマの変更が即座にAPIに反映されるため、手動での同期やメンテナンスが不要です。
+- **パフォーマンス**:
+    - 軽量でステートレスな設計により、SQLクエリを直接実行して、非常に高速なデータアクセスを実現します。
+- **柔軟性**:
+    - シンプルなCRUD操作に加えて、クエリの組み合わせやフィルタリング、ソートなどの複雑な操作も簡単に行えます。
+- **セキュリティ**:
+    - 厳格な型チェックとクエリパラメータの自動エスケープ処理により、SQLインジェクションなどの攻撃から高いレベルの保護を提供します。
 
-## RESTful architecture
+### **RESTfulアーキテクチャ**
 
-The API employs standard HTTP methods and provides intuitive and easy-to-use CRUD operations based on a RESTful architecture. This design allows developers to easily integrate the system with a wide range of different programming languages and applications.
+このAPIは標準的なHTTPメソッドを採用しており、RESTfulアーキテクチャに基づいた直感的で使いやすいCRUD操作を提供します。この設計により、様々なプログラミング言語やアプリケーションとの幅広い連携が可能となり、開発者は容易にシステムを統合できます。
 
-In addition, the following advanced features are provided:
+さらに、以下の高度な機能も提供されます：
 
-- **Filtering and searching**:
-    - Complex query parameters can be used to precisely extract only those records that match specific criteria.
-- **Sorting and Pagination**
-    - Sort the result set and use pagination to provide smaller chunks of data.
-- **Relational query**
-    - Allows data from multiple related tables to be retrieved in a single query. This enables data retrieval by utilizing relational database relationships without the need for multiple API calls.
-- **Aggregation**:
-    - Aggregation functions such as grouping, counting, averaging, maximum and minimum values can be included in the query.
-- **Batch requests**:
-    - Multiple API calls can be performed in a single HTTP request, reducing network latency and ensuring efficient data processing.
+- **フィルタリングと検索**:
+    - 複雑なクエリパラメータを使用して、特定の条件に一致するレコードだけを精密に抽出できます。
+- **ソートとページネーション**:
+    - 結果セットをソートし、ページネーションを利用してデータを小容量に分割して提供します。
+- **リレーショナルクエリ**:
+    - 複数の関連するテーブルからデータを単一のクエリで取得できます。これにより、リレーショナルデータベースの関連を活かしたデータ取得が複数のAPI呼び出しを必要とせずに可能となります。
+- **アグリゲーション**:
+    - グループ化、カウント、平均、最大値、最小値などの集計機能をクエリに含めることができます。
+- **バッチリクエスト**:
+    - 複数のAPI呼び出しを単一のHTTPリクエストで実行し、ネットワーク遅延を減らし、効率的なデータ処理を実現します。
 
-In addition to these, various other functions are provided by [PostgREST](https://postgrest.org/). For more information, please see the following reference documents.
+これら以外にも、[PostgREST](https://postgrest.org/)により様々な機能が提供されます。詳しくは下記の参考資料をご確認ください。
+
+### **参考資料**
+
+- [PostgREST 公式ドキュメント](https://postgrest.org/en/v12/)
+- [PostgREST ソースコード](https://github.com/PostgREST/postgrest)

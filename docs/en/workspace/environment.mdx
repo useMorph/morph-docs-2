@@ -2,69 +2,52 @@
 title: 'About Development Environment'
 ---
 
+MorphのワークスペースのCodeセクションでは、データ分析やデータアプリケーションを構築するための開発環境を提供します。
+
+ワークスペースには、全てそれぞれのVM(Virtual Machine)が割り当てられているため各ユーザーは自分だけの完全に切り離された作業空間を手に入れることができます。
+同じチームでもユーザーごとに完全に切り離されたVMが立ち上がるので作業が競合することはありません。エンジニア同志のコラボレーション可能にするために各種VMからはマネージドなGitLabに接続をされています。
+
+また、VM上でのコード実行やコーディングを行うためのVS Codeベースのエディターを活用してデータアプリケーションの構築を行うことができます。
+
+ワークスペース上の構成は以下のようになっています。
+
 <img
-  className="block dark:hidden"
-  src="assets/images/hero-light.svg"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="assets/images/hero-dark.svg"
-  alt="Hero Dark"
+  src="/assets/images/docs/workspace-architecture.png"
+  alt="Workspace Architecture"
 />
 
-## Setting up
+## Gitの利用
 
-The first step to world-class documentation is setting up your editing environments.
+CodeではVM内に自動でビルトインのGitをインストールしています。そのため、ワークスペース上での作業を他のメンバーと共有したい場合はGitに対してコミットをしてください。
+
+同一のワークスペースは同じGitlabのプロジェクトに紐づいているため、コードをコミットすることによって他のメンバーと作業を共有することができます。
+
+VS CodeのデフォルトのGit操作機能、もしくはターミナルからGitの操作を行うことができます。もちろん、VS Code Extensionであなたの好みのGit操作用拡張をインストールすることも可能です。
+
+<img
+  src="/assets/images/docs/workspace-git.png"
+  alt="Workspace Git"
+/>
+
+### フレームワークについて
+
+Morphのフレームワークでは、データを分析・可視化・運用するための様々なツールを使うことができます。
+以下のページにそれぞれの構築方法を紹介しています。
 
 <CardGroup cols={2}>
-  <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
-  >
-    Get your docs set up locally for easy development
+  <Card title="SQL & Python" icon="square-1" href="/docs/ja/workspace/sql-python">
+    SQLとPythonを使用してデータ分析を行えます。
   </Card>
-  <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
-  >
-    Preview your changes before you push to make sure they're perfect
+  <Card title="データ可視化" icon="square-2" href="/docs/ja/workspace/visualization">
+    GUIを使用して集計したデータから簡単に可視化を実行できます。
   </Card>
-</CardGroup>
-
-## Make it yours
-
-Update your docs to your brand and add valuable content for the best user conversion.
-
-<CardGroup cols={2}>
-  <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
-  >
-    Customize your docs to your company's colors and brands
+  <Card title="データアプリケーション構築" icon="square-3" href="/docs/ja/workspace/data-application">
+    MDXを活用してリッチなデータアプリケーションを簡単に作成ができます。
   </Card>
-  <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
-  >
-    Automatically generate endpoints from an OpenAPI spec
+  <Card title="データフローの可視化" icon="square-4" href="/docs/ja/workspace/about-canvas">
+    Canvasを使用してデータフローを可視化します。
   </Card>
-  <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/components/accordion"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
-  >
-    Check out our showcase of our favorite documentation
+  <Card title="ジョブスケジューリング" icon="square-5" href="/docs/ja/workspace/job-schedule">
+    SQLやPythonで作成したDAGをスケジュール実行できます。
   </Card>
 </CardGroup>
