@@ -13,8 +13,8 @@ def get_data_from_database(context):
 	return sql_result_df
 ```
 
-**@morph.load_dataの引数**
+## Parameters
 
-| カラム | 説明 |
-| --- | --- |
-| name | nameで指定した関数の出力結果をcontext.dataに格納する |
+<ParamField body="name" type="string" required>
+nameで指定した関数の出力結果をcontext.dataに格納する
+</ParamField>

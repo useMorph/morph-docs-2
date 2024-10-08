@@ -19,11 +19,24 @@ title: 'config'
 select 1 as test
 ```
 
-**Configの設定値**
+## Parameters
 
-| カラム | 説明 |
-| --- | --- |
-| name | 処理名, 他のファイルから呼び出す時のエイリアスとしても使える |
-| description | 処理の説明を残す |
-| output_paths | 結果ファイルの出力先 |
-| connection | 画面で登録したbuiltin以外のconnectionの向き先 (optional)<br/>※ 指定をしない場合はbuilt-in postgresqlに設定されます。 |
+<ParamField body="name" type="string" default="SQLファイル名">
+処理名, 他のファイルから呼び出す時のエイリアスとしても使える。
+</ParamField>
+
+<ParamField body="description" type="string">
+処理の説明を記述できる
+</ParamField>
+
+<ParamField body="output_paths" type="array: string" default="['_private/{name}/{now()}{ext()}']">
+結果ファイルの出力先。
+
+記述方法は[こちら](/sql-python/ja/framework/output-paths)を参照してください。
+</ParamField>
+
+<ParamField body="connection" type="string" default="morph_project.ymlで設定したdefault_connection">
+画面で登録したbuiltin以外のconnectionの向き先 (optional)
+
+※ 指定をしない場合はbuilt-in postgresqlに設定されます。
+</ParamField>
