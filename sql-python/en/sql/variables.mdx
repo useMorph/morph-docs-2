@@ -1,0 +1,31 @@
+---
+title: 'Variables'
+---
+
+Morphではvariablesを使うことで、runした際の引数をSQL内で使用することができます。
+
+`{{ }}`で囲うと変数とみなされrunした際の引数がここに入るようになっています。この引数はMDXでのデータアプリケーションなど動的なアプリケーションを構築するために使用します。
+
+引数は実際にMorphのCLIでは以下のようなコマンドで実行されます。Codeのタブで実行された場合には、この引数は追加されないのでデフォルトの値を指定する必要があります。
+
+`morph run user -d user_type=admin`
+
+-dでvariablesを指定することができます。
+
+```sql
+{{
+	config(
+		name="user",
+		description="User",
+	)
+}}
+
+{% if user_type %}
+# user_typeが送られたときに発行されるSQL
+# 通常のSQLと同様に指定の値はシングルクオートで囲む必要あり(dbの文法による)
+select * from user where user_type = '{{ user_type }}'
+{% else %}
+# user_typeの指定がないときに発行されるSQL
+select * from user
+{% endif %}
+```
