@@ -2,7 +2,7 @@
 title: '@morph.load_data'
 ---
 
-`@morph.load_data`のアノテーションをつけることで、関数の出力結果をcontext.dataに格納して使うことができます。
+The annotation `@morph.load_data` allows the output results of the function to be stored and used in context.data.
 
 ```python
 @morph.func
@@ -16,5 +16,5 @@ def get_data_from_database(context):
 ## Parameters
 
 <ParamField body="name" type="string" required>
-nameで指定した関数の出力結果をcontext.dataに格納する
+Stores the output result of the function specified by name in context.data.
 </ParamField>

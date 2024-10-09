@@ -2,7 +2,7 @@
 title: 'morph_project.yml'
 ---
 
-`morph_project.yml`は、Morphのフレームワークを実行時に使用される設定ファイルです。Morphのプロジェクトを立ち上げると自動的にデフォルトの値が設定されたファイルが作成されます。
+The `morph_project.yml` is the configuration file used when running the Morph framework; a file with default values is automatically created when the Morph project is launched.
 
 ```yaml
 default_connection: MORPH_BUILTIN_DB
@@ -16,19 +16,19 @@ template_paths:
 ## Parameters
 
 <ParamField body="default_connection" type="string" default="MORPH_BUILTIN_DB">
-デフォルトのDB接続を指定します。SQLファイルでconfig関数の中でconnectionを指定しなかった場合は自動的にこの接続が使用されます。
+Specify the default DB connection; if connection is not specified in the config function in the SQL file, this connection is automatically used.
 
-設定をする場合は、configのconnectionに設定と同様にコネクション名を設定してください。
+If you want to configure it, set the connection name as well as the configuration to connection in the config.
 </ParamField>
 
 <ParamField body="source_paths" type="string" default="src">
-ソースパスを指定します。
+Specify the source path.
 
-ソースパスとして指定をしたディレクトリ以下にあるファイルがMorph上で実行可能なソースコードとして扱われます。
+Files under the directory specified as the source path are treated as executable source code on Morph.
 </ParamField>
 
 <ParamField body="template_paths" type="string" default="templates">
-テンプレートパスを指定します。
+Specify the template path.
 
-テンプレートの使い方については、[こちらのドキュメント](/docs/ja/workspace/template)を参照してください。
+For more information on how to use templates, see [documentation here](/docs/en/workspace/template).
 </ParamField>

@@ -2,15 +2,15 @@
 title: 'run'
 ---
 
-`morph run`コマンドは、Morphのソースコードを実行するためのコマンドです。
+The `morph run` command is used to run the Morph source code.
 
 ## Options
 
 ### `-d [key]=[value]`
 
-`-d`オプションは、Morphのソースコードの実行時の引数の値を指定できるオプションです。
+The `-d` option is an option that allows you to specify runtime argument values for Morph source code.
 
-[@morph.variables](/sql-python/ja/python/morph-variables)で指定した引数を与えると実行時の値を動的に変更することができます。
+The runtime values can be changed dynamically by giving the arguments specified in [@morph.variables](/sql-python/en/python/morph-variables).
 
 ```
 $ morph run example_sql_cell -d var1=value1

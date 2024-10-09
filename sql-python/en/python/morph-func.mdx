@@ -2,7 +2,7 @@
 title: '@morph.func'
 ---
 
-`@morph.func`のアノテーションをつけることでmorphで実行できる関数として登録ができます。
+It can be registered as a function that can be executed in morph by annotating it with `@morph.func`.
 
 ```python
 @morph.func(
@@ -19,22 +19,22 @@ def get_data_from_database(context):
 
 ## Parameters
 
-<ParamField body="name" type="string" default="関数名">
-処理名, 他のファイルから呼び出す時のエイリアスとしても使える。
+<ParamField body="name" type="string" default="function name">
+Process name, can also be used as an alias when calling from another file.
 </ParamField>
 
 <ParamField body="description" type="string">
-処理の説明を記述できる
+Can describe the process
 </ParamField>
 
 <ParamField body="output_paths" type="array: string" default="['_private/{name}/{now()}{ext()}']">
-結果ファイルの出力先。
+Output paths for the result files.
 
-記述方法は[こちら](/sql-python/ja/framework/output-paths)を参照してください。
+See [here](/sql-python/en/framework/output-paths) for description.
 </ParamField>
 
 <ParamField body="output_type" type="string">
-出力結果の形式の指定。指定をしない場合はシステムで自動で推定をします。
+Specification of the format of the output results. If not specified, the system automatically estimates the result.
 
 Values: `dataframe`, `visualization`, `markdown`, `json`
 </ParamField>

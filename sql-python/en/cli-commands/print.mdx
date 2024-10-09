@@ -2,19 +2,19 @@
 title: 'print'
 ---
 
-`morph print`コマンドは、コンパイル後のデータをターミナルに表示するためのコマンドです。
+The `morph print` command is used to display the compiled data on the terminal.
 
-- 設定されている関数の一覧を確認する
-- nameでファイルを検索する
-- ファイルパスからnameを検索する
+It can be used in cases such as:
 
-などのケースで使用できます。
+- Check the list of configured functions.
+- Searching for a file by name
+- Searching for name from a file path.
 
 ## Options
 
 ### --alias
 
-設定されているnameの値からコンパイルされた各種値を取得する
+Get various values compiled from the set name values.
 
 ```shell
 workdir $ morph print --alias example_sql_cell
@@ -37,7 +37,7 @@ workdir $ morph print --alias example_sql_cell
 
 ### --file
 
-ファイルのパスからコンパイル後のデータを取得する
+Get post-compilation data from file paths
 
 ```shell
 workdir $ morph print --file /home/morph/workdir/src/example_sql_cell.sql

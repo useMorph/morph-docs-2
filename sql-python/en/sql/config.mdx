@@ -2,7 +2,7 @@
 title: 'config'
 ---
 
-以下のようにSQLの中にjinjaで設定値を書くことができます。
+Configuration values can be written in jinja in SQL as follows:
 
 ```sql
 {{
@@ -21,22 +21,22 @@ select 1 as test
 
 ## Parameters
 
-<ParamField body="name" type="string" default="SQLファイル名">
-処理名, 他のファイルから呼び出す時のエイリアスとしても使える。
+<ParamField body="name" type="string" default="SQL filename">
+Process name, can also be used as an alias when calling from another file.
 </ParamField>
 
 <ParamField body="description" type="string">
-処理の説明を記述できる
+Description of the process
 </ParamField>
 
 <ParamField body="output_paths" type="array: string" default="['_private/{name}/{now()}{ext()}']">
-結果ファイルの出力先。
+Output paths for the result files.
 
-記述方法は[こちら](/sql-python/ja/framework/output-paths)を参照してください。
+See [here](/sql-python/en/framework/output-paths) for description.
 </ParamField>
 
-<ParamField body="connection" type="string" default="morph_project.ymlで設定したdefault_connection">
-画面で登録したbuiltin以外のconnectionの向き先 (optional)
+<ParamField body="connection" type="string" default="default_connection configured in morph_project.yml">
+Destination of connections other than the builtin registered on the screen (optional).
 
-※ 指定をしない場合はbuilt-in postgresqlに設定されます。
+※ If not specified, it is set to built-in postgresql.
 </ParamField>

@@ -2,23 +2,23 @@
 title: 'How to install pip packages'
 ---
 
-Morphでは、Pythonで外部モジュールをしたい場合にpipを使用してパッケージをインストールすることができます。
+Morph allows you to use pip to install packages when you want to do external modules in Python.
 
-## Morph上のpipの利用方法
+## How to use pip on Morph
 
-1. インストールしたいパッケージの名前を特定します。
+1. Identify the name of the package you want to install.
 
-    例えばopenaiのAPIクライアントを利用したい場合、 `openai` というパッケージ名で引き当てることができます。
-    これはchatgptなどLLMに聞けば特定できる他、[こちら](https://pypi.org/)で検索ができます。
+    For example, if you want to use the openai API client, you can pull it up with the package name `openai`.
+    This can be identified by asking LLMs such as chatgpt, or you can search for it [here](https://pypi.org/).
 
-2. エディタ上で、Control + ` を押してターミナルを開きます。
-3. ターミナル上で下記コマンドを実行します
+2. On the editor, press Control + ` to open the terminal.
+3. Execute the following command on the terminal:
 
-    `pip install {パッケージ名}`
+    `pip install {package name}`
 
-    `{パッケージ名}` は1で決めたものを指定してください。
+    `{package name}` must be the one determined in 1.
 
-4. コードから、該当するパッケージが利用できることを確認します。
+4. From the code, check that the relevant package is available.
 
-    一度インストールすると、そのワークスペースでは次回起動時も当該パッケージを引き続き利用することができます. 別のワークスペースで利用するためには、別途インストールをする必要があります。
+    Once installed, the package will continue to be available in that workspace the next time it is launched. To use it in a different workspace, you need to install it separately.
 
