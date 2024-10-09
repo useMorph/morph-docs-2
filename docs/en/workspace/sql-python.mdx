@@ -2,43 +2,43 @@
 title: 'Build with SQL & Python'
 ---
 
-ワークスペースでは、SQLとPythonを使用してデータ分析を行うことができます。
+The workspace allows data analysis using SQL and Python.
 
-ワークスペースを開くとプロジェクトルートに`src`ディレクトリが存在します。この`src`ディレクトリ内にSQLファイルやPythonファイルを配置して実行します。
+When you open the workspace, a `src` directory exists in the project root. Place and run SQL and Python files in this `src` directory.
 
-<Tip>`morph_project.yml`ファイルに`source_paths: src`と設定されています。この値を変えることでソースコードを配置するディレクトリを変更することも可能です。</Tip>
+<Tip>The `morph_project.yml` file is set to `source_paths: src`. It is possible to change the directory where the source code is placed by changing this value.</Tip>
 
 <img
   src="/assets/images/docs/workspace-editor-sql.png"
   alt="Workspace Editor SQL"
 />
 
-### ソースコードの実行
+### Execution of source code
 
-記述したSQLやPythonは以下の画像のように、エディターの右上に配置された「RUN」ボタンから実行することができます。
+The SQL or Python you have written can be executed using the ‘RUN’ button located in the top right-hand corner of the editor, as shown in the image below.
 
-実行をするとターミナル内に対応するMorph CLIのログが出力されるとともに、実行結果のデータが右のサイドバーの「Result」タブに表示されます。
+When executed, the corresponding Morph CLI log is output in the terminal and the data from the execution is displayed in the ‘Result’ tab in the right sidebar.
 
 <img
   src="/assets/images/docs/workspace-editor-sql-run.png"
   alt="Workspace Editor SQL Run"
 />
 
-## ソースコードを実装する
+## Implementing source code
 
-Morph上のSQLとPythonは、ワークスペース上のVMにインストールされたMorph CLIが実行します。使用するDBや標準のPythonスクリプトをベースにして、よりユーザーが強力にデータ分析を行えるように拡張を用意しています。
+SQL and Python on Morph is run by the Morph CLI installed on a VM on the workspace. It builds on the DB and standard Python scripts used, and provides extensions to allow more powerful data analysis by the user.
 
-また、Morphでは、分析用のファイルは実行時に名前が付けられます。名前をつけることで、他のファイルからそのファイルの結果に簡単にアクセスをすることができるようになります。
-この仕組みはMorphのフレームワークの中でとても重要な仕組みになります。
+In addition, in Morph, files for analysis are named at runtime. Naming makes it easier to access the results of that file from other files.
+This mechanism is a very important part of the Morph framework.
 
-実行時にこの名前が重複している場合はコンパイルエラーを起こしてしまいますので、注意をしてください。
+Note that duplicate names of this name at runtime will result in a compile error.
 
 ### SQL
 
-jinja2を使用してSQLを記述することができます。jinja内にMorph独自のconfigというメタデータを記述するための関数を使うことができます。
-configでは、その関数の処理の内容を記述することができます。これによって、チームメンバーに処理内容を残しておいたり、Morph AIが詳細に開発者の意図を解釈することができます。
+You can use jinja2 to write SQL, and within jinja you can use Morph's own config, a function for writing metadata.
+In config, you can describe the processing of the function. This allows you to leave the processing details for team members and for the Morph AI to interpret the developer's intentions in detail.
 
-以下のSQLでは、config関数で処理に名前をつけたり詳細の説明を記述しています。このようにjinjaを使うことでSQL内にメタデータをそのまま記述することができます。
+In the SQL below, the config function is used to name and describe the process in detail. Using jinja in this way allows metadata to be written directly in the SQL.
 
 ```sql
 {{
@@ -52,33 +52,33 @@ select * from customers limit 10
 ```
 
 <Note>
-config関数が未定義だったり、nameで命名がされていない場合はsqlファイル名がそのまま名前として使用されます。
-例: example_sql_cell.sqlの場合example_sql_cellが名前として使われる。
+If the config function is undefined or not named by name, the sql file name is used as the name.
+Example: example_sql_cell.sql, in which case example_sql_cell is used as the name.
 </Note>
 
 
 <Warning>
-Morph上では、1つのSQLファイルに複数のSQLを記述できないように、SQLの末尾にセミコロンを書くことを禁止しています。もし書いてしまった場合はエラーメッセージが表示されるので、セミコロンを削除して再度実行をしてください。
+In Morph, it is forbidden to write a semicolon at the end of SQL to prevent multiple SQLs in one SQL file. If you have written one, an error message will be displayed, so delete the semi-colon and run the program again.
 </Warning>
 
-configの詳細設定やその他の文法ルールに関しては以下の詳細ページをご覧ください。
+For detailed config settings and other grammar rules, see the following detailed pages:
 
 <CardGroup cols={1}>
-    <Card title="クイックスタート: SQL" href="/sql-python/ja/quickstart-sql">
-        Morph上でSQLを実行する方法を説明します。
+    <Card title="Quick start: SQL" href="/sql-python/ja/quickstart-sql">
+        Describes how to run SQL on Morph.
     </Card>
 </CardGroup>
 
 ### Python
 
-Pythonファイルでは、`@morph.func`というアノテーションを関数に付与することでMorph上で実行できる関数として登録ができます。この仕組みによって、Pythonファイルには1つのファイルに複数の関数を記述して実行することができます。
+In Python files, functions can be registered as functions that can be executed on Morph by adding the annotation `@morph.func` to the function. This mechanism allows Python files to contain and execute multiple functions in a single file.
 
-SQLの場合と同様にPythonファイルでは、この`@morph.func`のアノテーションの引数にnameとdescriptionを設定することで、関数の名前と説明を記述することができます。
+As with SQL, Python files can describe the name and description of a function by setting name and description to the arguments of this `@morph.func` annotation.
 
-また、`@morph.load_data`を使用すると他のSQL/Pythonの実行結果をそのまま変数に読み込んで使用することができます。読み込まれた変数は引数の`context`の中から参照することができます。
-以下の例では、example_sql_cellというSQLの実行結果をexample_python_cellというPythonの関数で読み込んで、その結果にアクセスしたものをそのまま返しています。
+In addition, `@morph.load_data` can be used to load the results of other SQL/Python executions directly into variables. The loaded variables can be referenced from within the `context` argument.
+In the following example, the result of an SQL execution called example_sql_cell is read in by a Python function called example_python_cell, which returns the accessed result as is.
 
-`context`変数の中には、読み込み対象の名前と同じ名前で辞書型でデータが格納されています。
+The `context` variable contains data in a dictionary type with the same name as the name of the read target.
 
 ```python
 import pandas as pd
@@ -98,13 +98,13 @@ def main(context: MorphGlobalContext) -> pd.DataFrame:
 ```
 
 <Note>
-Pythonの関数には必ず`@morph.func`は付与する必要がありますが、nameなどの引数は必須ではありません。指定されなかった場合には、関数名がそのまま名前として使用されます。
+Python functions must always be given `@morph.func`, but arguments such as name are not required. If not specified, the function name is used as-is as the name.
 </Note>
 
-`@morph.func` / `@morph.load_data`の詳細設定やその他のアノテーションなどの便利関数の詳細は以下の詳細ページをご覧ください。
+For more information on convenience functions, including detailed settings for `@morph.func` / `@morph.load_data` and other annotations, see the details page below:
 
 <CardGroup cols={1}>
-    <Card title="クイックスタート: Python" href="/sql-python/ja/quickstart-python">
-        Morph上でPythonを実行する方法を説明します。
+    <Card title="Quick start: Python" href="/sql-python/ja/quickstart-python">
+        This section explains how to run Python on Morph.
     </Card>
 </CardGroup>

@@ -2,9 +2,9 @@
 title: BigQuery
 ---
 
-このチャプターではMorphプラットフォームに、外部データソースとしてBigQueryを連携する方法を説明します。
+This chapter explains how to link BigQuery as an external data source to the Morph platform.
 
-## 設定方法
+## How to set up
 
 <video
   className="w-full mt-4 lg:mx-0 rounded-xl max-w-[1080px]"
@@ -15,44 +15,43 @@ title: BigQuery
   <source src="/assets/videos/integrations/docs_connection_bigquery.mp4" type="video/mp4" />
 </video>
 
-BigQueryへの接続を設定するには、ホーム画面の「Connections」タブを開いて、「Create New Connection」ボタンから接続設定モーダルを開き、BigQueryを選択します。
+To set up a connection to BigQuery, open the Connections tab on the home screen, open the Connection Settings modal via the Create New Connection button and select BigQuery.
 
+## Authentication method
 
-## **認証方式**
+Two methods are available for connecting to BigQuery: Service Account or OAuth2 authentication. Both methods provide secure access to BigQuery data and can be chosen according to the application.
 
-BigQueryへの接続には、Service AccountまたはOAuth2認証の二つの方法が利用可能です。どちらの方法も安全にBigQueryデータにアクセスするためのもので、用途に応じて選択することができます。
+**OAuth2 Certification**
 
-**OAuth2認証**
+OAuth2 is a way for third-party applications to securely access Google services without the user directly using their own Google account credentials.
 
-OAuth2は、ユーザーが自身のGoogleアカウントの資格情報を直接使用せずに、第三者アプリケーションがGoogleサービスに安全にアクセスするための方法です。
+**Service Account Certification**
 
-**Service Account認証**
+Service Account is used by applications to access Google Cloud services without user intervention. It is mainly used by back-end systems and automation scripts.
 
-Service Accountは、アプリケーションがユーザーの介入なしにGoogle Cloudサービスにアクセスするために使用します。これは主にバックエンドシステムや自動化スクリプトで使用されます。
+### BigQuery integration using OAuth2 authentication
 
-### **OAuth2認証を使用したBigQuery連携**
+**Setup procedure:**
 
-**設定手順**:
+1. select ‘OAuth2’ in the Morph settings and use the ‘Sign in with Google’ button to authenticate with your Google account.
+2. when you are redirected from Sign in with Google to the Google Cloud Platform side screen, allow the Morph connection request. If you allow it, you will be redirected to the Morph screen and the configuration is complete.
 
-1. Morphの設定で「OAuth2」を選択し、「Sign in with Google」ボタンを使用してGoogleアカウントで認証します。
-2. Sign in with GoogleからGoogle Cloud Platform側の画面に遷移したらMorphの接続要求を許可してください。許可するとMorph画面にリダイレクトされて設定は完了です。
+### BigQuery integration with Service Account
 
-### **Service Accountを使用したBigQuery連携**
+**Setup procedure:**
 
-**設定手順**:
+1. create a Service Account in Google Cloud Platform and obtain its JSON key. [Ref: [Creating and managing Service Account keys](https://cloud.google.com/iam/docs/creating-managing-service-account-keys?hl=ja)]
+2. select ‘Service Account’ in the Morph settings and upload the downloaded JSON key to the field you specify.
 
-1. Google Cloud PlatformでService Accountを作成し、そのJSONキーを取得します。[参考: [サービス アカウント キーの作成と管理](https://cloud.google.com/iam/docs/creating-managing-service-account-keys?hl=ja)]
-2. Morphの設定で「Service Account」を選択し、ダウンロードしたJSONキーを指定するフィールドにアップロードします。
+### Complete the connection settings.
 
-### 接続設定を完了する
-
-> Accountセクションの入力が終わって画面左下のCreateボタンを押下したら、次はConnection slugを入力して、接続設定を完了してください。
+> Once you have completed the Account section and pressed the Create button in the bottom left-hand corner of the screen, you can now enter the Connection slug to complete the connection settings.
 
 1. **Connection slug**
-    - 外部データソースへの接続を一意に識別するもので、空にすることはできません。文字、数字、アンダースコアのみで任意に設定してください。
+    - Uniquely identifies the connection to the external data source and cannot be empty. Use only letters, numbers and underscores as desired.
 
 ![BigQuery Slug](/assets/images/integrations/bigqueryslug.png)
 
-Connections一覧に接続設定が表示されたら設定完了となります。
+When the connection settings appear in the Connections list, the configuration is complete.
 
 ![BigQuery Complete](/assets/images/integrations/bigquerycomplete.png)

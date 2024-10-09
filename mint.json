@@ -165,7 +165,7 @@
       ]
     },
     {
-      "group": "Connect an SQL connector",
+      "group": "Connect SQL",
       "version": "English",
       "pages": [
         "integrations/en/database/snowflake",
@@ -176,7 +176,7 @@
       ]
     },
     {
-      "group": "Connect an SaaS integration",
+      "group": "Connect SaaS",
       "version": "English",
       "pages": [
         "integrations/en/saas/airtable",

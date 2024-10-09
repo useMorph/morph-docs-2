@@ -2,9 +2,9 @@
 title: Redshift
 ---
 
-このチャプターではMorphプラットフォームに、外部データソースとしてRedshiftを連携する方法を説明します。
+This chapter explains how to link Redshift as an external data source to the Morph platform.
 
-## 設定方法
+## How to set it up
 
 <video
   className="w-full mt-4 lg:mx-0 rounded-xl max-w-[1080px]"
@@ -15,42 +15,42 @@ title: Redshift
   <source src="/assets/videos/integrations/docs_connection_redshift.mp4" type="video/mp4" />
 </video>
 
-Redshiftへの接続を設定するには、ホーム画面の「Connections」タブを開いて、「Create New Connection」ボタンから接続設定モーダルを開き、Redshiftを選択します。
+To set up a connection to Redshift, open the Connections tab on the home screen, open the Connection Settings modal via the Create New Connection button and select Redshift.
 
 
-## **接続設定項目 (Account)**
+## ## Connection configuration (Account)
 
-> ここではAccountセクションの入力内容について説明します。必要に応じて以下の接続設定項目を入力して、サイドパネルをスクロールダウンした左下に表示されるCreateボタンを押下してください。
+> This section describes the entries in the Account section. Enter the following connection configuration items as required and press the Create button in the bottom left-hand corner of the scroll down side panel.
 
 1. **Host**
-    - データベースサーバーのIPアドレスまたはホスト名（例: db.example.com）。localhostや127.0.0.1は無効です。Morphプラットフォームの固定IPアドレス（35.79.243.33）からアクセス可能であることを確認してください。
+    - IP address or hostname of the database server (e.g. db.example.com). localhost or 127.0.0.1 is invalid; make sure it is accessible from the static IP address of the Morph platform (35.79.243.33).
 2. **Username**
-    - データベースサーバーに接続する際に使用するユーザー名。
+    - User name used to connect to the database server.
 3. **Password**
-    - データベースサーバーに接続する際に使用するパスワード。
+    - Password used to connect to the database server.
 4. **Database**
-    - 接続したいデータベースの名前。
+    - Name of the database you want to connect to.
 5. **Port**
-    - 接続したいデータベースサーバーのポート番号。
+    - Port number of the database server you want to connect to.
 6. **SSH Host**
-    - 踏み台サーバー（中継ホスト）を経由する場合のIPアドレスまたはホスト名。localhostや127.0.0.1は無効です。Morphプラットフォームの固定IPアドレス（35.79.243.33）からアクセス可能であることを確認してください。
+    - IP address or hostname when going through a stepping-stone server (relay host). localhost or 127.0.0.1 is invalid; make sure it is accessible from the Morph platform's fixed IP address (35.79.243.33).
 7. **SSH Username**
-    - 踏み台サーバーに接続する際に使用するユーザー名。
+    - User name used to connect to the stepping-stone server.
 8. **SSH Password**
-    - 踏み台サーバー接続する際に使用するパスワード。公開鍵認証方式で秘密鍵（SSH Private Key）を使用する場合は必要ありません。
+    - Password to be used when connecting to the stepping-stone server. Not required when using a private key (SSH Private Key) with the public key authentication method.
 9. **SSH Port**
-    - 踏み台サーバーのポート番号。
+    - Port number of the stepping-stone server.
 10. **SSH Private Key**
-    - 踏み台サーバー接続する際に使用するプライベートキー。パスワードを使用する場合は必要ありません。
+    - Private key used when connecting to a stepping-stone server. Not required if a password is used.
 11. **SSH Passphrase**
-    - 秘密鍵（SSH Private Key）にパスフレーズが設定されている場合は入力します。パスワードを使用する場合は必要ありません。
+    - Enter if a passphrase has been set for the private key (SSH Private Key). Not required if a password is used.
 
-### 接続設定を完了する
+### Complete the connection settings.
 
-> Accountセクションの入力が終わって画面左下のCreateボタンを押下したら、次はConnection slugを入力して、接続設定を完了してください。
+> Once you have completed the Account section and pressed the Create button in the bottom left-hand corner of the screen, you can now enter the Connection slug to complete the connection settings.
 
 1. **Connection slug**
-    - 外部データソースへの接続を一意に識別するもので、空にすることはできません。文字、数字、アンダースコアのみで任意に設定してください。
+    - Uniquely identifies the connection to the external data source and cannot be empty. Use only letters, numbers and underscores as desired.
 
 ![Redshift Slug](/assets/images/integrations/redshiftslug.png)
 

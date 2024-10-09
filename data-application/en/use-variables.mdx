@@ -1,16 +1,16 @@
 ---
-title: '変数を使う'
+title: 'Using Variables'
 ---
 
-Morphでは、Python関数やSQLファイルの中で変数を定義することができますが、MDXファイルから実行する場合にも変数を利用することができます。
+Morph allows variables to be defined in Python functions and SQL files, but variables can also be used when executing from MDX files.
 
-Python, SQLファイル中での変数の利用については、[変数の使い方](/data-application/ja/variables)を参照してください。
+For more information on using variables in Python and SQL files, see [how to use variables](/data-application/en/variables).
 
-## MDXファイルでの変数の使い方
+## How to use variables in MDX files
 
-MDXファイルで変数を使うには、**新たにtsxファイルを作成**し、変数を利用したReactコンポーネントを作成してから、それをMDXファイル内で利用する必要があります。
+To use variables in an MDX file, you need to **create a new tsx file**, create a React component that uses the variable and then use it in the MDX file.
 
-<Warning>mdxファイル内で直接 `useVariable` を利用することはできません。</Warning>
+<Warning>It is not possible to use `useVariable` directly in an MDX file.</Warning>
 
 <CodeGroup>
 
@@ -96,20 +96,20 @@ def main(context: MorphGlobalContext) -> pd.DataFrame:
 
 </CodeGroup>
 
-## `useVariable` フック
+## `useVariable` Hook
 
-変数の宣言には `useVariable` を使用してください。
-  
+Use `useVariable` to declare variables.
+ 
 ```tsx
 const dateRangeStart = useVariable<Date | null>(null);
 const dateRangeEnd = useVariable<Date | null>(null);
 ```
 
-## コンポーネントに渡す
+## Passing to components
 
-コンポーネントに渡す際には、オブジェクト形式で、PythonまたはSQLファイル内での変数名をキーとして渡してください。
+When passing to a component, pass the name of the variable in the Python or SQL file as a key, in object form.
 
-上記の例では、Pythonファイル中で `start_date` と `end_date` を変数として利用しているため、それらをキーとして渡しています。
+In the example above, `start_date` and `end_date` are used as variables in the Python file, so they are passed as keys.
 
 ```tsx
 <DataTable 

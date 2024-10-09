@@ -1,10 +1,10 @@
 ---
-title: 'データコンポーネント'
+title: 'Data Components'
 ---
 
-Morphのデータを利用するには、専用のコンポーネントを用いて、Python関数やSQLファイルの name をプロパティとして渡します。
+To use Morph data, a dedicated component is used to pass the name of the Python function or SQL file as a property.
 
-以下は、Pythonの実行結果のDataFrameをテーブル表示する例です。
+Below is an example of a table display of a DataFrame from a Python run.
 
 ```tsx index.mdx
 
@@ -23,11 +23,11 @@ import { DataTable } from '@use-morph/page';
 
 ```
 
-以下で、データ表示用のコンポーネントを紹介します。
+The components for data display are presented below.
 
 ## DataTable
 
-DataTableコンポーネントは、Python関数やSQLファイルの実行結果をテーブル表示します。
+The DataTable component displays the results of a Python function or SQL file execution in a table.
 
 ```tsx
 import { DataTable } from '@use-morph/page';
@@ -37,7 +37,7 @@ import { DataTable } from '@use-morph/page';
 
 ## Embed
 
-Embedコンポーネントは、Python関数の実行結果がHTMLの場合に、そのHTMLを表示します。
+The Embed component displays HTML when the result of a Python function execution is HTML.
 
 ```tsx
 

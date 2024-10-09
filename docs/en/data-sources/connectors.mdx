@@ -1,33 +1,33 @@
 ---
-title: 'Connectors - DB / DWH / SaaS'
+title: 'Connectors: DB / DWH / SaaS'
 ---
 
-Morphは、様々なデータソースと連携することで、ユーザーが一元的にデータを管理・分析できる環境を提供します。このセクションでは、Morphがサポートする主要なデータソースを紹介します。
+Morph provides an environment where users can manage and analyse data centrally by working with a variety of data sources. This section presents the main data sources supported by Morph.
 
-## SQLデータベース
+## SQL databases
 
-Morphでは、さまざまな外部データソースとの連携が可能です。これにより、ユーザーは以下のデータベースやデータウェアハウスから直接SQLを使用してクエリを実行することができます。
+Morph allows users to work with a variety of external data sources. This allows users to query directly from the following databases and data warehouses using SQL.
 
-1. **MySQL**: オープンソースのリレーショナルデータベース管理システムで、世界中の多くのアプリケーションで広く使用されています。
-2. **PostgreSQL**: 強力なオープンソースのオブジェクトリレーショナルデータベースシステムで、信頼性、機能の豊富さ、パフォーマンスが特徴です。
-3. **BigQuery**: Google Cloudのサーバーレス、高スケーラビリティを持つデータウェアハウスで、大量のデータに対する迅速なSQLクエリをサポートします。
-4. **Snowflake**: クラウドベースのデータウェアハウスサービスで、データの共有やスケーラビリティに優れ、多様なデータワークロードをサポートします。
-5. **Redshift**: Amazon Web Servicesによるクラウドデータウェアハウスで、大規模なデータセットの分析を高速で行うことができます。
+1. **MySQL**: Open source relational database management system, widely used in many applications worldwide.
+2. **PostgreSQL**: A powerful open source object-relational database system, characterised by reliability, feature richness and performance.
+3. **BigQuery**: Google Cloud's serverless, highly scalable data warehouse supports rapid SQL queries on large volumes of data.
+4. **Snowflake**: Cloud-based data warehousing service with excellent data sharing and scalability to support diverse data workloads.
+5. **Redshift**: Cloud data warehousing with Amazon Web Services, for fast analysis of large data sets.
 
-これらのデータソースをMorphに接続することで、異なるプラットフォームやツール間でデータを統合し、効率的にデータ分析やビジネスインテリジェンスのタスクを行うことが可能になります。Morphのインターフェースを通じて簡単に接続を設定し、データを直接クエリすることができます。
+By connecting these data sources to Morph, data can be integrated across different platforms and tools to efficiently perform data analysis and business intelligence tasks. Morph's interface allows you to easily set up connections and query data directly.
 
 ## SaaS
 
-Morphでは、一部のSaaSとの連携を用意しています。これにより、ユーザーは認証周りの実装を全てMorphに任せてビジネスロジックの実装に集中をすることができます。
+Morph provides integration with many SaaS. This allows users to concentrate on implementing the necessary business logic, leaving the setup to Morph.
 
-以下のようにConnectionsのタブからIntegrationを作成することで、すぐにSaaS内のデータの分析を始めることができます。
+You can start analysing the data in SaaS immediately by creating an Integration from the Connections tab, as shown below:
 
 <img
   src="/assets/images/docs/integrations.png"
   alt="Integrations"
 />
 
-Pythonで作成したIntegrationからaccess_tokenを取得します。
+Get the `access_token` from the Integration created in Python.
 
 ```python
 import pandas as pd
@@ -48,15 +48,16 @@ def freee_get_balance(context: MorphGlobalContext) -> pd.DataFrame:
     # ↓↓↓ call API with access_token ↓↓↓
 ```
 
+## Non-SQL databases
 
-## 非SQLデータベース
+Morph can also work with NoSQL databases and other non-SQL databases, including MongoDB and Cassandra. Data can be retrieved and analysed against these databases using Python, which utilises powerful libraries to facilitate data manipulation and transformation — effectively extracting insights from non-SQL databases.
 
-Morphは、NoSQLデータベースやその他の非SQLデータベースとも連携可能です。これには、MongoDBやCassandraなどが含まれ、これらのデータベースに対してPythonを使用してデータを取得し、分析することができます。Pythonの強力なライブラリを活用することで、データの操作や変換が容易になり、非SQLデータベースからも効果的にインサイトを引き出すことができます。
+## Interfacing via API
 
-## APIによる連携
+Morph can also be integrated with various external services and applications via API. This allows real-time data to be retrieved from web services or integrated with other cloud services, for example. 
 
-Morphは、様々な外部サービスやアプリケーションとAPIを通じて連携することも可能です。これにより、例えばウェブサービスからリアルタイムのデータを取得したり、他のクラウドサービスと統合したりすることができます。ユーザーはPythonスクリプトを使用してAPIからデータを取得し、Morph内で直接処理・分析を行うことができます。これにより、柔軟でカスタマイズ可能なデータ連携が実現します。
+Users can use Python scripts to retrieve data from the API and process and analyse it directly within Morph. This allows for flexible and customisable data integration.
 
-## ファイルアップロード
+## File upload
 
-Morphは、ローカルファイルからのデータアップロードもサポートしています。ユーザーはCSV、JSON、Excelファイルなどを簡単にアップロードし、Workspaceにインポートすることができます。アップロードされたデータはすぐに利用可能で、Morphのツールを使って分析や可視化を行うことができます。
+Morph also supports data upload from local files. Users can easily upload CSV, JSON, or Excel files and import them into your Workspace. Uploaded data is immediately available and can be analysed and visualised using Morph's tools.
