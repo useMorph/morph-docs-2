@@ -1,27 +1,27 @@
 ---
-title: 'Data Application'
+title: 'Data Applications'
 ---
 
-Morphでは、マークダウン形式とReactコンポーネントを組み合わせて、リッチなデータアプリケーションを簡単に作成することができます。
+Morph makes it easy to create rich data applications using a combination of markdown formats and React components.
 
-このセクションでは、データアプリケーションを構築するための手順を説明します。
+This section provides step-by-step instructions for building data applications.
 
 ## MDX
 
-Morphでデータアプリケーションを構築する際には、[MDX (https://mdxjs.com/) ](https://mdxjs.com/)を使用します。MDXの詳しい使い方については、[MDXの公式ドキュメント](https://mdxjs.com/)を参照してください。
+When building data applications in Morph, use [MDX (https://mdxjs.com/)](https://mdxjs.com/) For more information on how to use MDX, see [Official MDX documentation](https://mdxjs.com/). See also.
 
-## 0. セットアップ
+## 0. Setup
 
 {/* <Warning>通常この手順は、ワークスペースのシステムが自動で実行するため、スキップして構いません。どうしても起動がうまくいかない場合に試してください。</Warning> */}
 
-データアプリケーションを構築するためには、まずMorphのワークスペースを開いて、以下のコマンドを実行してください。これは数分かかる場合があります。
+To build a data application, first open the Morph workspace and execute the following commands. This may take several minutes.
 
 ```bash
 npm i -S @use-morph/page-build && npx morph-page init
 ```
 
 
-## 1. mdxファイルを作成する
+## 1. Create MDX files
 
 <video
   controls
@@ -29,20 +29,20 @@ npm i -S @use-morph/page-build && npx morph-page init
   src="/assets/images/docs/mdx-1.mp4"
 ></video>
 
-まず、データアプリケーションのコンテンツを記述するためのmdxファイルを作成します。mdxファイルは、マークダウン形式で記述されたテキストとReactコンポーネントを組み合わせて、リッチなコンテンツを作成するためのファイルです。
-ワークスペースのホームディレクトリの `src` ディレクトリにmdxファイルを作成してください。
+First, create an mdx file to describe the content of your data application. mdx files combine text written in markdown format with React components to create rich content.
+Create the mdx file in the `src` directory of your workspace home directory.
 
-## 2. mdxファイルを編集する
+## 2. Edit MDX files
 
-mdxファイルを作成したら、内容を編集していきます。
+Once the MDX file has been created, the contents can be edited.
 
-とても重要な要素として、2つの変数をexportする必要があります。
+One very important element is the need to EXPORT two variables:
 
-- name ... これは、このファイルのページのパス名です。例えば、nameが`index`の場合は`/`となり、nameが`about`の場合は`/about`となります。
+- `name`: This is the pathname of the page for this file. For example, if name is `index`, this is `/`, and if name is `about`, this is `/about`.
 
-- title ... これは、このファイルのページのタイトルです。画面内のメニューやタイトルに表示されます。
+- `title`: This is the title of the page for this file. It appears in the menu and title in the screen.
 
-以下は、`index.mdx`ファイルの例です。
+The following is an example of an `index.mdx` file:
 
 ```tsx index.mdx
 
@@ -55,13 +55,13 @@ This is the top page of the data application.
 
 ```
 
-通常のマークダウン記法を使用することができます。
+Normal markdown notation can be used.
 
-## 3. Morphのデータを利用する
+## 3. Using Morph data
 
-Morphのデータを利用するには、専用のコンポーネントを用いて、Python関数やSQLファイルの name をプロパティとして渡します。
+To use Morph data, a dedicated component is used to pass the name of the Python function or SQL file as a property.
 
-以下は、Pythonの実行結果のDataFrameをテーブル表示する例です。
+Below is an example of a table display of a DataFrame from a Python run:
 
 ```tsx index.mdx
 
@@ -80,9 +80,8 @@ import { DataTable } from '@use-morph/page';
 
 ```
 
-Morphのコンポーネントの詳しい仕様は、[Data Applicationのページ](/data-application/ja/how-to-build-data-application)を参照してください。
+For detailed specifications of Morph components, see the [Data Application page](/data-application/en/how-to-build-data-application).
 
-## 4. データアプリケーションの起動
+## 4. Launching data applications
 
-データアプリケーションを起動するには、mdxファイルの編集画面右上にある Preview ボタンをクリックしてください。
-
+To start the data application, click on the Preview button in the top right-hand corner of the mdx file editing screen.

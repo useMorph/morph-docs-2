@@ -2,9 +2,9 @@
 title: 'Quickstart - Python'
 ---
 
-Morphでは、Pythonを使用して複雑なデータ分析を行うことができます。
+Morph allows you to perform complex data analysis using Python.
 
-記述方法は通常のPython関数に`@morph.func`アノテーションを付与するだけでMorphで実行することができます。
+To write a Python function, simply add the `@morph.func` annotation to a normal Python function and run it in Morph.
 
 ```python
 @morph.func
@@ -14,22 +14,22 @@ def get_data_from_database(context):
 	return pd.DataFrame({})
 ```
 
-## 返り値について
+## About return values
 
-Pythonの返り値では、`dataframe`、`visualization`、`markdown`、`json`のいずれかを指定することができます。これらの方に合うような値を作成し返り値として返却してください。
+Python return values can be `dataframe`, `visualisation`, `markdown` or `json`. Create a value that matches one of these and return it as the return value.
 
-`dataframe`を指定した場合は、そのままMorphのデータフレームとして表示されます。
+If `dataframe` is specified, it will be displayed as is as a Morph dataframe.
 
-`visualization`を指定した場合は、そのままMorphのビジュアライゼーションとして表示されます。この場合は、PlotlyやMatplotlibなどのライブラリを使用して可視化することができます。
+If `visualisation` is specified, it will be displayed as is as a Morph visualisation. In this case, you can use libraries such as Plotly or Matplotlib to visualise it.
 
-`markdown`を指定した場合は、そのままMorphのMarkdownとして表示されます。
+If `markdown` is specified, it is displayed as is as a Morph Markdown visualization.
 
-`json`を指定した場合は、そのままMorphのJSONとして表示されます。
+If `json` is specified, it will be displayed as Morph's JSON as is.
 
-## 可視化について
+## About visualisation
 
-可視化をする場合は、以下のようにPlotlyやMatplotlibなどのライブラリを使用して可視化オブジェクトを返却する関数を実装してください。
-ここで、関数の中でhtmlを作成して返却したりしないように注意をしてください。
+For visualisation, implement a function that returns a visualisation object using a library such as Plotly or Matplotlib as follows.
+Here, take care not to create and return html in the function.
 
 **Plotly**
 

@@ -2,12 +2,12 @@
 title: 'load_data'
 ---
 
-load_data関数を使用することで他のcellの結果をテーブルのように扱うことができます。
+The load_data function can be used to treat the results of other cells as if they were tables.
 
-以下のように記述した場合`users` のcellを実行したあとの結果ファイルをテーブルとしてアクセスすることができます。
+You can access the result file after running the `users` cell as a table if you write.
 
 <Warning>
-load_dataをfrom句で使用する場合は、SQLの文法はDuckDBの文法を使用する必要があります。
+If load_data is used in the from clause, the SQL syntax must use DuckDB syntax.
 </Warning>
 
 ```sql

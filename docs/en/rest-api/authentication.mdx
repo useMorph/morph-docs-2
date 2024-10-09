@@ -2,7 +2,7 @@
 title: 'Authentication'
 ---
 
-MorphのAPIを利用するには、APIキーをリクエストのヘッダーに含める必要があります。APIキーはMorphのダッシュボードから取得でき、セキュアなアクセスを保証します。
+To use Morph's API, an API key must be included in the header of the request; the API key can be obtained from the Morph dashboard and ensures secure access.
 
 <iframe
 	src="https://www.loom.com/embed/b7e334cacc954af8af2bd36d230a8269?sid=17e7577e-5613-462d-a8ad-7383ae420ef6"
@@ -10,31 +10,31 @@ MorphのAPIを利用するには、APIキーをリクエストのヘッダーに
 	className="w-full aspect-video"
 ></iframe>
 
-## APIキーの取得方法
+## How to obtain an API key:
 
-1. Home画面から「Secrets」タブを押下して下記のページを表示します。
-2. 次に「Create Secret」のボタンを押下し、Secret nameとSource IPを入力して「Create」ボタンで確定します。
-※Source IPを空欄にすると全部のIPが許可されます。Source IPを限定する場合はカンマ区切りで入力してください。
-3. 作成したAPIキーが不要になった場合は「Delete」ボタンから削除することができます。
-4. 出現した削除確認モーダルから「Delete」ボタンを押下すると、APIキーは完全に削除されます。
-**[NB!] この操作は取り消すことができません。一度削除すると復旧できないため十分にご注意ください。**
+1. from the Home screen, press the ‘Secrets’ tab to display the following page.
+2. next press the ‘Create Secret’ button, enter the Secret name and Source IP and confirm with the ‘Create’ button.
+※If the Source IP is left blank, all IPs are allowed; to restrict the Source IP, enter a comma-separated list.
+3. if the created API key is no longer required, it can be deleted from the ‘Delete’ button.
+4. press the ‘Delete’ button from the Delete confirmation modal that appears, and the API key will be deleted completely.
+**[NB!] This operation cannot be undone.**
 
 ## API URL
 
-APIのURLは以下のような形式となります。
+The URL of the API will be in the following format:
 
 BaseURL: `https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/`
 
-**データベースID(`[Your_DatabaseID]`)の確認方法**
+**How to check the database ID `[Your_DatabaseID]`**
 
-Morphのワークスペース画面内で、 `/workspace` に続いて表示されているのがデータベースIDです。
+Within the Morph workspace screen, the database ID is displayed following `/workspace`.
 
 `https://beta-app.morphdb.io/workspace/[database_id]?selected...`
 
-**テーブル名(`[**Your_Table_Name**]`)の確認方法**
+**How to check the table name `[**Your_Table_Name**]`**.
 
-データベーススキーマ内の特定のテーブルに対するクエリを行う場合は、APIのURLは以下のような形式となります。
+When querying for a specific table in the database schema, the URL of the API will be of the form:
 
 URL: `https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/[Your_Table_Name]`
 
-サイドメニューの Built-in Tables の中に表示されているのがテーブル名です。テーブルを選択した際に、エディターのタブに表示されるのもテーブル名です。
+The table name is what you see in the Built-in Tables in the side menu. The table name is also what appears in the editor tab when you select a table.

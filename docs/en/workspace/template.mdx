@@ -2,13 +2,13 @@
 title: 'Template'
 ---
 
-Morphには、SQLやPythonのコードをより簡単に記述するためにテンプレートの機能があります。
-テンプレートには2種類存在しています。
+Morph has a template facility to make writing SQL and Python code easier.
+Two types of templates exist.
 
-## 標準で用意されているテンプレート　 (Built-in Template)
+## Built-in Template
 
-ソースコードをワークスペース上で開くとMorphチームが作成した標準のテンプレートが右のサイドバーから確認することができます。
-このテンプレートは、Morphのフレームワークのスニペットの役割をしており、コピーをすることですぐに分析部分の実装を開始することができます。
+When the source code is opened on the workspace, a standard template created by the Morph team can be seen in the sidebar on the right.
+This template acts as a snippet of the Morph framework and by copying it you can immediately start implementing the analysis part.
 
 <img
   src="/assets/images/docs/workspace-template.png"
@@ -16,27 +16,27 @@ Morphには、SQLやPythonのコードをより簡単に記述するためにテ
 />
 
 <Note>
-テンプレートの要望がある場合には、`shibata@morphdb.io`まで是非リクエストください！
+If you have any requests for templates, please do not hesitate to request them from `shibata@morphdb.io`!
 </Note>
 
-## 自作テンプレート (Custom Template)
+## Custom Template
 
-`templates`フォルダでは、ユーザー定義のテンプレートファイルを作成して管理することができます。
+In the `templates` folder, user-defined template files can be created and managed.
 
-作成したテンプレートから`morph create`コマンドで新規ファイルを作ることができます。また`morph search`コマンドで検索することもできます。
+New files can be created from the created templates with the `morph create` command. You can also search for them with the `morph search` command.
 
-### テンプレートの作成手順
+### Steps to create a template
 
-**(手順1) テンプレートファイルの作成**
+**(Step 1) Create template files**
 
-テンプレートファイルはtemplatesディレクトリ配下に作成します。
+Template files are created under the templates directory.
 
-作成時には以下のプレースホルダーを定義できます。（プレースホルダーで定義した値は後述するmorph createコマンドのオプションで指定することで、置換してファイルが作成されます。）
+The following placeholders can be defined during creation. (The values defined in the placeholders can be specified in the morph create command options described below, which will create the file with the replacements).
 
-- `${MORPH_NAME}`: テンプレート名(旧エイリアス)に置換されます。（`morph create`コマンドの`--name`オプションの指定）
-- `${MORPH_DESCRIPTION}`: テンプレート説明に置換されます。（`morph create`コマンドの`—-description`オプションの指定）
+- `${MORPH_NAME}`: replaced by the template name (old alias). (Specified by the `--name` option of the `morph create` command).
+- `${MORPH_DESCRIPTION}`: replaced by the template description. (Specified by the `--description` option of the `morph create` command)
 
-E.g.)
+E.g:
 
 ```python
 import pandas as pd
@@ -59,13 +59,13 @@ def main(context: MorphGlobalContext) -> pd.DataFrame:
     return pd.DataFrame({{"key1": [3, 2, 1], "key2": [5, 4, 3]}})
 ```
 
-**(手順2) template.yamlの編集**
+**(Step 2) Edit template.yaml**
 
-templatesフォルダ直下のtemplate.yamlを編集します。Syntaxは以下の例を参考にしてください。
+Edit template.yaml directly under the templates folder, see example below for Syntax.
 
-※srcはフルパスまたはtemplate.yamlからの相対パスで定義します。
+※The src can be defined as the full path or relative to template.yaml.
 
-E.g.)
+E.g:
 
 ```yaml
 # [Description]
@@ -95,45 +95,45 @@ templates:
     language: python
 ```
 
-**(手順3) コンパイル**
+**(Step 3) Compile**
 
-以下のコマンドでtemplate.yamlの妥当性をチェックすることができます。テンプレートファイルを作成してtemplate.yamlの編集まで終わったら、VSコードのターミナルから以下のコマンドを叩いてください。
+You can check the validity of template.yaml with the following command. Once you have created the template file and even edited template.yaml, hit the following command from the VS Code terminal.
 
 ```bash
 $ morph template compile
-$ # 実行して何も表示がなければ成功です🎉
+$ # If you run it and nothing is displayed, you have succeeded.🎉
 ```
 
-## テンプレートの利用方法
+## How to use templates
 
-設定をしたテンプレートはワークスペースの右側のメニューやキャンバス内の新規作成時に使用することができます。
+The templates you set up can be used in the menu on the right-hand side of the workspace or when creating a new canvas in the canvas.
 
-**テンプレート一覧から選択**
+**Select from the list of templates**
 
 <img
   src="/assets/images/docs/workspace-template-menu.png"
   alt="Workspace Template Menu"
 />
 
-**キャンバスから選択**
+**Select from canvas**
 <img
   src="/assets/images/docs/workspace-template-canvas.png"
   alt="Workspace Template Canvas"
 />
 
-### CLIからテンプレートを利用する方法
+### How to use templates from the CLI
 
-以下のコマンドで作成できます。
+It can be created with the following command:
 
-※`<テンプレート名>`はtemplate.yamlで定義したnameを指定します。また、[テンプレートAPI](https://queue-inc.stoplight.io/docs/morph-api-document/fhs6hbxyjjtxu-no-auth-search-template) が返却するnameを指定することで、グローバルのテンプレートを利用することもできます。
+※The `<template name>` is the name defined in template.yaml. Or by specifying the name returned by [Template API](https://queue-inc.stoplight.io/docs/morph-api-document/fhs6hbxyjjtxu-no-auth-search-template), You can also use a global template.
 
 ```bash
-# morph create <作成するファイル> —template <テンプレート名>
+# morph create <File to create> -template <template name>
 $ morph create src/test.py --template test
 ```
 
 <CardGroup cols={1}>
-    <Card title="CLI: morph create" href="/sql-python/ja/cli-commands/create">
-        CLIを使用して、テンプレートからファイルを作成する。
+    <Card title="CLI: morph create" href="/sql-python/en/cli-commands/create">
+        Use the CLI to create files from templates.
     </Card>
 </CardGroup>

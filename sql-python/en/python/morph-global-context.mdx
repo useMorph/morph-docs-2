@@ -2,19 +2,19 @@
 title: 'MorphGlobalContext'
 ---
 
-`MorphGlobalContext`は、Morphで実行できる関数の引数として与えることができるcontext変数の型です。
+`MorphGlobalContext` is a type of context variable that can be given as an argument to functions that can be executed in Morph.
 
-contextは、Morphのアノテーションからデータを自動で受け取り他の関数での結果や外部からの引数を受け取ることができます。
+The context can automatically receive data from Morph annotations, results from other functions or external arguments.
 
-|property|説明|
+|property|Description|
 |---|---|
-|data|`@morph.load_data`のアノテーションをつけた関数の出力結果を格納します。|
-|vars|`@morph.variables`のアノテーションをつけた関数の引数を格納します。|
+|data|Stores the output results of functions annotated with `@morph.load_data`.|
+|vars|Stores arguments of functions annotated with `@morph.variables`.|
 
-### 使用例
+### Example of use
 
-`load_data`, `variables`のアノテーションをつけることで、関数の引数としてcontextを受け取ることができます。
-これらの関数の使用の仕方はそれぞれの解説ページを参照してください。
+By annotating with `load_data` and `variables`, it is possible to accept a context as an argument to a function.
+See the respective description pages for information on how to use these functions.
 
 ```python
 import pandas as pd

@@ -2,9 +2,9 @@
 title: 'Quickstart - SQL'
 ---
 
-Morph上では、接続しているデータベースに対するSQLを記述することでデータの取り出しを行うことができます。
+On Morph, data can be retrieved by writing SQL against the connected database.
 
-SQL上では、`config`関数を活用し、connectionを指定することで、簡単にConnectionsで接続したデータベースに対してSQLを発行することができます。
+On SQL, by utilising the `config` function and specifying a connection, you can easily issue SQL against the database connected with Connections.
 
 ```sql
 {{
@@ -18,13 +18,13 @@ SQL上では、`config`関数を活用し、connectionを指定することで�
 select 1 as test
 ```
 
-<Warning>SQLではstatementの最後にセミコロンをつけることが一般的ですが、一つのファイルに複数のSQLを書かれることを防止するためにセミコロンの使用を禁止しています。</Warning>
+<Warning>Although it is common practice in SQL to add a semicolon at the end of a statement, the use of semicolons is prohibited to prevent multiple SQL being written in a single file. </Warning>
 
 ## Jinja
 
 
-Morph上のSQLファイルでは、Jinjaによる柔軟な記述を行うことができます。Jinjaを使用することでSQL内にplaceholderやif文などの条件分岐を記述することができます。
+SQL files on Morph can be written flexibly with Jinja, which allows conditional branches such as placeholder and if statements to be written in the SQL.
 
-リンク: [https://jinja.palletsprojects.com/en/2.10.x/templates/#synopsis](https://jinja.palletsprojects.com/en/2.10.x/templates/#synopsis)
+Link: [https://jinja.palletsprojects.com/en/2.10.x/templates/#synopsis](https://jinja.palletsprojects.com/en/2.10.x/templates/#synopsis)
 
-またJinjaを活用して、よりデータ分析を簡単に行うための関数を用意しています。それについては、`config`や、`load_data`などの関数を参照してください。
+Functions are also available to make data analysis easier by utilising Jinja. See `config` and functions such as `load_data` for more information on this.

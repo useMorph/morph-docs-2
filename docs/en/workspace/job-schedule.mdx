@@ -2,25 +2,25 @@
 title: 'Job Scheduling'
 ---
 
-このセクションでは、SQLやPythonで作成したデータパイプラインをスケジュール実行する機構について説明します。
+This section describes a mechanism for scheduling and executing data pipelines created in SQL or Python.
 
-SQLの`load_data`やPythonの`@morph.load_data()`などの関数を使うことで、複数の処理をパイプラインとして構築することができます。
-このパイプラインをスケジュール実行することで、毎日の売り上げの集計などの定期的なタスクを自動化することができます。
+Functions such as `load_data` in SQL and `@morph.load_data()` in Python allow multiple processes to be built as a pipeline.
+Scheduled execution of this pipeline can automate recurring tasks such as daily sales totals.
 
-以下のように、SQL/Pythonのファイルを開くと右側のタブに「Run Schedules」が表示されます。
-ここで、現在設定されているジョブの確認や新しいジョブの登録が行えます。
+As shown below, when you open the SQL/Python file, ‘Run Schedules’ appears in the tab on the right-hand side.
+Here you can check the jobs currently set up and register new jobs.
 
 <img
     src="/assets/images/docs/workspace-job-schedule.png"
     alt="Job Schedule"
 />
 
-## ジョブスケジューリングの設定
+## Job scheduling settings
 
-ジョブスケジューリングは、パイプラインの最後の関数に対して設定をしてください。
-`load_data`関数では実行時時に読み込み対象の関数も実行するため、データパイプラインの最後の関数を指定して定期実行することで任意のデータパイプラインを定期実行することができます。
+Job scheduling should be configured for the last function in the pipeline.
+The `load_data` function also executes the function to be loaded at runtime, so any data pipeline can be executed periodically by specifying the last function in the data pipeline.
 
-実行日時は、「毎日」「平日だけ」など柔軟に設定をすることができます。また、実行時間は15分単位の設定が可能です。
+The execution date and time can be set flexibly, such as ‘every day’ or ‘only on weekdays’. The execution time can also be set in 15-minute increments.
 
 <iframe
     src="https://www.loom.com/embed/6460e39061be4df78ecffb5a56225951?sid=74b921ff-bb21-4d2e-8dd6-50cb872f2606"

@@ -1,53 +1,53 @@
 ---
-title: 'About Development Environment'
+title: 'Development Environment'
 ---
 
-MorphのワークスペースのCodeセクションでは、データ分析やデータアプリケーションを構築するための開発環境を提供します。
+The Code section of the Morph workspace provides a development environment for building data analysis and data applications.
 
-ワークスペースには、全てそれぞれのVM(Virtual Machine)が割り当てられているため各ユーザーは自分だけの完全に切り離された作業空間を手に入れることができます。
-同じチームでもユーザーごとに完全に切り離されたVMが立ち上がるので作業が競合することはありません。エンジニア同志のコラボレーション可能にするために各種VMからはマネージドなGitLabに接続をされています。
+Every workspace is allocated its own VM (Virtual Machine), so each user has their own completely separate workspace.
+Even within the same team, each user has a completely separate VM, so there is no conflict in work. To enable collaboration between engineers, each VM is connected to a managed GitLab.
 
-また、VM上でのコード実行やコーディングを行うためのVS Codeベースのエディターを活用してデータアプリケーションの構築を行うことができます。
+You can also utilise a VS Code-based editor for executing code and coding on the VMs to build data applications.
 
-ワークスペース上の構成は以下のようになっています。
+The organisation on the workspace is as follows:
 
 <img
   src="/assets/images/docs/workspace-architecture.png"
   alt="Workspace Architecture"
 />
 
-## Gitの利用
+## Using Git
 
-CodeではVM内に自動でビルトインのGitをインストールしています。そのため、ワークスペース上での作業を他のメンバーと共有したい場合はGitに対してコミットをしてください。
+Code automatically installs a built-in Git in the VM. Therefore, if you want to share your work on a workspace with other members, you need to commit to Git.
 
-同一のワークスペースは同じGitlabのプロジェクトに紐づいているため、コードをコミットすることによって他のメンバーと作業を共有することができます。
+The same workspace is tied to the same Gitlab project, so you can share your work with other members by committing your code.
 
-VS CodeのデフォルトのGit操作機能、もしくはターミナルからGitの操作を行うことができます。もちろん、VS Code Extensionであなたの好みのGit操作用拡張をインストールすることも可能です。
+You can use VS Code's default Git manipulation functionality or Git from the Terminal. Of course, you can also install your preferred Git manipulation extension in the VS Code Extension.
 
 <img
   src="/assets/images/docs/workspace-git.png"
   alt="Workspace Git"
 />
 
-### フレームワークについて
+### About the framework
 
-Morphのフレームワークでは、データを分析・可視化・運用するための様々なツールを使うことができます。
-以下のページにそれぞれの構築方法を紹介しています。
+The Morph framework allows you to use a range of tools to analyse, visualise and operationalise your data.
+The following pages show you how to build each of these:
 
 <CardGroup cols={2}>
-  <Card title="SQL & Python" icon="square-1" href="/docs/ja/workspace/sql-python">
-    SQLとPythonを使用してデータ分析を行えます。
+  <Card title="SQL & Python" icon="square-1" href="/docs/en/workspace/sql-python">
+    SQL and Python can be used to analyse data.
   </Card>
-  <Card title="データ可視化" icon="square-2" href="/docs/ja/workspace/visualization">
-    GUIを使用して集計したデータから簡単に可視化を実行できます。
+  <Card title="Data visualisation" icon="square-2" href="/docs/en/workspace/visualization">
+    GUIs make it easy to perform visualisations from aggregated data.
   </Card>
-  <Card title="データアプリケーション構築" icon="square-3" href="/docs/ja/workspace/data-application">
-    MDXを活用してリッチなデータアプリケーションを簡単に作成ができます。
+  <Card title="Building data applications" icon="square-3" href="/docs/en/workspace/data-application">
+    Rich data applications can be easily created using MDX.
   </Card>
-  <Card title="データフローの可視化" icon="square-4" href="/docs/ja/workspace/about-canvas">
-    Canvasを使用してデータフローを可視化します。
+  <Card title="Data flow visualisation" icon="square-4" href="/docs/en/workspace/about-canvas">
+    Use Canvas to visualise data flows.
   </Card>
-  <Card title="ジョブスケジューリング" icon="square-5" href="/docs/ja/workspace/job-schedule">
-    SQLやPythonで作成したDAGをスケジュール実行できます。
+  <Card title="Job scheduling" icon="square-5" href="/docs/en/workspace/job-schedule">
+    DAGs created in SQL or Python can be executed on a scheduled basis.
   </Card>
 </CardGroup>

@@ -2,24 +2,24 @@
 title: 'template'
 ---
 
-`morph template`コマンドは`/templates`ディレクトリ以下のテンプレートファイルを操作するためのコマンドです。
+The `morph template` command is used to manipulate template files under the `/templates` directory.
 
 ## `morph template compile`
 
-`morph template compile`コマンドは`/templates`にあるtemplate.ymlファイルをコンパイルします。
+The `morph template compile` command compiles the template.yml file in `/templates`.
 
-コンパイル中にエラーが発生した場合はエラーを表示します。その場合は`morph search`や`morph create`による新規作成がうまくいかないので、トラブルシューティングを先に行なってください。
+If an error occurs during compilation, an error is displayed. In that case, new creation by `morph search` or `morph create` will not work, so please troubleshoot first.
 
 ## `morph template search`
 
-`morph template search`コマンドは`/templates`ディレクトリ以下のテンプレートファイルを検索します。
+The `morph template search` command searches for template files under the `/templates` directory.
 
 ### Options
 
-テンプレートを検索するためのオプションを指定することができます。
+You can specify options for searching for templates.
 
-- `--name`: テンプレートの名前で絞り込みをします。
-- `--language`: テンプレートで使用しているプログラミング言語で絞り込みをします。
-- `--query`: テンプレートの名前と説明に対して部分一致で検索ができます。
-- `--limit`: 検索結果の数を指定します。
-- `--skip`: 検索結果のスキップする数を指定します。
+- `--name`: Filter by template name.
+- `--language`: Filter by the programming language used in the template.
+- `--query`: Partial matches can be searched against the name and description of the template.
+- `--limit`: Specifies the number of search results.
+- `--skip`: Specifies the number of search results to skip.
