@@ -34,7 +34,7 @@ import pandas as pd
 
 import morph
 from morph import MorphGlobalContext
-from morphdb_utils.api import get_auth_token # ← access_tokenを取得する関数
+from morph_lib.api import get_auth_token # ← access_tokenを取得する関数
 
 @morph.func(
     name="freee_get_balance",
@@ -54,7 +54,7 @@ Morph can also work with NoSQL databases and other non-SQL databases, including 
 
 ## Interfacing via API
 
-Morph can also be integrated with various external services and applications via API. This allows real-time data to be retrieved from web services or integrated with other cloud services, for example. 
+Morph can also be integrated with various external services and applications via API. This allows real-time data to be retrieved from web services or integrated with other cloud services, for example.
 
 Users can use Python scripts to retrieve data from the API and process and analyse it directly within Morph. This allows for flexible and customisable data integration.
 
