@@ -25,6 +25,14 @@ import { DataTable } from '@use-morph/page';
 
 The components for data display are presented below.
 
+## Common Properties
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `alias` | string | The name of the Python function or SQL file |
+| `variables` | Variable | Variables to pass to the Python function or SQL file. Declare using the variable function. |
+
+
 ## DataTable
 
 The DataTable component displays the results of a Python function or SQL file execution in a table.
@@ -35,7 +43,7 @@ import { DataTable } from '@use-morph/page';
 <DataTable alias="aggregate_py" />
 ```
 
-## Embed
+## Embed (HTML, Plotly, etc.)
 
 The Embed component displays HTML when the result of a Python function execution is HTML.
 
@@ -46,5 +54,21 @@ import { Embed } from '@use-morph/page';
 <Embed alias="plotly_py" />
 ```
 
+| Property | Type | Description |
+| --- | --- | --- |
+| `width` | string (optional) | Width of the element |
+| `height` | string (optional) | Height of the element |
 
 
+## Metrics
+The Metrics component displays the value of a specific column from the first row of the execution result of a Python function or SQL file.
+
+```tsx
+<Metrics alias="aggregate_py" />
+```
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `column` | string | Column name of the value to display |
+| `label` | string (optional) | String displayed above the value |
+| `unit` | string (optional) | String displayed to the right of the value |

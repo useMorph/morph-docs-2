@@ -160,6 +160,7 @@
         "data-application/en/how-to-build-data-application",
         "data-application/en/mdx-setup",
         "data-application/en/data-components",
+        "data-application/en/layout-components",
         "data-application/en/use-variables",
         "data-application/en/custom-components"
       ]
@@ -299,6 +300,7 @@
         "data-application/ja/how-to-build-data-application",
         "data-application/ja/mdx-setup",
         "data-application/ja/data-components",
+        "data-application/ja/layout-components",
         "data-application/ja/use-variables",
         "data-application/ja/custom-components"
       ]
