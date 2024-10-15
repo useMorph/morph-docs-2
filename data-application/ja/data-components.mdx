@@ -15,8 +15,6 @@ export const title = 'Top page';
 
 This is the top page of the data application.
 
-import { DataTable } from '@use-morph/page';
-
 <div className="h-[600px] w-full">
   <DataTable alias="aggregate_py" />
 </div>
@@ -25,26 +23,45 @@ import { DataTable } from '@use-morph/page';
 
 以下で、データ表示用のコンポーネントを紹介します。
 
+## 共通のプロパティ
+
+| プロパティ | 型 | 説明 |
+| --- | --- | --- |
+| `alias` | string | Python関数やSQLファイルの name |
+| `variables` | Variable | Python関数やSQLファイルに渡す変数。 `variable`関数 を使って宣言してください。 |
+
 ## DataTable
 
 DataTableコンポーネントは、Python関数やSQLファイルの実行結果をテーブル表示します。
 
 ```tsx
-import { DataTable } from '@use-morph/page';
-
 <DataTable alias="aggregate_py" />
 ```
 
-## Embed
+## Embed (HTML, Plotly, etc.)
 
 Embedコンポーネントは、Python関数の実行結果がHTMLの場合に、そのHTMLを表示します。
 
 ```tsx
-
-import { Embed } from '@use-morph/page';
-
 <Embed alias="plotly_py" />
 ```
 
+| プロパティ | 型 | 説明 |
+| --- | --- | --- |
+| `width` | string (optional) | 要素の幅 |
+| `height` | string (optional) | 要素の高さ |
 
+## Metrics
+
+Metricsコンポーネントは、Python関数やSQLファイルの実行結果のうち、1行目の特定の行の値を表示します。
+
+```tsx
+<Metrics alias="aggregate_py" />
+```
+
+| プロパティ | 型 | 説明 |
+| --- | --- | --- |
+| `column` | string | 値を表示するカラム名 |
+| `label` | string (optional) | 値の上部に表示される文字列 |
+| `unit` | string (optional) | 値の右部に表示される文字列 |
 

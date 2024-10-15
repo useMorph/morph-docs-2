@@ -1,49 +1,29 @@
 ---
-title: '変数を使う'
+title: '変数を使う (variable関数)'
 ---
 
 Morphでは、Python関数やSQLファイルの中で変数を定義することができますが、MDXファイルから実行する場合にも変数を利用することができます。
 
 Python, SQLファイル中での変数の利用については、[変数の使い方](/data-application/ja/variables)を参照してください。
 
-## MDXファイルでの変数の使い方
+## `variable` 関数
 
-MDXファイルで変数を使うには、**新たにtsxファイルを作成**し、変数を利用したReactコンポーネントを作成してから、それをMDXファイル内で利用する必要があります。
+変数の宣言には `variable` を使用してください。
 
-<Warning>mdxファイル内で直接 `useVariable` を利用することはできません。</Warning>
+variableの型は、 string | undefined です。
+  
+```tsx
+const dateRangeStart = variable(undefined);
+const dateRangeEnd = variable(undefined);
+```
+
+## コンポーネントに渡す
+
+コンポーネントに渡す際には、オブジェクト形式で、PythonまたはSQLファイル内での変数名をキーとして渡してください。
+
+以下の例では、Pythonファイル中で start_date と end_date を変数として利用しているため、それらをキーとして渡しています。
 
 <CodeGroup>
-
-```tsx src/components/stocks-with-dates.tsx
-import { DataTable, useVariable, VariableDatePicker } from '@use-morph/page';
-
-export const StocksWithDates = () => {
-  const dateRangeStart = useVariable<Date | null>(null);
-  const dateRangeEnd = useVariable<Date | null>(null);
-
-  return (
-    <div>
-      <VariableDatePicker 
-        type="range" 
-        variables={[
-          dateRangeStart,
-          dateRangeEnd
-        ]}
-      />
-      <div className="h-[600px] w-full">
-        <DataTable 
-          alias="stocks" 
-          variables={{
-            start_date: dateRangeStart,
-            end_date: dateRangeEnd
-          }} 
-        />
-      </div>
-    </div>
-  );
-}
-
-```
 
 ```tsx index.mdx
 export const name = 'index';
@@ -51,9 +31,27 @@ export const title = 'Top page';
 
 # Stock prices with dates
 
-import { StocksWithDates } from './components/stocks-with-dates';
+export const dateRangeStart = variable(undefined);
+export const dateRangeEnd = variable(undefined);
 
-<StocksWithDates>
+<Grid cols="1">
+  <VariableDatePicker 
+    type="range" 
+    variables={[
+      dateRangeStart,
+      dateRangeEnd
+    ]}
+  />
+  <div className="h-[600px] w-full">
+    <DataTable 
+      alias="stocks" 
+      variables={{
+        start_date: dateRangeStart,
+        end_date: dateRangeEnd
+      }} 
+    />
+  </div>
+</Grid>
 ```
 
 ```python stocks.py
@@ -95,28 +93,3 @@ def main(context: MorphGlobalContext) -> pd.DataFrame:
 ```
 
 </CodeGroup>
-
-## `useVariable` フック
-
-変数の宣言には `useVariable` を使用してください。
-  
-```tsx
-const dateRangeStart = useVariable<Date | null>(null);
-const dateRangeEnd = useVariable<Date | null>(null);
-```
-
-## コンポーネントに渡す
-
-コンポーネントに渡す際には、オブジェクト形式で、PythonまたはSQLファイル内での変数名をキーとして渡してください。
-
-上記の例では、Pythonファイル中で `start_date` と `end_date` を変数として利用しているため、それらをキーとして渡しています。
-
-```tsx
-<DataTable 
-  alias="stocks" 
-  variables={{
-    start_date: dateRangeStart,
-    end_date: dateRangeEnd
-  }}
-/>
-```

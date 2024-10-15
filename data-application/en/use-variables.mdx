@@ -6,44 +6,24 @@ Morph allows variables to be defined in Python functions and SQL files, but vari
 
 For more information on using variables in Python and SQL files, see [how to use variables](/data-application/en/variables).
 
-## How to use variables in MDX files
+## `variable` function
 
-To use variables in an MDX file, you need to **create a new tsx file**, create a React component that uses the variable and then use it in the MDX file.
+Use `varialbe` function to declare variables.
 
-<Warning>It is not possible to use `useVariable` directly in an MDX file.</Warning>
+The type of variable is `string | undefined`. You cannot override the type.
+ 
+```tsx
+const dateRangeStart = variable(undefined);
+const dateRangeEnd = variable(undefined);
+```
+
+## Passing to components
+
+When passing to a component, pass the name of the variable in the Python or SQL file as a key, in object form.
+
+In the example below, `start_date` and `end_date` are used as variables in the Python file, so they are passed as keys.
 
 <CodeGroup>
-
-```tsx src/components/stocks-with-dates.tsx
-import { DataTable, useVariable, VariableDatePicker } from '@use-morph/page';
-
-export const StocksWithDates = () => {
-  const dateRangeStart = useVariable<Date | null>(null);
-  const dateRangeEnd = useVariable<Date | null>(null);
-
-  return (
-    <div>
-      <VariableDatePicker 
-        type="range" 
-        variables={[
-          dateRangeStart,
-          dateRangeEnd
-        ]}
-      />
-      <div className="h-[600px] w-full">
-        <DataTable 
-          alias="stocks" 
-          variables={{
-            start_date: dateRangeStart,
-            end_date: dateRangeEnd
-          }} 
-        />
-      </div>
-    </div>
-  );
-}
-
-```
 
 ```tsx index.mdx
 export const name = 'index';
@@ -51,9 +31,27 @@ export const title = 'Top page';
 
 # Stock prices with dates
 
-import { StocksWithDates } from './components/stocks-with-dates';
+export const dateRangeStart = variable(undefined);
+export const dateRangeEnd = variable(undefined);
 
-<StocksWithDates>
+<Grid cols="1">
+  <VariableDatePicker 
+    type="range" 
+    variables={[
+      dateRangeStart,
+      dateRangeEnd
+    ]}
+  />
+  <div className="h-[600px] w-full">
+    <DataTable 
+      alias="stocks" 
+      variables={{
+        start_date: dateRangeStart,
+        end_date: dateRangeEnd
+      }} 
+    />
+  </div>
+</Grid>
 ```
 
 ```python stocks.py
@@ -95,28 +93,3 @@ def main(context: MorphGlobalContext) -> pd.DataFrame:
 ```
 
 </CodeGroup>
-
-## `useVariable` Hook
-
-Use `useVariable` to declare variables.
- 
-```tsx
-const dateRangeStart = useVariable<Date | null>(null);
-const dateRangeEnd = useVariable<Date | null>(null);
-```
-
-## Passing to components
-
-When passing to a component, pass the name of the variable in the Python or SQL file as a key, in object form.
-
-In the example above, `start_date` and `end_date` are used as variables in the Python file, so they are passed as keys.
-
-```tsx
-<DataTable 
-  alias="stocks" 
-  variables={{
-    start_date: dateRangeStart,
-    end_date: dateRangeEnd
-  }}
-/>
-```

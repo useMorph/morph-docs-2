@@ -1,0 +1,42 @@
+---
+title: 'Layout Components'
+---
+
+## Grid
+
+You can easily create responsive grids.
+
+| Property | Type   | Description              |
+| -------- | ------ | ------------------------ |
+| `cols`   | string | Maximum number of columns |
+
+```tsx
+<Grid cols="4">
+  <Panel>
+    <Metrics alias="sp500_average" column="average" label="S&P 500 Average" unit="USD" />
+  </Panel>
+  <Panel>
+    <div style={{ height: '100%', minHeight: '300px' }}>
+      <Embed alias="sales_vis" />
+    </div>
+  </Panel>
+</Grid>
+```
+
+## Panel
+You can create panels that can be enlarged for detailed viewing.
+
+<div style={{ position: 'relative', padding: '0 0 46.76753782668501%', height: 0 }} > <iframe src="https://www.loom.com/embed/6171b56a04e244aa83e1790992ed1d64?sid=79c9bc03-6e67-4fca-b869-98d65ad503ed" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} > </iframe> </div>
+
+```tsx
+<Grid cols="4">
+  <Panel>
+    <Metrics alias="sp500_average" column="average" label="S&P 500 Average" unit="USD" />
+  </Panel>
+  <Panel>
+    <div style={{ height: '100%', minHeight: '300px' }}>
+      <Embed alias="sales_vis" />
+    </div>
+  </Panel>
+</Grid>
+```
