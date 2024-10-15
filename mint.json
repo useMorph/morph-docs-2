@@ -162,7 +162,8 @@
         "data-application/en/data-components",
         "data-application/en/layout-components",
         "data-application/en/use-variables",
-        "data-application/en/custom-components"
+        "data-application/en/custom-components",
+        "data-application/en/update-library"
       ]
     },
     {
@@ -302,7 +303,8 @@
         "data-application/ja/data-components",
         "data-application/ja/layout-components",
         "data-application/ja/use-variables",
-        "data-application/ja/custom-components"
+        "data-application/ja/custom-components",
+        "data-application/ja/update-library"
       ]
     },
     {
