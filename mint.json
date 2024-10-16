@@ -42,6 +42,10 @@
     {
       "name": "Integrations",
       "url": "integrations"
+    },
+    {
+      "name": "Changelog",
+      "url": "changelog"
     }
   ],
   "anchors": [
@@ -332,6 +336,13 @@
         "integrations/ja/saas/notion",
         "integrations/ja/saas/salesforce",
         "integrations/ja/saas/stripe"
+      ]
+    },
+    {
+      "group": "Changelog",
+      "version": "日本語",
+      "pages": [
+        "changelog/ja/2024-changelog"
       ]
     }
   ],
