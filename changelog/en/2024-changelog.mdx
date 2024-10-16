@@ -1,0 +1,36 @@
+---
+title: '2024 changelog'
+---
+
+## October 16, 2024
+
+### New Features in Morph AI
+
+- AI-powered code generation is now available when creating files from Canvas.
+
+<img
+    src="/assets/images/changelog/2024/changelog-ai-code-generation.png"
+    alt="AI-powered code generation"
+/>
+
+- Coding assistance in Morph AI has been extended to support `.mdx`, `.tsx`, and `vg.json` files.
+
+<img
+    src="/assets/images/changelog/2024/changelog-mdx-codeassistant.png"
+    alt="AI-powered coding assistance for MDX files"
+/>
+
+## October 15, 2024
+
+### MDX Library Update
+
+- Added [Metrics component](/data-application/en/data-components#metrics) as a data component.
+- Added layout components such as [Grid](/data-application/en/layout-components#grid) and [Panel](/data-application/en/layout-components#panel).
+- Variables can now be directly defined in mdx files using functions like `variable`. See the [documentation](/data-application/en/use-variables) for usage instructions.
+- Added input components such as [VariableInput](/data-application/en/use-variables#variableinput), [VariableDatePicker](/data-application/en/use-variables#variabledatepicker), and [VariableSelect](/data-application/en/use-variables#variableselect).
+
+## October 8, 2024
+
+### Default Values for `@morph.variables`
+
+- Default values can now be set using [`@morph.variables("var_name", default="default_value")`](/sql-python/en/python/morph-variables), allowing a default value to be used if no argument is passed during execution.

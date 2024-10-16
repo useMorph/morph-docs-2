@@ -1,0 +1,36 @@
+---
+title: '2024 changelog'
+---
+
+## October 16, 2024
+
+### Morph AIの機能追加
+
+- Canvasからファイルを作成する時にAIによるコードの初期生成が使用できるようになりました。
+
+<img
+    src="/assets/images/changelog/2024/changelog-ai-code-generation.png"
+    alt="AIによるコードの初期生成"
+/>
+
+- Morph AIでのコーディング支援で、`.mdx, .tsx`, `vg.json`ファイルも対象にすることができるようになりました。
+
+<img
+    src="/assets/images/changelog/2024/changelog-mdx-codeassistant.png"
+    alt="MDXファイルでのAIによるコーディング支援"
+/>
+
+## October 15, 2024
+
+### MDXライブラリのアップデート
+
+- データコンポーネントとして[Metricsコンポーネント](/data-application/ja/data-components#metrics)を追加しました。
+- [Grid](/data-application/ja/layout-components#grid), [Panel](/data-application/ja/layout-components#panel)などのレイアウトコンポーネントを追加しました。
+- variable関数などの変数を定義する際にmdxファイルに直接記述できるようになりました。使い方は[こちら](/data-application/en/use-variables)を参照してください。
+- [VariableInput](/data-application/ja/use-variables#variableinput), [VariableDatePicker](/data-application/ja/use-variables#variabledatepicker), [VariableSelect](/data-application/ja/use-variables#variableselect)などの入力コンポーネントを追加しました。
+
+## October 8, 2024
+
+### @morph.variablesにdefault値を設定できるようになりました
+
+- [`@morph.variables("var_name", default="default_value")`](/sql-python/ja/python/morph-variables)のようにデフォルト値を設定することで、実行時に引数が渡されなかった場合にデフォルト値が使用されるようになりました。
