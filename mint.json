@@ -198,6 +198,13 @@
       ]
     },
     {
+      "group": "Changelog",
+      "version": "English",
+      "pages": [
+        "changelog/en/2024-changelog"
+      ]
+    },
+    {
       "group": "Getting Started",
       "version": "日本語",
       "pages": [

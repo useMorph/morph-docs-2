@@ -6,15 +6,16 @@ title: '@morph.func'
 
 ```python
 @morph.func(
-    name="example_python_cell",
-    description="Example Python cell",
+    name: str | None = None,
+    description: str | None = None,
+    output_paths: list[str] | None = None,
+    output_type: Optional[
+        Literal["dataframe", "csv", "visualization", "markdown", "json"]
+    ] = None,
+    **kwargs: dict[str, Any],
 )
-def get_data_from_database(context):
-    # write your code here
-	return pd.DataFrame({
-        "name": ["John", "Doe"],
-        "age": [20, 30],
-    })
+def func_name(context):
+	# write your code here
 ```
 
 ## Parameters
@@ -38,3 +39,18 @@ def get_data_from_database(context):
 
 Values: `dataframe`, `visualization`, `markdown`, `json`
 </ParamField>
+
+## 使用例
+
+```python
+@morph.func(
+    name="example_python_cell",
+    description="Example Python cell",
+)
+def get_data_from_database(context):
+    # write your code here
+	return pd.DataFrame({
+        "name": ["John", "Doe"],
+        "age": [20, 30],
+    })
+```
