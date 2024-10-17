@@ -90,7 +90,7 @@
         "docs/en/morph-ai/features-of-morphai",
         "docs/en/morph-ai/code-generation",
         "docs/en/morph-ai/code-assistant",
-        "docs/en/morph-ai/data-pipeline-scaffold"
+        "docs/en/morph-ai/data-pipeline-builder"
       ]
     },
     {
@@ -234,7 +234,7 @@
         "docs/ja/morph-ai/features-of-morphai",
         "docs/ja/morph-ai/code-generation",
         "docs/ja/morph-ai/code-assistant",
-        "docs/ja/morph-ai/data-pipeline-scaffold"
+        "docs/ja/morph-ai/data-pipeline-builder"
       ]
     },
     {
