@@ -1,0 +1,27 @@
+---
+title: 'コード生成'
+---
+Morph AIのコード生成機能では、SQLとPythonのファイルを作成する時にプロンプトから初期コードを生成します。
+当機能はCanavsからのみ使用することができます。
+
+それぞれの言語で生成時に指定できる情報は以下の通りです。
+
+## SQL
+
+- テーブル: 指定をしたテーブルのデータベースに合わせてSQLを生成します。
+- SQLやPythonの結果(結果がDataFrameのもの): 集計結果をFROM句やJOIN句に指定してDuckDBを使用したSQLを生成します。
+
+<Warning>
+複数テーブルや複数の集計結果を活用することはできますが、テーブルと集計結果を同時に指定することはできません。
+</Warning>
+
+## Python
+
+- Integration: 指定したIntegrationの対象になるSaaSのAPIやSDKを使用してPythonコードを生成します。
+- SQLやPythonの結果: 集計結果を@morph.load_data()で読み込んでPythonコードを生成します。
+
+<iframe
+    src="https://www.loom.com/embed/6460e39061be4df78ecffb5a56225951?sid=74b921ff-bb21-4d2e-8dd6-50cb872f2606"
+    controls
+    className="w-full aspect-video"
+></iframe>
