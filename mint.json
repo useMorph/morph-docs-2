@@ -91,7 +91,10 @@
       "group": "Morph AI",
       "version": "English",
       "pages": [
-        "docs/en/morph-ai/features-of-morphai"
+        "docs/en/morph-ai/features-of-morphai",
+        "docs/en/morph-ai/code-generation",
+        "docs/en/morph-ai/code-assistant",
+        "docs/en/morph-ai/data-pipeline-builder"
       ]
     },
     {
@@ -239,7 +242,10 @@
       "group": "Morph AI",
       "version": "日本語",
       "pages": [
-        "docs/ja/morph-ai/features-of-morphai"
+        "docs/ja/morph-ai/features-of-morphai",
+        "docs/ja/morph-ai/code-generation",
+        "docs/ja/morph-ai/code-assistant",
+        "docs/ja/morph-ai/data-pipeline-builder"
       ]
     },
     {
