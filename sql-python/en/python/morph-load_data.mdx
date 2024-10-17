@@ -5,12 +5,11 @@ title: '@morph.load_data'
 The annotation `@morph.load_data` allows the output results of the function to be stored and used in context.data.
 
 ```python
-@morph.func
-@morph.load_data("example_sql_cell")
-def get_data_from_database(context):
-	sql_result_df = context.data["example_sql_cell"]
-    # write your code here using sql_result_df
-	return sql_result_df
+@morph.load_data(
+    name: str,
+)
+def func_name(context):
+	# write your code here
 ```
 
 ## Parameters
@@ -18,3 +17,14 @@ def get_data_from_database(context):
 <ParamField body="name" type="string" required>
 Stores the output result of the function specified by name in context.data.
 </ParamField>
+
+## Example
+
+```python
+@morph.func
+@morph.load_data("example_sql_cell")
+def get_data_from_database(context):
+	sql_result_df = context.data["example_sql_cell"]
+    # write your code here using sql_result_df
+	return sql_result_df
+```
