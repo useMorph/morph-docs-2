@@ -64,11 +64,29 @@ import { Embed } from '@use-morph/page';
 The Metrics component displays the value of a specific column from the first row of the execution result of a Python function or SQL file.
 
 ```tsx
-<Metrics alias="aggregate_py" />
+<Metrics alias="aggregate_py" valueKey="amount" />
 ```
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `column` | string | Column name of the value to display |
+| `valueKey` | string | Column name of the value to display |
 | `label` | string (optional) | String displayed above the value |
+| `labelKey` | string (optional) | Column name of label when you need to get label string from the data |
 | `unit` | string (optional) | String displayed to the right of the value |
+
+
+## Displaying data without components
+
+To display the results of a Python function or SQL file execution without using components, use the `getJson` and `value` functions.
+
+```tsx
+
+# My Page
+
+export const employeeData = getJson('employee_data_py');
+
+## We have {value(employeeData).length} employees.
+
+```
+
+The `getJson` function is used to retrieve the result of executing a Python function or SQL file in an MDX file. The return value is not just an object, so use the `value` function to retrieve the value.
