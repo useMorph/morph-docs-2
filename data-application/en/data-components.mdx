@@ -74,6 +74,24 @@ The Metrics component displays the value of a specific column from the first row
 | `labelKey` | string (optional) | Column name of label when you need to get label string from the data |
 | `unit` | string (optional) | String displayed to the right of the value |
 
+## MetricsGrid
+
+The MetricsGrid component displays each row of a Python function or SQL file execution result in the Metrics component.
+
+The display is in grid format.
+
+```tsx
+<MetricsGrid alias="aggregate_py" cols="3" valueKey="amount" labelKey="name" />
+```
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `cols` | number | Number of grids in a row |
+| `valueKey` | string | Column name of the value to display |
+| `label` | string (optional) | String displayed above the value |
+| `labelKey` | string (optional) | Column name of label when you need to get label string from the data |
+| `unit` | string (optional) | String displayed to the right of the value |
+
 
 ## Displaying data without components
 
