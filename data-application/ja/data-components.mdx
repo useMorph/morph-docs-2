@@ -56,7 +56,24 @@ Embedコンポーネントは、Python関数の実行結果がHTMLの場合に�
 Metricsコンポーネントは、Python関数やSQLファイルの実行結果のうち、1行目の特定の行の値を表示します。
 
 ```tsx
-<Metrics alias="aggregate_py" />
+<Metrics alias="aggregate_py" valueKey="amount" />
+```
+
+| プロパティ | 型 | 説明 |
+| --- | --- | --- |
+| `valueKey` | string | 値を表示するカラム名 |
+| `label` | string (optional) | 値の上部に表示される文字列 |
+| `labelKey` | string (optional) | 値の上部に表示される文字列をデータの中から取得したい場合、そのカラム名 |
+| `unit` | string (optional) | 値の右部に表示される文字列 |
+
+## MetricsGrid
+
+MetricsGridコンポーネントは、Python関数やSQLファイルの実行結果の各行を、Metricsコンポーネントで表示します。
+
+表示はグリッド形式です。
+
+```tsx
+<MetricsGrid alias="aggregate_py" cols="3" valueKey="amount" labelKey="" />
 ```
 
 | プロパティ | 型 | 説明 |
@@ -65,3 +82,19 @@ Metricsコンポーネントは、Python関数やSQLファイルの実行結果�
 | `label` | string (optional) | 値の上部に表示される文字列 |
 | `unit` | string (optional) | 値の右部に表示される文字列 |
 
+
+## コンポーネントを用いずにデータを表示する
+
+コンポーネントを使わずに、Python関数やSQLファイルの実行結果を表示するには、`getJson` 関数と `value` 関数を使ってください。
+
+```tsx
+
+# My Page
+
+export const employeeData = getJson('employee_data_py');
+
+## We have {value(employeeData).length} employees.
+
+```
+
+`getJson` 関数はMDXファイル内で、Python関数やSQLファイルの実行結果を取得するために使います。この返り値は単なるオブジェクトではないため、`value` 関数を使って値を取り出してください。
