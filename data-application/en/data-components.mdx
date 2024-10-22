@@ -107,3 +107,22 @@ export const employeeData = getJson('employee_data_py');
 ```
 
 The `getJson` function is used to retrieve the result of executing a Python function or SQL file in an MDX file. The return value is not just an object, so use the `value` function to retrieve the value.
+
+### How do I use this?
+
+For example, you may want to return a list of employees from a Python file, display it in a select box, and pass the ID of the selected employee as a variable to the DataTable.
+
+In that case, you would write the following
+
+```tsx
+
+# Employee Detail
+
+export const employees = getJson('employee_list_py');
+export const selectedEmployee = variable();
+
+## Work log
+
+<DataTable alias="work_log_py" variables={{ employee_id: selectedEmployee }} />
+
+```
