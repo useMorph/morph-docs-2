@@ -213,3 +213,20 @@ Use the `variable` function to declare variables, and pass them to input compone
 | --- | --- | --- |
 | `variable` | Variable | Variable object to bind date input value |
 | `placeholder` | string | Placeholder for the select box |
+
+A `<VariableSelect>` can have the following elements as children.
+
+- `<VariableSelectItem>` ... A choice in the select box. Be sure to provide the `value` attribute.
+- `<VariableSelectGroup>` ... Grouped select box elements.
+- `<VariableSelectLabel>` ... The label of the group.
+- `<VariableSelectSeparator>` ... Separator line inserted between the choices in the select box.
+
+### VariableValue
+
+`<VariableValue>` is a component for displaying the value of a variable.
+
+| Property | Type | Description |
+| VariableValue
+| `variable` | Variable | Variable object to display |
+| `size` | 'default'\| 'sm'\| 'lg' | size of the component's drawing |
+| `className` | string | Class name specifying the component's style, which can be TailwindCSS. | `className` | string

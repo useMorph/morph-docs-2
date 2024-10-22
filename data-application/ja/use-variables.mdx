@@ -212,3 +212,20 @@ def main(context: MorphGlobalContext) -> pd.DataFrame:
 | --- | --- | --- |
 | `variable` | Variable | コンポーネントの入力値をバインドする変数オブジェクト |
 | `placeholder` | string | セレクトボックスのプレースホルダー |
+
+`<VariableSelect>` は以下の要素を子要素として持つことができます。
+
+- `<VariableSelectItem>` ... セレクトボックスの選択肢。 `value` 属性を必ず与えてください。
+- `<VariableSelectGroup>` ... グループ化されたセレクトボックスの要素
+- `<VariableSelectLabel>` ... グループのラベル
+- `<VariableSelectSeparator>` ... セレクトボックスの選択肢の間に挿入される区切り線
+
+### VariableValue
+
+`<VariableValue>` は、変数の値を表示するためのコンポーネントです。
+
+| プロパティ | 型 | 説明 |
+| --- | --- | --- |
+| `variable` | Variable | 表示する変数オブジェクト |
+| `size` | 'default' \| 'sm' \| 'lg' | コンポーネントの描画の大きさ |
+| `className` | string | コンポーネントのスタイルを指定するクラス名。TailwindCSSを利用することができます。 |

@@ -113,6 +113,10 @@ export const employeeData = getJson('employee_data_py');
 export const employees = getJson('employee_list_py');
 export const selectedEmployee = variable();
 
+<VariableSelect variable={selectedEmployee}>
+  <VariableSelectItems items={employee} />
+</VaraibleSelect>
+
 ## Work log
 
 <DataTable alias="work_log_py" variables={{ employee_id: selectedEmployee }} />
