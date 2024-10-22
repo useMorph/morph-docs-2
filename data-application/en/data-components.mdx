@@ -118,7 +118,9 @@ In that case, you would write the following
 
 # Employee Detail
 
-export const employees = getJson('employee_list_py');
+export const employees = getJson({
+  alias: 'employee_list_py'
+});
 export const selectedEmployee = variable();
 
 <VariableSelect variable={selectedEmployee}>
