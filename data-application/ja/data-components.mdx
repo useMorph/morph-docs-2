@@ -90,7 +90,7 @@ MetricsGridコンポーネントは、Python関数やSQLファイルの実行結
 
 ```tsx
 
-# My Page
+# Employee Data
 
 export const employeeData = getJson('employee_data_py');
 
@@ -99,3 +99,22 @@ export const employeeData = getJson('employee_data_py');
 ```
 
 `getJson` 関数はMDXファイル内で、Python関数やSQLファイルの実行結果を取得するために使います。この返り値は単なるオブジェクトではないため、`value` 関数を使って値を取り出してください。
+
+### どう使う？
+
+たとえば、Pythonファイルから従業員のリストを返却し、それをセレクトボックスに表示し、選択された従業員のIDをvariableとしてDataTableに渡したい場合があります。
+
+その場合、以下のように記述します。
+
+```tsx
+
+# Employee Detail
+
+export const employees = getJson('employee_list_py');
+export const selectedEmployee = variable();
+
+## Work log
+
+<DataTable alias="work_log_py" variables={{ employee_id: selectedEmployee }} />
+
+```
