@@ -11,7 +11,7 @@ For more information on using variables in Python and SQL files, see [how to use
 Use `varialbe` function to declare variables.
 
 The type of variable is `string | undefined`. You cannot override the type.
- 
+
 ```tsx
 const dateRangeStart = variable(undefined);
 const dateRangeEnd = variable(undefined);
@@ -35,20 +35,20 @@ export const dateRangeStart = variable(undefined);
 export const dateRangeEnd = variable(undefined);
 
 <Grid cols="1">
-  <VariableDatePicker 
-    type="range" 
+  <VariableDatePicker
+    type="range"
     variables={[
       dateRangeStart,
       dateRangeEnd
     ]}
   />
   <div className="h-[600px] w-full">
-    <DataTable 
-      alias="stocks" 
+    <DataTable
+      alias="stocks"
       variables={{
         start_date: dateRangeStart,
         end_date: dateRangeEnd
-      }} 
+      }}
     />
   </div>
 </Grid>
@@ -77,17 +77,17 @@ def main(context: MorphGlobalContext) -> pd.DataFrame:
     end_date = context.var.get('end_date', None)
 
     df['date'] = pd.to_datetime(df['date'], format='%b %d %Y')
-    
+
     if start_date is None:
         start_date = df['date'].min()
     else:
         start_date = pd.to_datetime(start_date, format='%Y-%m-%d')
-    
+
     if end_date is None:
         end_date = df['date'].max()
     else:
         end_date = pd.to_datetime(end_date, format='%Y-%m-%d')
-    
+
     filtered_df = df[(df['date'] >= start_date) & (df['date'] <= end_date)]
     return filtered_df
 ```
@@ -194,7 +194,7 @@ Use the `variable` function to declare variables, and pass them to input compone
 | `size` | 'default' \| 'sm' \| 'lg' | Size of the component |
 
 ### VariableDatePicker
-  
+
 `<VariableDatePicker>` is a component for date input.
 
 | Property | Type | Description |
@@ -226,7 +226,7 @@ A `<VariableSelect>` can have the following elements as children.
 `<VariableValue>` is a component for displaying the value of a variable.
 
 | Property | Type | Description |
-| VariableValue
+| --- | --- | --- |
 | `variable` | Variable | Variable object to display |
 | `size` | 'default'\| 'sm'\| 'lg' | size of the component's drawing |
-| `className` | string | Class name specifying the component's style, which can be TailwindCSS. | `className` | string
+| `className` | string | Class name specifying the component's style, which can be TailwindCSS. |
