@@ -16,10 +16,6 @@
     }
   },
   "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
-    }
   ],
   "versions": ["English", "日本語"],
   "topbarCtaButton": {
@@ -179,6 +175,15 @@
       ]
     },
     {
+      "group": "MDX Deep Dive",
+      "version": "English",
+      "pages": [
+        "data-application/en/mdx-1-basic",
+        "data-application/en/mdx-2-styling",
+        "data-application/en/mdx-3-js"
+      ]
+    },
+    {
       "group": "Connect SQL",
       "version": "English",
       "pages": [
@@ -327,6 +332,15 @@
         "data-application/ja/use-variables",
         "data-application/ja/custom-components",
         "data-application/ja/update-library"
+      ]
+    },
+    {
+      "group": "MDX 詳解",
+      "version": "日本語",
+      "pages": [
+        "data-application/ja/mdx-1-basic",
+        "data-application/ja/mdx-2-styling",
+        "data-application/ja/mdx-3-js"
       ]
     },
     {
