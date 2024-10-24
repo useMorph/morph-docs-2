@@ -212,10 +212,12 @@ def main(context: MorphGlobalContext) -> pd.DataFrame:
 | --- | --- | --- |
 | `variable` | Variable | コンポーネントの入力値をバインドする変数オブジェクト |
 | `placeholder` | string | セレクトボックスのプレースホルダー |
+| `withClearButton` | boolean | リセットボタンの表示フラグ |
 
 `<VariableSelect>` は以下の要素を子要素として持つことができます。
 
 - `<VariableSelectItem>` ... セレクトボックスの選択肢。 `value` 属性を必ず与えてください。
+- `<VariableSelectItems>` ... セレクトボックスの選択肢を複数追加できます。 `items` には、オブジェクトの配列、または `getJson` 関数の返り値を渡してください。
 - `<VariableSelectGroup>` ... グループ化されたセレクトボックスの要素
 - `<VariableSelectLabel>` ... グループのラベル
 - `<VariableSelectSeparator>` ... セレクトボックスの選択肢の間に挿入される区切り線

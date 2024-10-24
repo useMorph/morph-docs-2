@@ -13,12 +13,18 @@ export const title = 'Top page';
 
 # Top page
 
-This is the top page of the data application.
+export const date = variable();
+
+<VariableDatePicker type='single' variable={date}>
 
 import { DataTable } from '@use-morph/page';
 
 <div className="h-[600px] w-full">
-  <DataTable alias="aggregate_py" />
+  <DataTable 
+    alias="aggregate_py" 
+    variable={{ date: date }} 
+    headerKeys={['date', 'new_deal_count', 'diff']}
+  />
 </div>
 
 ```
@@ -30,12 +36,16 @@ The components for data display are presented below.
 | Property | Type | Description |
 | --- | --- | --- |
 | `alias` | string | The name of the Python function or SQL file |
-| `variables` | `{ [key: string]: Variable }` | Variables to pass to the Python function or SQL file. Declare using the variable function. |
+| `variables` | `{ [key: string]: Variable }` | Variables to pass to the Python function or SQL file. Declare using the `variable()` function. |
 
 
 ## DataTable
 
 The DataTable component displays the results of a Python function or SQL file execution in a table.
+
+ Property | Type | Description |
+| --- | --- | --- |
+| `headerKeys` | string[] | Name of the columns to show. You can specify the order too. |
 
 ```tsx
 import { DataTable } from '@use-morph/page';

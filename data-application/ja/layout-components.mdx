@@ -2,6 +2,54 @@
 title: 'レイアウトコンポーネント'
 ---
 
+<Note>
+  サンプルアプリから、実際のコードとインタラクティブなプレビューを確認できます。
+</Note>
+
+<Card title="サンプルアプリ + コード" icon="link" href="https://stackblitz.com/edit/vitejs-vite-7fyrdn?file=src%2Findex.mdx">
+  <></>
+</Card>
+
+## Accordion
+
+開閉可能なコンテンツを作成できます。
+
+| プロパティ | 型 | 説明 |
+| --- | --- | --- |
+| `title` | string | タイトル |
+
+
+```tsx
+<Accordion title="Open me">
+  <div>
+    <DataTable alias="work_log" />
+  </div>
+</Accordion>
+```
+## Alert
+
+視覚的に目立たせたいコンテンツを作成できます。
+
+| プロパティ | 型 | 説明 |
+| --- | --- | --- |
+| `title` | string | タイトル |
+
+
+```tsx
+<Grid cols="1">
+  <Alert title="Default Alert"> Contents goes here </Alert>
+  <Alert title="Info Alert" variant="info">
+    Contents goes here
+  </Alert>
+  <Alert title="Destructive Alert" variant="destructive">
+    Contents goes here
+  </Alert>
+  <Alert title="Warning Alert" variant="warning">
+    Contents goes here
+  </Alert>
+</Grid>
+```
+
 ## Grid
 
 レスポンシブなグリッドを簡単に作成できます。
@@ -61,4 +109,15 @@ title: 'レイアウトコンポーネント'
     </div>
   </Panel>
 </Grid>
+```
+
+## Tabs
+
+タブによって切り替え可能なコンテンツを作成できます。
+
+```tsx
+<Tabs>
+  <Tab title="Tab 1">Content 1</Tab>
+  <Tab title="Tab 2">Content 2</Tab>
+</Tabs>
 ```

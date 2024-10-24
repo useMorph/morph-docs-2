@@ -13,10 +13,18 @@ export const title = 'Top page';
 
 # Top page
 
-This is the top page of the data application.
+export const date = variable();
+
+<VariableDatePicker type='single' variable={date}>
+
+import { DataTable } from '@use-morph/page';
 
 <div className="h-[600px] w-full">
-  <DataTable alias="aggregate_py" />
+  <DataTable 
+    alias="aggregate_py" 
+    variable={{ date: date }} 
+    headerKeys={['date', 'new_deal_count', 'diff']}
+  />
 </div>
 
 ```
@@ -28,11 +36,15 @@ This is the top page of the data application.
 | プロパティ | 型 | 説明 |
 | --- | --- | --- |
 | `alias` | string | Python関数やSQLファイルの name |
-| `variables` | `{ [key: string]: Variable }` | Python関数やSQLファイルに渡す変数。 `variable`関数 を使って宣言してください。 |
+| `variables` | `{ [key: string]: Variable }` | Python関数やSQLファイルに渡す変数。 `variable()`関数 を使って宣言してください。 |
 
 ## DataTable
 
 DataTableコンポーネントは、Python関数やSQLファイルの実行結果をテーブル表示します。
+
+| プロパティ | 型 | 説明 |
+| --- | --- | --- |
+| `headerKeys` | string[] | 表示するカラムの名前。順番も指定できます。 |
 
 ```tsx
 <DataTable alias="aggregate_py" />
