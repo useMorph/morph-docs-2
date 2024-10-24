@@ -216,7 +216,8 @@ Use the `variable` function to declare variables, and pass them to input compone
 
 A `<VariableSelect>` can have the following elements as children.
 
-- `<VariableSelectItem>` ... A choice in the select box. Be sure to provide the `value` attribute.
+- `<VariableSelectItem>` ... An option in the select box. Be sure to provide the `value` attribute.
+- `<VariableSelectItems>` ... Adding options for the select box. The `items` property should be an array of objects or the return value of the `getJson` function.
 - `<VariableSelectGroup>` ... Grouped select box elements.
 - `<VariableSelectLabel>` ... The label of the group.
 - `<VariableSelectSeparator>` ... Separator line inserted between the choices in the select box.
