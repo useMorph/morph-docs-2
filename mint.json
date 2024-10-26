@@ -135,7 +135,12 @@
         "sql-python/en/python/morph-global-context",
         "sql-python/en/python/morph-func",
         "sql-python/en/python/morph-load_data",
-        "sql-python/en/python/morph-variables"
+        "sql-python/en/python/morph-variables",
+        "sql-python/en/python/morphlib-execute_sql",
+        "sql-python/en/python/morphlib-insert_records",
+        "sql-python/en/python/morphlib-update_records",
+        "sql-python/en/python/morphlib-insert_or_update_records",
+        "sql-python/en/python/morphlib-delete_records"
       ]
     },
     {
@@ -295,7 +300,12 @@
         "sql-python/ja/python/morph-global-context",
         "sql-python/ja/python/morph-func",
         "sql-python/ja/python/morph-load_data",
-        "sql-python/ja/python/morph-variables"
+        "sql-python/ja/python/morph-variables",
+        "sql-python/ja/python/morphlib-execute_sql",
+        "sql-python/ja/python/morphlib-insert_records",
+        "sql-python/ja/python/morphlib-update_records",
+        "sql-python/ja/python/morphlib-insert_or_update_records",
+        "sql-python/ja/python/morphlib-delete_records"
       ]
     },
     {
