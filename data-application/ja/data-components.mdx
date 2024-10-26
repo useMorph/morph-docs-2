@@ -7,7 +7,6 @@ Morphのデータを利用するには、専用のコンポーネントを用い
 以下は、Pythonの実行結果のDataFrameをテーブル表示する例です。
 
 ```tsx index.mdx
-
 export const name = 'index';
 export const title = 'Top page';
 
@@ -17,8 +16,6 @@ export const date = variable();
 
 <VariableDatePicker type='single' variable={date}>
 
-import { DataTable } from '@use-morph/page';
-
 <div className="h-[600px] w-full">
   <DataTable 
     alias="aggregate_py" 
@@ -26,7 +23,6 @@ import { DataTable } from '@use-morph/page';
     headerKeys={['date', 'new_deal_count', 'diff']}
   />
 </div>
-
 ```
 
 以下で、データ表示用のコンポーネントを紹介します。
@@ -104,7 +100,9 @@ MetricsGridコンポーネントは、Python関数やSQLファイルの実行結
 
 # Employee Data
 
-export const employeeData = getJson('employee_data_py');
+export const employeeData = getJson({
+  alias: 'employee_list_py',
+}));
 
 ## We have {value(employeeData).length} employees.
 
