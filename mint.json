@@ -172,9 +172,7 @@
       "pages": [
         "data-application/en/how-to-build-data-application",
         "data-application/en/mdx-setup",
-        "data-application/en/data-components",
         "data-application/en/layout-components",
-        "data-application/en/use-variables",
         "data-application/en/custom-components",
         "data-application/en/update-library"
       ]
@@ -186,6 +184,21 @@
         "data-application/en/mdx-1-basic",
         "data-application/en/mdx-2-styling",
         "data-application/en/mdx-3-js"
+      ]
+    },
+    {
+      "group": "Using Morph Data",
+      "version": "English",
+      "pages": [
+        "data-application/en/morph-data-basic",
+        "data-application/en/morph-data-getjson",
+        "data-application/en/morph-data-data-table",
+        "data-application/en/morph-data-embed",
+        "data-application/en/morph-data-metrics",
+        "data-application/en/use-variables",
+        "data-application/en/morph-data-variable-input",
+        "data-application/en/morph-data-variable-date-picker",
+        "data-application/en/morph-data-variable-select"
       ]
     },
     {
@@ -337,9 +350,7 @@
       "pages": [
         "data-application/ja/how-to-build-data-application",
         "data-application/ja/mdx-setup",
-        "data-application/ja/data-components",
         "data-application/ja/layout-components",
-        "data-application/ja/use-variables",
         "data-application/ja/custom-components",
         "data-application/ja/update-library"
       ]
@@ -351,6 +362,21 @@
         "data-application/ja/mdx-1-basic",
         "data-application/ja/mdx-2-styling",
         "data-application/ja/mdx-3-js"
+      ]
+    },
+    {
+      "group": "Morphのデータを扱う",
+      "version": "日本語",
+      "pages": [
+        "data-application/ja/morph-data-basic",
+        "data-application/ja/morph-data-getjson",
+        "data-application/ja/morph-data-data-table",
+        "data-application/ja/morph-data-embed",
+        "data-application/ja/morph-data-metrics",
+        "data-application/ja/use-variables",
+        "data-application/ja/morph-data-variable-input",
+        "data-application/ja/morph-data-variable-date-picker",
+        "data-application/ja/morph-data-variable-select"
       ]
     },
     {
