@@ -7,12 +7,19 @@ title: 'ジョブスケジューリング'
 SQLの`load_data`やPythonの`@morph.load_data()`などの関数を使うことで、複数の処理をパイプラインとして構築することができます。
 このパイプラインをスケジュール実行することで、毎日の売り上げの集計などの定期的なタスクを自動化することができます。
 
-以下のように、SQL/Pythonのファイルを開くと右側のタブに「Run Schedules」が表示されます。
-ここで、現在設定されているジョブの確認や新しいジョブの登録が行えます。
+以下のように、Jobsのタブを開くと、現在設定されているジョブの確認や新しいジョブの登録が行えます。
+
+<iframe
+    src="https://www.loom.com/embed/4b608b640dc340ca8b730b600a6d8273?sid=9fe2ca61-bff5-4804-b556-738ebc12e83e"
+    controls
+    className="w-full aspect-video"
+></iframe>
+
+詳細のページを開くと、ジョブが実行された際のログや実行結果を確認することができます。
 
 <img
-    src="/assets/images/docs/workspace-job-schedule.png"
-    alt="Job Schedule"
+    src="/assets/images/docs/workspace-job-schedule-detail.png"
+    alt="Job Schedule Detail"
 />
 
 ## ジョブスケジューリングの設定
@@ -23,7 +30,8 @@ SQLの`load_data`やPythonの`@morph.load_data()`などの関数を使うこと�
 実行日時は、「毎日」「平日だけ」など柔軟に設定をすることができます。また、実行時間は15分単位の設定が可能です。
 
 <iframe
-    src="https://www.loom.com/embed/6460e39061be4df78ecffb5a56225951?sid=74b921ff-bb21-4d2e-8dd6-50cb872f2606"
+    src="https://www.loom.com/embed/4177425642e941d0841dd31e152da289?sid=b3523927-36dd-4612-a705-a9866a8fb0f1"
     controls
     className="w-full aspect-video"
 ></iframe>
+
