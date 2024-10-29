@@ -1,0 +1,40 @@
+---
+title: 'AWSのコストレポート'
+---
+
+`AWS` `Finance`
+
+<img
+    src="/assets/images/sample-data-app/aws-cost.png"
+    alt="Sample Data App: AWS Cost Report"
+/>
+
+このサンプルデータアプリでは、AWSのSDKを活用してプロダクトコード別のコストの分析をします。
+
+AWS上で使用しているプロダクト別にどのように時系列でコストが変動しているのかを可視化をすることができます。
+さらに、プロダクトコードでの絞り込み機能を実装することでよりドリルダウンをした分析体験が可能になります。
+
+## 使い方
+
+### 手順1 AWS Cost Reportのテンプレートから新規ワークスペースを作成する
+
+ワークスペースの一覧画面から「AWS Cost Report」というテンプレートを選択して新しいワークスペースを作成してください。
+
+### 手順2 AWS ConsoleでBillingReadOnlyAccessのポリシーが付与されたIAMを作成する
+
+このテンプレートでは、AWS SDKを活用するため今回のデータアプリで必要なBillingReadOnlyAccessのポリシーを付与したIAMを用意してください。
+このIAMの認証情報は次の手順で使用するので、安全な形でローカルに保存をしてください。
+
+### 手順3 ワークスペース内で環境変数を設定する
+
+作成したIAMから認証情報をダウンロードして、ワークスペース内の.envファイルに設定してください。
+
+```
+AWS_ACCESS_KEY=PUT_YOUR_ACCESS_KEY
+AWS_SECRET_KEY=PUT_YOUR_SECRET_KEY
+AWS_REGION=PUT_YOUR_AWS_REGION
+```
+
+### 手順4 Pagesから結果を確認する
+
+手順3の環境変数が正しく設定されていれば、Pagesのセクションからサンプルアプリの成果物にアクセスができます。

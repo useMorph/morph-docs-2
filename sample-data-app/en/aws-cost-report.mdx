@@ -1,0 +1,39 @@
+---
+title: 'AWS Cost Report'
+---
+
+`AWS` `Finance`
+
+<img
+    src="/assets/images/sample-data-app/aws-cost.png"
+    alt="Sample Data App: AWS Cost Report"
+/>
+
+
+In this sample data app, we use the AWS SDK to analyze costs by product code.
+
+You can visualize how costs fluctuate over time for each product used on AWS. Additionally, by implementing a filter function for product codes, you can enable a more drilled-down analysis experience.
+
+## Usage
+
+### Step 1: Create a new workspace from the AWS Cost Report template
+
+In the workspace list, select the "AWS Cost Report" template to create a new workspace.
+
+### Step 2: Create an IAM with the BillingReadOnlyAccess policy in the AWS Console
+
+To use the AWS SDK in this template, please prepare an IAM with the BillingReadOnlyAccess policy for this data app. Save the credentials for this IAM locally in a secure way, as you will use them in the next step.
+
+### Step 3: Set environment variables within the workspace
+
+Download the credentials from the IAM you created and set them in the `.env` file in the workspace.
+
+```
+AWS_ACCESS_KEY=PUT_YOUR_ACCESS_KEY
+AWS_SECRET_KEY=PUT_YOUR_SECRET_KEY
+AWS_REGION=PUT_YOUR_AWS_REGION
+```
+
+### Step 4: View the results from Pages
+
+Once the environment variables in Step 3 are correctly set, you can access the sample app results from the Pages section.

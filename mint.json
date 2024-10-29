@@ -40,6 +40,14 @@
       "url": "integrations"
     },
     {
+      "name": "Sample Data Apps",
+      "url": "sample-data-app"
+    },
+    {
+      "name": "Troubleshooting",
+      "url": "troubleshooting"
+    },
+    {
       "name": "Changelog",
       "url": "changelog"
     }
@@ -209,7 +217,8 @@
         "integrations/en/database/bigquery",
         "integrations/en/database/redshift",
         "integrations/en/database/mysql",
-        "integrations/en/database/postgresql"
+        "integrations/en/database/postgresql",
+        "integrations/en/database/athena"
       ]
     },
     {
@@ -226,6 +235,29 @@
         "integrations/en/saas/notion",
         "integrations/en/saas/salesforce",
         "integrations/en/saas/stripe"
+      ]
+    },
+    {
+      "group": "Sample Data Apps",
+      "version": "English",
+      "pages": [
+        "sample-data-app/en/aws-cost-report",
+        "sample-data-app/en/google-analytics-conversion"
+      ]
+    },
+    {
+      "group": "Support",
+      "version": "English",
+      "pages": [
+        "troubleshooting/en/support/contact-support"
+      ]
+    },
+    {
+      "group": "Workspace",
+      "version": "English",
+      "pages": [
+        "troubleshooting/en/workspace/mdx-api-error",
+        "troubleshooting/en/workspace/mdx-bad-gateway"
       ]
     },
     {
@@ -387,7 +419,8 @@
         "integrations/ja/database/bigquery",
         "integrations/ja/database/redshift",
         "integrations/ja/database/mysql",
-        "integrations/ja/database/postgresql"
+        "integrations/ja/database/postgresql",
+        "integrations/ja/database/athena"
       ]
     },
     {
@@ -404,6 +437,29 @@
         "integrations/ja/saas/notion",
         "integrations/ja/saas/salesforce",
         "integrations/ja/saas/stripe"
+      ]
+    },
+    {
+      "group": "サンプルデータアプリ",
+      "version": "日本語",
+      "pages": [
+        "sample-data-app/ja/aws-cost-report",
+        "sample-data-app/ja/google-analytics-conversion"
+      ]
+    },
+    {
+      "group": "サポート",
+      "version": "日本語",
+      "pages": [
+        "troubleshooting/ja/support/contact-support"
+      ]
+    },
+    {
+      "group": "ワークスペース",
+      "version": "日本語",
+      "pages": [
+        "troubleshooting/ja/workspace/mdx-api-error",
+        "troubleshooting/ja/workspace/mdx-bad-gateway"
       ]
     },
     {
