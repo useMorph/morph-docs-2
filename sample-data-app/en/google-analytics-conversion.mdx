@@ -1,0 +1,88 @@
+---
+title: 'Google Analytics(GA4) Conversion Analysis'
+---
+
+`Google Analytics(GA4)` `BigQuery`
+
+<img
+    src="/assets/images/sample-data-app/ga-analysis.png"
+    alt="Sample Data App: AWS Cost Report"
+/>
+
+In this sample data application, we use Google Analytics (GA4) data to analyze visitor behavior on your web pages.
+
+The application aggregates and visualizes the pages that visitors viewed immediately before arriving at a specific page on your website. This analysis provides insights such as:
+- "Many visitors view the pricing page before signing up for a paid plan."
+- "Visitors check specific use case pages before going to the pricing page."
+
+These insights enable informed decisions like "enriching the use case pages on the website."
+
+By changing the URL as shown in the image below, you can easily see the visitor behavior history for any page on your website.
+
+## How to Use
+
+To use this sample application, first synchronize your data from Google Analytics to BigQuery.
+
+### Step 1: Create a Connection
+
+In the Data section of the workspace, create a connection with BigQuery linked to Google Analytics.
+
+Be sure to name this connection as `bq_google_analytics`.
+
+<Tip>The config function in `./src/sql/ga_data_extraction.sql` specifies `bq_google_analytics` as the connection. Therefore, you can also edit this file to use the name of the connection you created for it to work correctly.</Tip>
+
+Refer to the following for connecting with BigQuery.
+
+<CardGroup cols={1}>
+    <Card title="Connect with BigQuery" href="/integrations/en/database/bigquery">
+        Create a connection with BigQuery.
+    </Card>
+</CardGroup>
+
+### Step 2: Edit `target_link`
+
+Update the `FROM` clause in `src/sql/ga_data_extraction.sql` to use the `project_id` and `dataset` from the connected BigQuery.
+
+- PUT_YOUR_PROJECT_ID: The `project_id` of your connected BigQuery
+- PUT_YOUR_DATASET: The `dataset` of your connected BigQuery
+
+```sql
+-- Config section omitted.
+SELECT user_pseudo_id,
+    (
+        SELECT
+            value.string_value
+        FROM
+            UNNEST(event_params)
+            WHERE
+            key = 'page_location'
+    ) AS page_location,
+    (
+        SELECT
+            value.string_value
+        FROM
+            UNNEST(event_params)
+            WHERE
+            key = 'page_referrer'
+    ) AS page_referrer,
+    event_timestamp
+FROM `[PUT_YOUR_PROJECT_ID].[PUT_YOUR_DATASET].events_*`, UNNEST(event_params)
+WHERE
+    event_name = 'page_view'
+```
+
+### Step 3: Edit target_link
+
+Specify the URL of the conversion page as target_link for analysis.
+
+(e.g., "https://www.morph-data.io/pricing")
+
+- `src/python/calculate_traffic_flow.py`: Change the default value of target_link to your site’s conversion URL.
+- `src/python/visualize_traffic_flow.py`: Change target_link as described above.
+- `src/pages/index.mdx`: Change target_link as described above.
+
+If an error occurs in Step 3, execute the files from Steps 2 and 3 individually to identify the problematic file.
+
+### Step 4: Check Results from Pages
+
+Once the settings in Step 2 are configured correctly, you can access the output of the sample application from the Pages section.

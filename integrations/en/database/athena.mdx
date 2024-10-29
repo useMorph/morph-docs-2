@@ -1,0 +1,48 @@
+---
+title: AWS Athena
+---
+
+This chapter explains how to integrate AWS Athena as an external data source with the Morph platform.
+
+## Setup Instructions
+
+<video
+  className="w-full mt-4 lg:mx-0 rounded-xl max-w-[1080px]"
+  controls
+  muted
+  playsInline
+>
+  <source src="/assets/videos/integrations/docs_connection_athena.mp4" type="video/mp4" />
+</video>
+
+To configure the connection to AWS Athena, open the "Connections" tab on the home screen, then open the connection settings modal by clicking the "Create New Connection" button, and select Athena.
+
+## **Connection Settings (Account)**
+
+> This section explains the input fields required for the Account section. Enter the necessary connection settings below and click the Submit button in the bottom-right corner.
+
+1. **Access key**
+    - Access key for your AWS account
+2. **Secret key**
+    - Secret key for your AWS account
+3. **Region**
+    - AWS region
+
+![Athena Account](/assets/images/integrations/athena_account.png)
+
+### Completing the Connection Settings
+
+> Once you’ve filled out the Account section and clicked the Submit button in the bottom-right corner, enter the Connection slug to complete the connection setup.
+
+1. **Catalog**
+    - Data catalog name for AWS Athena
+2. **Database**
+    - Database name for AWS Athena
+3. **Work group**
+    - Work group name for AWS Athena
+
+![Athena Setting](/assets/images/integrations/athena_setting.png)
+
+The setup is complete once the connection settings appear in the Connections list.
+
+![Athena Complete](/assets/images/integrations/athenacomplete.png)
