@@ -16,6 +16,26 @@ Morph allows users to work with a variety of external data sources. This allows 
 
 By connecting these data sources to Morph, data can be integrated across different platforms and tools to efficiently perform data analysis and business intelligence tasks. Morph's interface allows you to easily set up connections and query data directly.
 
+You can start analysing the data in the database immediately by creating an SQL Connection from the Connections tab, as shown below.
+The connection name can be obtained from the list, and it can be changed if necessary.
+
+<img
+  src="/assets/images/docs/connection.png"
+  alt="Connection"
+/>
+
+Use the connection name created in SQL to retrieve data.
+
+```sql
+{{
+  config(
+    connection="connection_name"
+  )
+}}
+
+select * from table_name;
+```
+
 ## SaaS
 
 Morph provides integration with many SaaS. This allows users to concentrate on implementing the necessary business logic, leaving the setup to Morph.
