@@ -6,19 +6,29 @@ Morphでは、ワークスペースを実行するためのクラウドマシン
 
 利用プランごとに一定数のクレジットがパッケージされ、追加購入することも可能です。
 
+<Warning>追加購入をしたクレジットの有効期限は1ヶ月です。</Warning>
+
 ## クレジットの消費
 
 各機能は、以下の表に従ってクレジットを消費します。
 
-| 消費クレジット / 1時間 | CPU | メモリ |
-| :--- | :--- | :--- |
-| 30 | 2vCPU | 4GB |
+### VMの実行
 
-| 消費クレジット | AI機能 |
+Morphのワークスペースは、Virtual Machine(VM)が稼働しています。VMの稼働時にはクレジットが消費されます。
+
+| CPU | メモリ | 消費クレジット / 1時間 |
+| :--- | :--- | :--- |
+| 2vCPU | 4GB | 30 |
+
+### AI機能
+
+MorphAIの機能では、以下の表に従ってクレジットを消費します。
+
+| AI機能 | 消費クレジット |
 | :--- | :--- |
-| 6 | [コード生成](/docs/ja/morph-ai/code-generation) |
-| 6 | [コーディングアシスタント](/docs/ja/morph-ai/code-assistant) |
-| 18 | [データパイプラインの自動構築](/docs/ja/morph-ai/data-pipeline-builder) |
+| [コード生成](/docs/ja/morph-ai/code-generation) | 6 |
+| [コーディングアシスタント](/docs/ja/morph-ai/code-assistant) | 6 |
+| [データパイプラインの自動構築](/docs/ja/morph-ai/data-pipeline-builder) | 18 |
 
 ## クレジットの管理
 

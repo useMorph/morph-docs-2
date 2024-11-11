@@ -238,6 +238,14 @@
       ]
     },
     {
+      "group": "Getting Started",
+      "version": "English",
+      "pages": [
+        "sample-data-app/en/introduction/about-sample-apps",
+        "sample-data-app/en/introduction/how-to-use"
+      ]
+    },
+    {
       "group": "Sample Data Apps",
       "version": "English",
       "pages": [
@@ -437,6 +445,14 @@
         "integrations/ja/saas/notion",
         "integrations/ja/saas/salesforce",
         "integrations/ja/saas/stripe"
+      ]
+    },
+    {
+      "group": "Getting Started",
+      "version": "日本語",
+      "pages": [
+        "sample-data-app/ja/introduction/about-sample-apps",
+        "sample-data-app/ja/introduction/how-to-use"
       ]
     },
     {

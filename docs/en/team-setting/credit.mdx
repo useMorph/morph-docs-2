@@ -6,19 +6,29 @@ Morph manages the execution of cloud machines to run workspaces and AI functions
 
 A certain number of credits are packaged with each usage plan and additional credits can be purchased.
 
+<Warning>The credits purchased are valid for 1 month.</Warning>
+
 ## Credit usage
 
 Each function consumes credits according to the table below:
 
-| Credit consumption / 1 hour | CPU | Memory |
-| :--- | :--- | :--- |
-| 30 | 2vCPU | 4GB |
+### VM execution
 
-| Credit consumption | AI function |
+Morph's workspace runs on a Virtual Machine (VM). When the VM is running, credits are consumed.
+
+| CPU | Memory | Credit consumption / 1 hour |
+| :--- | :--- | :--- |
+| 2vCPU | 4GB | 30 |
+
+### AI function
+
+MorphAI's functions consume credits according to the table below:
+
+| AI function | Credit consumption |
 | :--- | :--- |
-| 6 | [Code Generation](/docs/en/morph-ai/code-generation) |
-| 6 | [Coding Assistant](/docs/en/morph-ai/code-assistant) |
-| 18 | [Data Pipeline Builder](/docs/en/morph-ai/data-pipeline-builder) |
+| [Code Generation](/docs/en/morph-ai/code-generation) | 6 |
+| [Coding Assistant](/docs/en/morph-ai/code-assistant) | 6 |
+| [Data Pipeline Builder](/docs/en/morph-ai/data-pipeline-builder) | 18 |
 
 ## Credit management
 
