@@ -1,11 +1,11 @@
 ---
-title: 'morph_lib.execute_sql'
+title: 'morph_lib.database.execute_sql'
 ---
 
 SQLを実行して結果のDataFrameを返却します。Built-in PostgreSQLとSQL Connectionで接続しているデータベースの全てにアクセスができます。
 
 ```python
-from morph_lib import execute_sql
+from morph_lib.database import execute_sql
 
 execute_sql(
 	sql: str,
@@ -28,7 +28,7 @@ execute_sql(
 ### Example
 
 ```python
-from morph_lib import execute_sql
+from morph_lib.database import execute_sql
 
 @morph.func
 def func_name(context):

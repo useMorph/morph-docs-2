@@ -93,5 +93,5 @@ def main(context: MorphGlobalContext) -> plt.Figure:
 
 <Tip>
 These visualizations output the results of the execution in HTML and PNG. If you want to access these raw data, you can specify the output destination with `@morph.func`'s `output_paths`.
-By specifying `@morph.func(output_paths=[‘_private/{name}/{now()}{ext()}’])` in this way, the output is output to `_private/{name of function}/{time stamp of execution}{.png, .html}`.
+By specifying `@morph.func(output_paths=[‘/tmp/morph/{name}/{now()}{ext()}’])` in this way, the output is output to `_private/{name of function}/{time stamp of execution}{.png, .html}`.
 </Tip>

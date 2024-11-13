@@ -1,11 +1,11 @@
 ---
-title: 'morph_lib.insert_or_update_records'
+title: 'morph_lib.database.insert_or_update_records'
 ---
 
 Built-in PostgreSQLおよびSQL Connectionで接続しているデータベース上のテーブルにデータを更新します。もし、Primary Keyが存在しなければ新しいレコードとして登録します。
 
 ```python
-from morph_lib import insert_or_update_records
+from morph_lib.database import insert_or_update_records
 
 insert_or_update_records(
 	data: pd.DataFrame,
@@ -45,7 +45,7 @@ insert_or_update_records(
 ### Example
 
 ```python
-from morph_lib import insert_or_update_records
+from morph_lib.database import insert_or_update_records
 
 @morph.func
 @morph.load_data("user_data")

@@ -65,7 +65,7 @@ import pandas as pd
 @morph.func(
     name="stocks",
     description="stock prices with dates",
-    output_paths=["_private/{name}/{now()}{ext()}"],
+    output_paths=["/tmp/morph/{name}/{now()}{ext()}"],
     output_type="dataframe",
 )
 @morph.variables('start_date')

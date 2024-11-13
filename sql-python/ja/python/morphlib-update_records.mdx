@@ -1,11 +1,11 @@
 ---
-title: 'morph_lib.update_records'
+title: 'morph_lib.database.update_records'
 ---
 
 Built-in PostgreSQLおよびSQL Connectionで接続しているデータベース上のテーブルのデータを更新します。
 
 ```python
-from morph_lib import update_records
+from morph_lib.database import update_records
 
 update_records(
 	data: pd.DataFrame,
@@ -42,7 +42,7 @@ update_records(
 ### Example
 
 ```python
-from morph_lib import update_records
+from morph_lib.database import update_records
 
 @morph.func
 @morph.load_data("user_data")

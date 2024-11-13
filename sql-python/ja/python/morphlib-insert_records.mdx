@@ -1,11 +1,11 @@
 ---
-title: 'morph_lib.insert_records'
+title: 'morph_lib.database.insert_records'
 ---
 
 Built-in PostgreSQLおよびSQL Connectionで接続しているデータベース上のテーブルにデータを挿入します。
 
 ```python
-from morph_lib import insert_records
+from morph_lib.database import insert_records
 
 insert_records(
 	data: pd.DataFrame,
@@ -38,7 +38,7 @@ insert_records(
 ### Example
 
 ```python
-from morph_lib import insert_records
+from morph_lib.database import insert_records
 
 @morph.func
 @morph.load_data("user_data")

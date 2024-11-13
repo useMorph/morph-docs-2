@@ -53,7 +53,7 @@ SQL, Pythonのソースコードを実行した結果は、その後の処理の
         name="sample_sql",
         description="Sameple SQL for output_paths",
         output_paths=[
-            "_private/{name}/{now()}{ext()}",
+            "/tmp/morph/{name}/{now()}{ext()}",
             "_private/{name}/{now()}.csv"
         ]
     )

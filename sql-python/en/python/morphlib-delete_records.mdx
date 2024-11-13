@@ -1,11 +1,11 @@
 ---
-title: 'morph_lib.delete_records'
+title: 'morph_lib.database.delete_records'
 ---
 
 Deletes records from tables in the databases connected via built-in PostgreSQL or an SQL Connection.
 
 ```python
-from morph_lib import delete_records
+from morph_lib.database import delete_records
 
 delete_records(
 	data: pd.DataFrame,
@@ -42,7 +42,7 @@ Destination of the connection other than the registered builtin connection (opti
 ### Example
 
 ```python
-from morph_lib import delete_records
+from morph_lib.database import delete_records
 
 @morph.func
 @morph.load_data("user_data")

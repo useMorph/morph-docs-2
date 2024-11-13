@@ -1,11 +1,11 @@
 ---
-title: 'morph_lib.insert_or_update_records'
+title: 'morph_lib.database.insert_or_update_records'
 ---
 
 Updates data in the tables of databases connected via built-in PostgreSQL or SQL Connection. If the Primary Key does not exist, the data will be inserted as a new record.
 
 ```python
-from morph_lib import insert_or_update_records
+from morph_lib.database import insert_or_update_records
 
 insert_or_update_records(
     data: pd.DataFrame,
@@ -42,7 +42,7 @@ Destination of the connection other than the registered builtin connection (opti
 ### Example
 
 ```python
-from morph_lib import insert_or_update_records
+from morph_lib.database import insert_or_update_records
 
 @morph.func
 @morph.load_data("user_data")
