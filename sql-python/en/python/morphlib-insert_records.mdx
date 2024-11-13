@@ -1,11 +1,11 @@
 ---
-title: 'morph_lib.insert_records'
+title: 'morph_lib.database.insert_records'
 ---
 
 Inserts data into tables in databases connected via built-in PostgreSQL or SQL Connection.
 
 ```python
-from morph_lib import insert_records
+from morph_lib.database import insert_records
 
 insert_records(
     data: pd.DataFrame,
@@ -37,7 +37,7 @@ Destination of the connection other than the registered builtin connection (opti
 ### Example
 
 ```python
-from morph_lib import insert_records
+from morph_lib.database import insert_records
 
 @morph.func
 @morph.load_data("user_data")

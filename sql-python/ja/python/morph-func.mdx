@@ -28,7 +28,7 @@ def func_name(context):
 処理の説明を記述できる
 </ParamField>
 
-<ParamField body="output_paths" type="array: string" default="['_private/{name}/{now()}{ext()}']">
+<ParamField body="output_paths" type="array: string" default="['/tmp/morph/{name}/{now()}{ext()}']">
 結果ファイルの出力先。
 
 記述方法は[こちら](/sql-python/ja/framework/output-paths)を参照してください。

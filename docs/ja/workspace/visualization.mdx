@@ -93,5 +93,5 @@ def main(context: MorphGlobalContext) -> plt.Figure:
 
 <Tip>
 これらの可視化では、実行結果をHTMLとPNGの2種類で出力をしています。これらの生のデータにアクセスをしたい場合は、`@morph.func`の`output_paths`で出力先を指定することができます。
-`@morph.func(output_paths=["_private/{name}/{now()}{ext()}"])`このように指定することで、`_private/{関数名}/{実行時間のタイムスタンプ}{.png, .html}`に出力されます。
+`@morph.func(output_paths=["/tmp/morph/{name}/{now()}{ext()}"])`このように指定することで、`_private/{関数名}/{実行時間のタイムスタンプ}{.png, .html}`に出力されます。
 </Tip>

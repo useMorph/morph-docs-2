@@ -56,12 +56,7 @@ import morph
 from morph import MorphGlobalContext
 from morph_lib.api import get_auth_token # ← access_tokenを取得する関数
 
-@morph.func(
-    name="freee_get_balance",
-    description="Freee Preprocess",
-    output_paths=["_private/{name}/{now()}{ext()}"],
-    output_type="dataframe",
-)
+@morph.func
 def freee_get_balance(context: MorphGlobalContext) -> pd.DataFrame:
     access_token = get_auth_token("Freee")
 

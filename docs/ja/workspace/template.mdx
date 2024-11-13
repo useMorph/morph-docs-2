@@ -52,7 +52,7 @@ from morph import MorphGlobalContext
 @morph.func(
     name="${MORPH_NAME}",
     description="${MORPH_DESCRIPTION}",
-    output_paths=["_private/{name}/{now()}{ext()}"],
+    output_paths=["/tmp/morph/{name}/{now()}{ext()}"],
     output_type="dataframe",
 )
 def main(context: MorphGlobalContext) -> pd.DataFrame:

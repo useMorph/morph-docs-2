@@ -61,7 +61,7 @@ from morph_lib.api import get_auth_token # ← access_tokenを取得する関数
 @morph.func(
     name="freee_get_balance",
     description="Freee Preprocess",
-    output_paths=["_private/{name}/{now()}{ext()}"],
+    output_paths=["/tmp/morph/{name}/{now()}{ext()}"],
     output_type="dataframe",
 )
 def freee_get_balance(context: MorphGlobalContext) -> pd.DataFrame:

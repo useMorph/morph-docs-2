@@ -10,7 +10,7 @@ title: 'config'
 		name="test",
 		description="this is test sql statement",
 		output_paths=[
-			"_private/{name}/{now()}{ext()}"
+			"/tmp/morph/{name}/{now()}{ext()}"
 		],
 		connection="your_connection_slug"
 	)
@@ -29,7 +29,7 @@ select 1 as test
 処理の説明を記述できる
 </ParamField>
 
-<ParamField body="output_paths" type="array: string" default="['_private/{name}/{now()}{ext()}']">
+<ParamField body="output_paths" type="array: string" default="['/tmp/morph/{name}/{now()}{ext()}']">
 結果ファイルの出力先。
 
 記述方法は[こちら](/sql-python/ja/framework/output-paths)を参照してください。

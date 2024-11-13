@@ -1,11 +1,11 @@
 ---
-title: 'morph_lib.update_records'
+title: 'morph_lib.database.update_records'
 ---
 
 Updates data in tables of databases connected via built-in PostgreSQL or SQL Connection.
 
 ```python
-from morph_lib import update_records
+from morph_lib.database import update_records
 
 update_records(
     data: pd.DataFrame,
@@ -42,7 +42,7 @@ Destination of the connection other than the registered builtin connection (opti
 ### Example
 
 ```python
-from morph_lib import update_records
+from morph_lib.database import update_records
 
 @morph.func
 @morph.load_data("user_data")

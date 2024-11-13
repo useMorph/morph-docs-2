@@ -1,11 +1,11 @@
 ---
-title: 'morph_lib.delete_records'
+title: 'morph_lib.database.delete_records'
 ---
 
 Built-in PostgreSQLおよびSQL Connectionで接続しているデータベース上のテーブルからレコードを削除します。
 
 ```python
-from morph_lib import delete_records
+from morph_lib.database import delete_records
 
 delete_records(
 	data: pd.DataFrame,
@@ -42,7 +42,7 @@ delete_records(
 ### Example
 
 ```python
-from morph_lib import delete_records
+from morph_lib.database import delete_records
 
 @morph.func
 @morph.load_data("user_data")

@@ -53,7 +53,7 @@ You can specify output paths by specifying paths in `output_paths` as follows.
         name="sample_sql",
         description="Sameple SQL for output_paths",
         output_paths=[
-            "_private/{name}/{now()}{ext()}",
+            "/tmp/morph/{name}/{now()}{ext()}",
             "_private/{name}/{now()}.csv"
         ]
     )
