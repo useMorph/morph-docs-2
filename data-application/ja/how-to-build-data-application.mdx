@@ -2,11 +2,44 @@
 title: 'データアプリケーションの構築方法'
 ---
 
+## プロジェクト構造
+
+Morphのプロジェクト構造は、以下のようになっています。
+
+```plaintext
+src
+├─ pages
+│  └─ index.mdx
+├─ python
+│  └─ custom-ai-chat.py
+└─ sql
+   └─ query.sql
+```
+
+このうち、`pages` ディレクトリ内に `.mdx` ファイルを作成することで、新規のページを追加できます。
+
+## ページファイルの基本的な文法
+
+ページファイルは、以下のような形式で記述します。
+
+```md
+
+export const title = 'Top page'; // ページのタイトル。メニュー上の表示に使われます。
+
+# Salesforce分析ダッシュボード + AIチャット
+
+これは、Salesforceのデータを接続したダッシュボードです。Pythonを用いてデータ可視化を作ったものと、Open AI APIを用いたカスタムチャットを備えています。
+
+<Grid cols='2'>
+  <DataTable loadData='sales-analysis' />
+  <LLM postData='ai-chat' />
+</Grid>
+
+```
+
 ## MDX
 
-Morphでデータアプリケーションを構築する際には、[MDX (https://mdxjs.com/) ](https://mdxjs.com/)を使用します。MDXの詳しい使い方については、[MDXの公式ドキュメント](https://mdxjs.com/)を参照してください。
-
-ワークスペースの `src` ディレクトリ以下に作成された `.mdx` ファイルは、データアプリケーション中の各ページの役割を果たします。
+Morphでデータアプリケーションを構築する際には、[MDX (https://mdxjs.com/) ](https://mdxjs.com/)を使用します。MDXの詳しい使い方については、[MDX詳解](/data-application/ja//mdx-1-basic)を参照してください。
 
 ## サンプルアプリケーション
 

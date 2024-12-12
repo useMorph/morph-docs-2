@@ -32,7 +32,7 @@
       "url": "sql-python"
     },
     {
-      "name": "Data Application",
+      "name": "Data App (MDX)",
       "url": "data-application"
     },
     {
@@ -178,11 +178,7 @@
       "group": "Getting Started",
       "version": "English",
       "pages": [
-        "data-application/en/how-to-build-data-application",
-        "data-application/en/mdx-setup",
-        "data-application/en/layout-components",
-        "data-application/en/custom-components",
-        "data-application/en/update-library"
+        "data-application/en/how-to-build-data-application"
       ]
     },
     {
@@ -388,11 +384,7 @@
       "group": "Getting Started",
       "version": "日本語",
       "pages": [
-        "data-application/ja/how-to-build-data-application",
-        "data-application/ja/mdx-setup",
-        "data-application/ja/layout-components",
-        "data-application/ja/custom-components",
-        "data-application/ja/update-library"
+        "data-application/ja/how-to-build-data-application"
       ]
     },
     {
