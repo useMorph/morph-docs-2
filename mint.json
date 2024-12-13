@@ -5,11 +5,14 @@
     "dark": "/assets/images/morph_logo_svg_w.svg",
     "light": "/assets/images/morph_logo_svg.svg"
   },
+  "codeBlock": {
+    "mode": "dark"
+  },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#030712",
-    "light": "#f9fafb",
-    "dark": "#030712",
+    "primary": "#111827",
+    "light": "#d1d5db",
+    "dark": "#111827",
     "anchors": {
       "from": "#0D9373",
       "to": "#07C983"
@@ -32,7 +35,7 @@
       "url": "sql-python"
     },
     {
-      "name": "Data Application",
+      "name": "Data App (MDX)",
       "url": "data-application"
     },
     {
@@ -178,11 +181,7 @@
       "group": "Getting Started",
       "version": "English",
       "pages": [
-        "data-application/en/how-to-build-data-application",
-        "data-application/en/mdx-setup",
-        "data-application/en/layout-components",
-        "data-application/en/custom-components",
-        "data-application/en/update-library"
+        "data-application/en/how-to-build-data-application"
       ]
     },
     {
@@ -388,35 +387,42 @@
       "group": "Getting Started",
       "version": "日本語",
       "pages": [
-        "data-application/ja/how-to-build-data-application",
-        "data-application/ja/mdx-setup",
-        "data-application/ja/layout-components",
-        "data-application/ja/custom-components",
-        "data-application/ja/update-library"
+        "data-application/ja/getting-started-introduction",
+        "data-application/ja/getting-started-quickstart"
+      ]
+    },
+    {
+      "group": "データコンポーネント",
+      "version": "日本語",
+      "pages": [
+        "data-application/ja/data-component-table",
+        "data-application/ja/data-component-embed",
+        "data-application/ja/data-component-metrics"
+      ]
+    },
+    {
+      "group": "AIコンポーネント",
+      "version": "日本語",
+      "pages": [
+        "data-application/ja/ai-component-llm"
+      ]
+    },
+    {
+      "group": "応用",
+      "version": "日本語",
+      "pages": [
+        "data-application/ja/advanced-morph-data-basic",
+        "data-application/ja/morph-data-getjson",
+        "data-application/ja/morph-data-variables"
       ]
     },
     {
       "group": "MDX 詳解",
       "version": "日本語",
       "pages": [
-        "data-application/ja/mdx-1-basic",
-        "data-application/ja/mdx-2-styling",
-        "data-application/ja/mdx-3-js"
-      ]
-    },
-    {
-      "group": "Morphのデータを扱う",
-      "version": "日本語",
-      "pages": [
-        "data-application/ja/morph-data-basic",
-        "data-application/ja/morph-data-getjson",
-        "data-application/ja/morph-data-data-table",
-        "data-application/ja/morph-data-embed",
-        "data-application/ja/morph-data-metrics",
-        "data-application/ja/use-variables",
-        "data-application/ja/morph-data-variable-input",
-        "data-application/ja/morph-data-variable-date-picker",
-        "data-application/ja/morph-data-variable-select"
+        "data-application/ja/mdx/mdx-1-basic",
+        "data-application/ja/mdx/mdx-2-styling",
+        "data-application/ja/mdx/mdx-3-js"
       ]
     },
     {
