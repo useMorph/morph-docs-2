@@ -1,5 +1,6 @@
 ---
 title: '<Metrics />'
+icon: '00'
 ---
 
 <Frame>
@@ -14,8 +15,8 @@ MetricsGridコンポーネントは、Python関数やSQLファイルの実行結
 
 ```tsx
 <MetricsGrid 
-  alias="aggregate_py" 
-  variables={{
+  loadData="aggregate_py" 
+  vars={{
     department
   }}
   cols="3"
@@ -26,12 +27,12 @@ MetricsGridコンポーネントは、Python関数やSQLファイルの実行結
 
 ## プロパティ
 
-<ParamField path="alias" type="string" required>
+<ParamField path="loadData" type="string" required>
   Python関数やSQLファイルの name
 </ParamField>
 
-<ParamField path="varialbes" type="{ [key: string]: Variable }">
-  Python関数やSQLファイルに渡す変数。 `variable()`関数 を使って宣言してください。
+<ParamField path="vars" type="{ [key: string]: Variable }">
+  Python関数やSQLファイルに渡す変数。 `var()`関数 を使って宣言してください。
 </ParamField>
 
 <ParamField path="valueKey" type="string">
@@ -56,8 +57,8 @@ Metricsコンポーネントは、Python関数やSQLファイルの実行結果�
 
 ```tsx
 <Metrics 
-  alias="aggregate_py"
-  variables={{
+  loadData="aggregate_py"
+  vars={{
     department
   }}
   valueKey="amount" 
@@ -67,11 +68,11 @@ Metricsコンポーネントは、Python関数やSQLファイルの実行結果�
 ```
 ## プロパティ
 
-<ParamField path="alias" type="string" required>
+<ParamField path="loadData" type="string" required>
   Python関数やSQLファイルの name
 </ParamField>
 
-<ParamField path="varialbes" type="{ [key: string]: Variable }">
+<ParamField path="vars" type="{ [key: string]: Variable }">
   Python関数やSQLファイルに渡す変数。 `variable()`関数 を使って宣言してください。
 </ParamField>
 
