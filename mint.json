@@ -209,50 +209,6 @@
       ]
     },
     {
-      "group": "Connect SQL",
-      "version": "English",
-      "pages": [
-        "integrations/en/database/snowflake",
-        "integrations/en/database/bigquery",
-        "integrations/en/database/redshift",
-        "integrations/en/database/mysql",
-        "integrations/en/database/postgresql",
-        "integrations/en/database/athena"
-      ]
-    },
-    {
-      "group": "Connect SaaS",
-      "version": "English",
-      "pages": [
-        "integrations/en/saas/airtable",
-        "integrations/en/saas/attio",
-        "integrations/en/saas/freee",
-        "integrations/en/saas/hubspot",
-        "integrations/en/saas/intercom",
-        "integrations/en/saas/linear",
-        "integrations/en/saas/mailchimp",
-        "integrations/en/saas/notion",
-        "integrations/en/saas/salesforce",
-        "integrations/en/saas/stripe"
-      ]
-    },
-    {
-      "group": "Getting Started",
-      "version": "English",
-      "pages": [
-        "sample-data-app/en/introduction/about-sample-apps",
-        "sample-data-app/en/introduction/how-to-use"
-      ]
-    },
-    {
-      "group": "Sample Data Apps",
-      "version": "English",
-      "pages": [
-        "sample-data-app/en/aws-cost-report",
-        "sample-data-app/en/google-analytics-conversion"
-      ]
-    },
-    {
       "group": "Support",
       "version": "English",
       "pages": [
@@ -423,50 +379,6 @@
         "data-application/ja/mdx/mdx-1-basic",
         "data-application/ja/mdx/mdx-2-styling",
         "data-application/ja/mdx/mdx-3-js"
-      ]
-    },
-    {
-      "group": "SQLデータベースに接続する",
-      "version": "日本語",
-      "pages": [
-        "integrations/ja/database/snowflake",
-        "integrations/ja/database/bigquery",
-        "integrations/ja/database/redshift",
-        "integrations/ja/database/mysql",
-        "integrations/ja/database/postgresql",
-        "integrations/ja/database/athena"
-      ]
-    },
-    {
-      "group": "SaaSに接続する",
-      "version": "日本語",
-      "pages": [
-        "integrations/ja/saas/airtable",
-        "integrations/ja/saas/attio",
-        "integrations/ja/saas/freee",
-        "integrations/ja/saas/hubspot",
-        "integrations/ja/saas/intercom",
-        "integrations/ja/saas/linear",
-        "integrations/ja/saas/mailchimp",
-        "integrations/ja/saas/notion",
-        "integrations/ja/saas/salesforce",
-        "integrations/ja/saas/stripe"
-      ]
-    },
-    {
-      "group": "Getting Started",
-      "version": "日本語",
-      "pages": [
-        "sample-data-app/ja/introduction/about-sample-apps",
-        "sample-data-app/ja/introduction/how-to-use"
-      ]
-    },
-    {
-      "group": "サンプルデータアプリ",
-      "version": "日本語",
-      "pages": [
-        "sample-data-app/ja/aws-cost-report",
-        "sample-data-app/ja/google-analytics-conversion"
       ]
     },
     {
