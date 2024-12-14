@@ -31,8 +31,8 @@
       "url": "docs"
     },
     {
-      "name": "SQL & Python",
-      "url": "sql-python"
+      "name": "Reference",
+      "url": "reference"
     },
     {
       "name": "Data App (MDX)",
@@ -83,7 +83,7 @@
         "docs/en/workspace/about-workspace",
         "docs/en/workspace/environment",
         "docs/en/workspace/vscode-extensions",
-        "docs/en/workspace/sql-python",
+        "docs/en/workspace/reference",
         "docs/en/workspace/template",
         "docs/en/workspace/visualization",
         "docs/en/workspace/data-application",
@@ -130,51 +130,51 @@
       "group": "SQL",
       "version": "English",
       "pages": [
-        "sql-python/en/sql/quickstart-sql",
-        "sql-python/en/sql/config",
-        "sql-python/en/sql/load_data",
-        "sql-python/en/sql/variables"
+        "reference/en/sql/quickstart-sql",
+        "reference/en/sql/config",
+        "reference/en/sql/load_data",
+        "reference/en/sql/variables"
       ]
     },
     {
       "group": "Python",
       "version": "English",
       "pages": [
-        "sql-python/en/python/quickstart-python",
-        "sql-python/en/python/how-to-install-pip",
-        "sql-python/en/python/env-vars",
-        "sql-python/en/python/morph-global-context",
-        "sql-python/en/python/morph-func",
-        "sql-python/en/python/morph-load_data",
-        "sql-python/en/python/morph-variables",
-        "sql-python/en/python/morphlib-execute_sql",
-        "sql-python/en/python/morphlib-insert_records",
-        "sql-python/en/python/morphlib-update_records",
-        "sql-python/en/python/morphlib-insert_or_update_records",
-        "sql-python/en/python/morphlib-delete_records"
+        "reference/en/python/quickstart-python",
+        "reference/en/python/how-to-install-pip",
+        "reference/en/python/env-vars",
+        "reference/en/python/morph-global-context",
+        "reference/en/python/morph-func",
+        "reference/en/python/morph-load_data",
+        "reference/en/python/morph-variables",
+        "reference/en/python/morphlib-execute_sql",
+        "reference/en/python/morphlib-insert_records",
+        "reference/en/python/morphlib-update_records",
+        "reference/en/python/morphlib-insert_or_update_records",
+        "reference/en/python/morphlib-delete_records"
       ]
     },
     {
       "group": "Framework",
       "version": "English",
       "pages": [
-        "sql-python/en/framework/overview",
-        "sql-python/en/framework/morph-project",
-        "sql-python/en/framework/output-paths"
+        "reference/en/framework/overview",
+        "reference/en/framework/morph-project",
+        "reference/en/framework/output-paths"
       ]
     },
     {
       "group": "CLI Commands",
       "version": "English",
       "pages": [
-        "sql-python/en/cli-commands/run",
-        "sql-python/en/cli-commands/create",
-        "sql-python/en/cli-commands/compile",
-        "sql-python/en/cli-commands/clean",
-        "sql-python/en/cli-commands/template",
-        "sql-python/en/cli-commands/init",
-        "sql-python/en/cli-commands/new",
-        "sql-python/en/cli-commands/print"
+        "reference/en/cli-commands/run",
+        "reference/en/cli-commands/create",
+        "reference/en/cli-commands/compile",
+        "reference/en/cli-commands/clean",
+        "reference/en/cli-commands/template",
+        "reference/en/cli-commands/init",
+        "reference/en/cli-commands/new",
+        "reference/en/cli-commands/print"
       ]
     },
     {
@@ -235,108 +235,102 @@
       "version": "日本語",
       "pages": [
         "docs/ja/getting-started/why-morph",
-        "docs/ja/getting-started/how-morph-works"
+        "docs/ja/getting-started/quickstart"
       ]
     },
     {
-      "group": "Workspace",
+      "group": "Develop",
       "version": "日本語",
       "pages": [
-        "docs/ja/workspace/about-workspace",
-        "docs/ja/workspace/environment",
-        "docs/ja/workspace/vscode-extensions",
-        "docs/ja/workspace/sql-python",
-        "docs/ja/workspace/template",
-        "docs/ja/workspace/visualization",
-        "docs/ja/workspace/data-application",
-        "docs/ja/workspace/about-canvas",
-        "docs/ja/workspace/job-schedule"
+        "docs/ja/develop/framework",
+        {
+          "group": "チュートリアル",
+          "icon": "book",
+          "pages": [
+            "docs/ja/develop/tutorials/visualize",
+            "docs/ja/develop/tutorials/pygwalker",
+            "docs/ja/develop/tutorials/langchain"
+          ]
+        },
+        "docs/ja/develop/variables",
+        "docs/ja/develop/integration",
+        "docs/ja/develop/job-schedule"
       ]
     },
     {
-      "group": "Data Sources",
+      "group": "Deploy",
       "version": "日本語",
       "pages": [
-        "docs/ja/data-sources/builtin-postgres",
-        "docs/ja/data-sources/connectors"
+        "docs/ja/deploy/quickstart",
+        "docs/ja/deploy/environment",
+        "docs/ja/deploy/how-to-install-pip"
       ]
     },
     {
-      "group": "Morph AI",
+      "group": "Advanced",
       "version": "日本語",
       "pages": [
-        "docs/ja/morph-ai/features-of-morphai",
-        "docs/ja/morph-ai/code-generation",
-        "docs/ja/morph-ai/code-assistant",
-        "docs/ja/morph-ai/data-pipeline-builder"
+        "docs/ja/advanced/morphai",
+        "docs/ja/advanced/authentication",
+        "docs/ja/advanced/canvas",
+        {
+          "group": "ビルトインPostgreSQL",
+          "icon": "database",
+          "pages": [
+            "docs/ja/advanced/builtin-postgres/builtin-postgres",
+            "docs/ja/advanced/builtin-postgres/restapi"
+          ]
+        },
+        "docs/ja/advanced/credit"
       ]
     },
     {
-      "group": "Rest API",
+      "group": "フレームワーク",
       "version": "日本語",
       "pages": [
-        "docs/ja/rest-api/overview",
-        "docs/ja/rest-api/authentication",
-        "docs/ja/rest-api/quickstart"
-      ]
-    },
-    {
-      "group": "Team Setting",
-      "version": "日本語",
-      "pages": [
-        "docs/ja/team-setting/credit",
-        "docs/ja/team-setting/manage-members"
+        "reference/ja/framework/morph-project"
       ]
     },
     {
       "group": "SQL",
       "version": "日本語",
       "pages": [
-        "sql-python/ja/sql/quickstart-sql",
-        "sql-python/ja/sql/config",
-        "sql-python/ja/sql/load_data",
-        "sql-python/ja/sql/variables"
+        "reference/ja/sql/config",
+        "reference/ja/sql/load_data"
       ]
     },
     {
       "group": "Python",
       "version": "日本語",
       "pages": [
-        "sql-python/ja/python/quickstart-python",
-        "sql-python/ja/python/how-to-install-pip",
-        "sql-python/ja/python/env-vars",
-        "sql-python/ja/python/morph-global-context",
-        "sql-python/ja/python/morph-func",
-        "sql-python/ja/python/morph-load_data",
-        "sql-python/ja/python/morph-variables",
-        "sql-python/ja/python/morphlib-execute_sql",
-        "sql-python/ja/python/morphlib-insert_records",
-        "sql-python/ja/python/morphlib-update_records",
-        "sql-python/ja/python/morphlib-insert_or_update_records",
-        "sql-python/ja/python/morphlib-delete_records"
+        "reference/ja/python/morph-global-context",
+        "reference/ja/python/morph-func",
+        "reference/ja/python/morph-load_data",
+        "reference/ja/python/morph-variables"
       ]
     },
     {
-      "group": "Framework",
+      "group": "morph_lib",
       "version": "日本語",
       "pages": [
-        "sql-python/ja/framework/overview",
-        "sql-python/ja/framework/morph-project",
-        "sql-python/ja/framework/output-paths"
+        "reference/ja/python/morphlib-execute_sql",
+        "reference/ja/python/morphlib-insert_records",
+        "reference/ja/python/morphlib-update_records",
+        "reference/ja/python/morphlib-insert_or_update_records",
+        "reference/ja/python/morphlib-delete_records"
       ]
     },
     {
-      "group": "CLI Commands",
+      "group": "CLI",
       "version": "日本語",
       "pages": [
-        "sql-python/ja/cli-commands/run",
-        "sql-python/ja/cli-commands/create",
-        "sql-python/ja/cli-commands/compile",
-        "sql-python/ja/cli-commands/clean",
-        "sql-python/ja/cli-commands/template",
-        "sql-python/ja/cli-commands/init",
-        "sql-python/ja/cli-commands/new",
-        "sql-python/ja/cli-commands/print"
+        "reference/ja/cli-commands/run",
+        "reference/ja/cli-commands/create",
+        "reference/ja/cli-commands/compile",
+        "reference/ja/cli-commands/clean",
+        "reference/ja/cli-commands/init",
+        "reference/ja/cli-commands/new",
+        "reference/ja/cli-commands/print"
       ]
     },
     {

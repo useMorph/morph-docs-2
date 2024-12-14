@@ -1,5 +1,6 @@
 ---
-title: 'REST APIの概要'
+title: 'REST API'
+icon: "globe"
 ---
 
 Morphでは、作成されたデータベーススキーマに基づいて自動的にAPIを生成し、提供しています。これにより、追加のコードを実装することなく、APIを通じてMorphのデータベースを利用したデータ連携やアプリケーション構築が可能です。
@@ -39,6 +40,68 @@ MorphのデータベースAPIは、[PostgREST](https://postgrest.org/)によっ�
     - 複数のAPI呼び出しを単一のHTTPリクエストで実行し、ネットワーク遅延を減らし、効率的なデータ処理を実現します。
 
 これら以外にも、[PostgREST](https://postgrest.org/)により様々な機能が提供されます。詳しくは下記の参考資料をご確認ください。
+
+### クイックスタート
+
+MorphのAPIを使用して基本的なCRUD操作（作成、読み取り、更新、削除）を実行する方法をステップバイステップで説明します。
+
+この例ではcURLコマンドを用いてAPIを呼び出しますので、お手元のターミナル環境や[Postman](https://www.postman.com/)などのAPIクライアントツールにコマンドをペーストしてお試しください。
+
+### API呼び出し
+
+*※**`[**Your_DatabaseID**]`,** `[Your_Table_Slug]`, **`[Your_API_Key]`** は置換してご利用ください。*
+
+**作成 (Create)**:
+
+データを新しく作成するには、POSTメソッドを使用します。
+
+```sh
+curl --location --request POST 'https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/[Your_Table_Slug]' \
+--header 'x-api-key: [Your_API_Key]' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "column1": "value1",
+    "column2": "value2"
+}'
+```
+
+**読み取り (Read)**:
+
+テーブルからデータを読み取るには、GETメソッドを使用します。
+
+```sh
+curl --location 'https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/[Your_Table_Slug]' \
+--header 'x-api-key: [Your_API_Key]'
+
+```
+**更新 (Update)**:
+
+既存のデータを更新するには、PUTメソッドを使用します。
+
+```sh
+curl --location --request PUT 'https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/[Your_Table_Slug]' \
+--header 'x-api-key: [Your_API_Key]' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "column1": "new_value1"
+}'
+```
+
+**削除 (Delete)**:
+
+データを削除するには、DELETEメソッドを使用します。
+
+```sh
+curl --location --request DELETE 'https://beta-api.morphdb.io/v0/rest/[Your_DatabaseID]/[Your_Table_Slug]' \
+--header 'x-api-key: [Your_API_Key]' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "column1": "value_to_delete"
+}'
+
+```
+
+これら以外にも、[PostgREST](https://postgrest.org/)によりお客様の用途に応じて様々なクエリパターンを実現することができます。詳しくは下記の参考資料をご確認ください。
 
 ### **参考資料**
 
