@@ -1,0 +1,84 @@
+---
+title: 'コネクター: DB / DWH / SaaS'
+---
+
+Morphは、様々なデータソースと連携することで、ユーザーが一元的にデータを管理・分析できる環境を提供します。このセクションでは、Morphがサポートする主要なデータソースを紹介します。
+
+## SQLデータベース
+
+Morphでは、さまざまな外部データソースとの連携が可能です。これにより、ユーザーは以下のデータベースやデータウェアハウスから直接SQLを使用してクエリを実行することができます。
+
+1. **MySQL**: オープンソースのリレーショナルデータベース管理システムで、世界中の多くのアプリケーションで広く使用されています。
+2. **PostgreSQL**: 強力なオープンソースのオブジェクトリレーショナルデータベースシステムで、信頼性、機能の豊富さ、パフォーマンスが特徴です。
+3. **BigQuery**: Google Cloudのサーバーレス、高スケーラビリティを持つデータウェアハウスで、大量のデータに対する迅速なSQLクエリをサポートします。
+4. **Snowflake**: クラウドベースのデータウェアハウスサービスで、データの共有やスケーラビリティに優れ、多様なデータワークロードをサポートします。
+5. **Amazon Redshift**: Amazon Web Servicesによるクラウドデータウェアハウスで、大規模なデータセットの分析を高速で行うことができます。
+6. **Amazon Athena**: Amazon Web Servicesによるクエリサービスで、S3に保存されたデータをSQLで分析することができます。
+
+これらのデータソースをMorphに接続することで、異なるプラットフォームやツール間でデータを統合し、効率的にデータ分析やビジネスインテリジェンスのタスクを行うことが可能になります。Morphのインターフェースを通じて簡単に接続を設定し、データを直接クエリすることができます。
+
+以下のようにConnectionsのタブからSQL Connectionを作成することで、すぐにデータソース内のデータの分析を始めることができます。
+コネクション名は、一覧から取得してください。変更することも可能です。
+
+<img
+  src="/assets/images/docs/connection.png"
+  alt="Connection"
+/>
+
+SQLから作成したコネクション名を使用してデータを取得します。
+
+```sql
+{{
+  config(
+    connection="connection_name"
+  )
+}}
+
+select * from table_name;
+```
+
+
+## SaaS
+
+Morphでは、一部のSaaSとの連携を用意しています。これにより、ユーザーは認証周りの実装を全てMorphに任せてビジネスロジックの実装に集中をすることができます。
+
+以下のようにConnectionsのタブからIntegrationを作成することで、すぐにSaaS内のデータの分析を始めることができます。
+
+<img
+  src="/assets/images/docs/integrations.png"
+  alt="Integrations"
+/>
+
+Pythonで作成したIntegrationからaccess_tokenを取得します。
+
+```python
+import pandas as pd
+
+import morph
+from morph import MorphGlobalContext
+from morph_lib.api import get_auth_token # ← access_tokenを取得する関数
+
+@morph.func(
+    name="freee_get_balance",
+    description="Freee Preprocess",
+    output_paths=["/tmp/morph/{name}/{now()}{ext()}"],
+    output_type="dataframe",
+)
+def freee_get_balance(context: MorphGlobalContext) -> pd.DataFrame:
+    access_token = get_auth_token("Freee")
+
+    # ↓↓↓ call API with access_token ↓↓↓
+```
+
+
+## 非SQLデータベース
+
+Morphは、NoSQLデータベースやその他の非SQLデータベースとも連携可能です。これには、MongoDBやCassandraなどが含まれ、これらのデータベースに対してPythonを使用してデータを取得し、分析することができます。Pythonの強力なライブラリを活用することで、データの操作や変換が容易になり、非SQLデータベースからも効果的にインサイトを引き出すことができます。
+
+## APIによる連携
+
+Morphは、様々な外部サービスやアプリケーションとAPIを通じて連携することも可能です。これにより、例えばウェブサービスからリアルタイムのデータを取得したり、他のクラウドサービスと統合したりすることができます。ユーザーはPythonスクリプトを使用してAPIからデータを取得し、Morph内で直接処理・分析を行うことができます。これにより、柔軟でカスタマイズ可能なデータ連携が実現します。
+
+## ファイルアップロード
+
+Morphは、ローカルファイルからのデータアップロードもサポートしています。ユーザーはCSV、JSON、Excelファイルなどを簡単にアップロードし、Workspaceにインポートすることができます。アップロードされたデータはすぐに利用可能で、Morphのツールを使って分析や可視化を行うことができます。

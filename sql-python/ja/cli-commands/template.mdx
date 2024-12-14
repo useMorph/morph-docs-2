@@ -1,0 +1,25 @@
+---
+title: 'template'
+---
+
+`morph template`コマンドは`/templates`ディレクトリ以下のテンプレートファイルを操作するためのコマンドです。
+
+## `morph template compile`
+
+`morph template compile`コマンドは`/templates`にあるtemplate.ymlファイルをコンパイルします。
+
+コンパイル中にエラーが発生した場合はエラーを表示します。その場合は`morph search`や`morph create`による新規作成がうまくいかないので、トラブルシューティングを先に行なってください。
+
+## `morph template search`
+
+`morph template search`コマンドは`/templates`ディレクトリ以下のテンプレートファイルを検索します。
+
+### Options
+
+テンプレートを検索するためのオプションを指定することができます。
+
+- `--name`: テンプレートの名前で絞り込みをします。
+- `--language`: テンプレートで使用しているプログラミング言語で絞り込みをします。
+- `--query`: テンプレートの名前と説明に対して部分一致で検索ができます。
+- `--limit`: 検索結果の数を指定します。
+- `--skip`: 検索結果のスキップする数を指定します。

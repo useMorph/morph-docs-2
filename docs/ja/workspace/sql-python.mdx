@@ -1,0 +1,110 @@
+---
+title: 'SQL/Pythonで分析をする'
+---
+
+ワークスペースでは、SQLとPythonを使用してデータ分析を行うことができます。
+
+ワークスペースを開くとプロジェクトルートに`src`ディレクトリが存在します。この`src`ディレクトリ内にSQLファイルやPythonファイルを配置して実行します。
+
+<Tip>`morph_project.yml`ファイルに`source_paths: src`と設定されています。この値を変えることでソースコードを配置するディレクトリを変更することも可能です。</Tip>
+
+<img
+  src="/assets/images/docs/workspace-editor-sql.png"
+  alt="Workspace Editor SQL"
+/>
+
+### ソースコードの実行
+
+記述したSQLやPythonは以下の画像のように、エディターの右上に配置された「RUN」ボタンから実行することができます。
+
+実行をするとターミナル内に対応するMorph CLIのログが出力されるとともに、実行結果のデータが右のサイドバーの「Result」タブに表示されます。
+
+<img
+  src="/assets/images/docs/workspace-editor-sql-run.png"
+  alt="Workspace Editor SQL Run"
+/>
+
+## ソースコードを実装する
+
+Morph上のSQLとPythonは、ワークスペース上のVMにインストールされたMorph CLIが実行します。使用するDBや標準のPythonスクリプトをベースにして、よりユーザーが強力にデータ分析を行えるように拡張を用意しています。
+
+また、Morphでは、分析用のファイルは実行時に名前が付けられます。名前をつけることで、他のファイルからそのファイルの結果に簡単にアクセスをすることができるようになります。
+この仕組みはMorphのフレームワークの中でとても重要な仕組みになります。
+
+実行時にこの名前が重複している場合はコンパイルエラーを起こしてしまいますので、注意をしてください。
+
+### SQL
+
+jinja2を使用してSQLを記述することができます。jinja内にMorph独自のconfigというメタデータを記述するための関数を使うことができます。
+configでは、その関数の処理の内容を記述することができます。これによって、チームメンバーに処理内容を残しておいたり、Morph AIが詳細に開発者の意図を解釈することができます。
+
+以下のSQLでは、config関数で処理に名前をつけたり詳細の説明を記述しています。このようにjinjaを使うことでSQL内にメタデータをそのまま記述することができます。
+
+```sql
+{{
+	config(
+		name="example_sql_cell",
+		description="Example SQL cell",
+	)
+}}
+
+select * from customers limit 10
+```
+
+<Note>
+config関数が未定義だったり、nameで命名がされていない場合はsqlファイル名がそのまま名前として使用されます。
+例: example_sql_cell.sqlの場合example_sql_cellが名前として使われる。
+</Note>
+
+
+<Warning>
+Morph上では、1つのSQLファイルに複数のSQLを記述できないように、SQLの末尾にセミコロンを書くことを禁止しています。もし書いてしまった場合はエラーメッセージが表示されるので、セミコロンを削除して再度実行をしてください。
+</Warning>
+
+configの詳細設定やその他の文法ルールに関しては以下の詳細ページをご覧ください。
+
+<CardGroup cols={1}>
+    <Card title="クイックスタート: SQL" href="/sql-python/ja/sql/quickstart-sql">
+        Morph上でSQLを実行する方法を説明します。
+    </Card>
+</CardGroup>
+
+### Python
+
+Pythonファイルでは、`@morph.func`というアノテーションを関数に付与することでMorph上で実行できる関数として登録ができます。この仕組みによって、Pythonファイルには1つのファイルに複数の関数を記述して実行することができます。
+
+SQLの場合と同様にPythonファイルでは、この`@morph.func`のアノテーションの引数にnameとdescriptionを設定することで、関数の名前と説明を記述することができます。
+
+また、`@morph.load_data`を使用すると他のSQL/Pythonの実行結果をそのまま変数に読み込んで使用することができます。読み込まれた変数は引数の`context`の中から参照することができます。
+以下の例では、example_sql_cellというSQLの実行結果をexample_python_cellというPythonの関数で読み込んで、その結果にアクセスしたものをそのまま返しています。
+
+`context`変数の中には、読み込み対象の名前と同じ名前で辞書型でデータが格納されています。
+
+```python
+import pandas as pd
+
+import morph
+from morph import MorphGlobalContext
+
+@morph.func(
+    name="example_python_cell",
+    description="Example Python cell",
+)
+@morph.load_data("example_sql_cell")
+def main(context: MorphGlobalContext) -> pd.DataFrame:
+    sql_result_df = context.data["example_sql_cell"]
+    return sql_result_df
+
+```
+
+<Note>
+Pythonの関数には必ず`@morph.func`は付与する必要がありますが、nameなどの引数は必須ではありません。指定されなかった場合には、関数名がそのまま名前として使用されます。
+</Note>
+
+`@morph.func` / `@morph.load_data`の詳細設定やその他のアノテーションなどの便利関数の詳細は以下の詳細ページをご覧ください。
+
+<CardGroup cols={1}>
+    <Card title="クイックスタート: Python" href="/sql-python/ja/python/quickstart-python">
+        Morph上でPythonを実行する方法を説明します。
+    </Card>
+</CardGroup>

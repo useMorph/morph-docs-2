@@ -1,0 +1,90 @@
+---
+title: 'Google Analytics(GA4)コンバージョン分析'
+---
+
+`Google Analytics(GA4)` `BigQuery`
+
+<img
+    src="/assets/images/sample-data-app/ga-analysis.png"
+    alt="Sample Data App: AWS Cost Report"
+/>
+
+このサンプルデータアプリでは、Google Analytics(GA4)のデータを使用してウェブページ上での訪問者の行動を分析します。
+
+あなたのウェブページへの訪問者が特定のページに訪問する直前に訪問していたページごとに集計し、可視化をします。
+これによって、例えば
+- 「課金登録をする前に料金表のページを見ている人が多い」
+- 「料金ページを見る前に具体的なユースケースのページを確認している」
+
+のようなことがわかり、「ウェブページ上のユースケースのページを豊富にする」のような意思決定を行うことができます。
+
+以下の画像のようにURLを変更することであなたのウェブページのどのページでも訪問者の行動履歴を一目で確認できます。
+
+## 使い方
+
+このサンプルアプリを使用するためには、事前にGoogle AnalyticsからBigQueryにデータを同期してください。
+
+### 手順1 コネクションを作成する
+
+ワークスペースのDataセクションから、Google Analyticsに接続されているBigQueryとのコネクションを作成します。
+
+この時に、必ずコネクションの名前を`bq_google_analytics`に設定してください。
+
+<Tip>`./src/sql/ga_data_extraction.sql`のconfig関数でconnectionに`bq_google_analytics`を設定しています。
+そのため、このファイルを編集して作成したコネクション名を使用する方法でも正しく動作します。</Tip>
+
+BigQueryとの接続については以下を参照してください。
+
+<CardGroup cols={1}>
+    <Card title="BigQueryと接続" href="/integrations/ja/database/bigquery">
+        BigQueryとのコネクションを作成します。
+    </Card>
+</CardGroup>
+
+### 手順2 target_linkを編集する
+
+`src/sql/ga_data_extraction.sql`の`FROM`句を接続したBigQueryのproject_id, datasetを使うように更新してください。
+
+- PUT_YOUR_PROJECT_ID: 接続したBigQueryのproject_id
+- PUT_YOUR_DATASET: 接続したBigQueryのdataset
+
+```sql
+-- config部分は省略しています。
+SELECT user_pseudo_id,
+    (
+        SELECT
+            value.string_value
+        FROM
+            UNNEST(event_params)
+            WHERE
+            key = 'page_location'
+    ) AS page_location,
+    (
+        SELECT
+            value.string_value
+        FROM
+            UNNEST(event_params)
+            WHERE
+            key = 'page_referrer'
+    ) AS page_referrer,
+        event_timestamp
+FROM `[PUT_YOUR_PROJECT_ID].[PUT_YOUR_DATASET].events_*`, UNNEST(event_params)
+WHERE
+    event_name = 'page_view'
+```
+
+### 手順3 target_linkを編集する
+
+`target_link`は、分析の対象となるコンバージョン先のページのURLを指定してください。
+
+(e.g., `"https://www.morph-data.io/pricing"`)
+
+- `src/python/calculate_traffic_flow.py`: `target_link`のデフォルトの値をあなたのサイトのコンバージョンURLに変更してください。
+- `src/python/visualize_traffic_flow.py`: `target_link`を上記と同様に変更してください。
+- `src/pages/index.mdx`: `target_link`を上記と同様に変更してください。
+
+もし手順3でエラーが発生した場合には、手順2,3のファイルを一つずつ実行して問題があるファイルを確認してください。
+
+### 手順4 Pagesから結果を確認する
+
+手順2までの設定が正しく設定行えていれば、Pagesのセクションからサンプルアプリの成果物にアクセスができます。

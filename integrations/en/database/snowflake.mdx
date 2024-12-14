@@ -1,0 +1,77 @@
+---
+title: Snowflake
+---
+
+This chapter explains how to link Snowflake as an external data source to the Morph platform.
+
+## How to set it up
+
+<video
+  className="w-full mt-4 lg:mx-0 rounded-xl max-w-[1080px]"
+  controls
+  muted
+  playsInline
+>
+  <source src="/assets/videos/integrations/docs_connection_snowflake.mp4" type="video/mp4" />
+</video>
+
+To set up a connection to Snowflake, open the Connections tab on the Home screen, open the Connection Settings modal via the Create New Connection button and select Snowflake.
+
+
+## Authentication Method
+
+There are two authentication methods that can be used to connect to Snowflake: ‘OAuth2’ and ‘Service Account’. Each method is suitable for different use cases.
+
+**OAuth2 authentication**
+
+OAuth2 is an industry-standard protocol for secure third-party authentication. Using this method, users can be granted secure data access without directly exposing their own Snowflake account credentials. The process requires the user to set up an OAuth client within Snowflake and provide its client ID and secret to Morph. This allows secure data access via the API.
+
+**Service Account Authentication**
+
+Service Account authentication is used when automated processes or system services access the database without human intervention.Set up a Service Account in Snowflake and enter the username and password (or private key) for that account in the Morph settings. This allows scripts and back-end applications to manipulate the database directly and securely.
+
+These authentication methods make the connection to Snowflake more secure and flexible, allowing data access according to the needs of different applications.
+
+### Snowflake integration using OAuth2 authentication
+
+1. **Configure Account and OAuth Server:**
+    - Specify the URL of the Snowflake instance. Example: **`https://<account_name>.snowflakecomputing.com`**
+
+2. **Get a Client ID:**
+    - Security integration with Snowflake account [Ref: [CREATE SECURITY INTEGRATION (Snowflake OAuth)](https://docs.snowflake.com/ja/sql-reference/sql/ create-security-integration-oauth-snowflake)]. This will generate a Client ID to be used for OAuth2 authentication.
+
+3. **Get Client Secret:**
+    - Obtain the Client Secret in the same way as when the Client ID was generated. This Secret is required to authenticate the connection.
+
+4. **Configure on Morph screen:**
+    - On the Morph connection settings page, select ‘OAuth2’, enter the Client ID and Client Secret obtained and press the Sign in Snowflake button to proceed to the actual OAuth integration.
+    - When you are transferred from Sign in Snowflake to the screen on the Snowflake side, allow the Morph connection request. If you allow it, you will be redirected to the Morph screen and the configuration is complete.
+
+### **Snowflake integration using Service Account**.
+
+**Configuration instructions:**
+
+1. **Account and Server settings:**
+    - Specify the URL of the Snowflake instance. Example: **`https://<account_name>.snowflakecomputing.com`**
+
+2. **Setting Username:**
+    - Enter the username to be used by Snowflake. This username must be that of a Service Account preconfigured in Snowflake. [Ref: [Key pair authentication and key pair rotation](https://docs.snowflake.com/ja/user-guide/key-pair-auth)]
+
+3. **Configure Private Key:**
+    - Enter the Private Key used to authenticate the Service Account user in Snowflake.
+
+4. **Configure on Morph screen:**
+    - On the Morph connection settings page, select ‘Service Account’ and enter the configured Server URL, Username and Private Key.
+
+### Complete the connection settings
+
+> Once you have completed the Account section and pressed the Create button in the bottom left-hand corner of the screen, you can now enter the Connection slug to complete the connection settings.
+
+1. **Connection slug**
+    - Uniquely identifies the connection to the external data source and cannot be empty. Use only letters, numbers and underscores as desired.
+
+![Snowflake Slug](/assets/images/integrations/snowflakeslug.png)
+
+When the connection settings appear in the Connections list, the configuration is complete.
+
+![Snowflake Complete](/assets/images/integrations/snowflakecomplete.png)

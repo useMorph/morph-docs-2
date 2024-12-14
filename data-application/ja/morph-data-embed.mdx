@@ -1,0 +1,38 @@
+---
+title: '<Embed />'
+---
+
+<Frame>
+  <img src="/assets/images/pages/embed.jpg" />
+</Frame>
+
+Embedコンポーネントは、Python関数の実行結果がHTMLの場合に、そのHTMLを表示します。
+
+```tsx
+<Embed 
+  alias="visualize_py" 
+  variable={{
+    department
+  }}
+  height="300px"
+  width="400px"
+/>
+```
+
+## プロパティ
+
+<ParamField path="alias" type="string" required>
+  Python関数やSQLファイルの name
+</ParamField>
+
+<ParamField path="varialbes" type="{ [key: string]: Variable }">
+  Python関数やSQLファイルに渡す変数。 `variable()`関数 を使って宣言してください。
+</ParamField>
+
+<ParamField path="width" type="string">
+  テーブルの横幅を決定するCSSの値。指定がない場合は親要素に合わせます。
+</ParamField>
+
+<ParamField path="height" type="string">
+  テーブルの縦幅を決定するCSSの値。指定がない場合は親要素に合わせます。
+</ParamField>
