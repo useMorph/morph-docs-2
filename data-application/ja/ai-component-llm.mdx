@@ -3,11 +3,19 @@ title: '<LLM />'
 icon: "message-dots"
 ---
 
-<Frame>
+<Frame caption="layout='chat'">
   <img src="/assets/images/pages/data-table.jpg" />
 </Frame>
 
-LLMコンポーネントは、Open AIやAnthropicのAPIを用いたストリーミング処理を実現するためのコンポーネントです。
+<Frame caption="layout='single'">
+  <img src="/assets/images/pages/data-table.jpg" />
+</Frame>
+
+<Frame caption="layout='side-by-side'">
+  <img src="/assets/images/pages/data-table.jpg" />
+</Frame>
+
+`<LLM />` コンポーネントは、Open AIやAnthropicのAPIを用いたストリーミング処理を実現するためのコンポーネントです。
 
 ```tsx
 <LLM
@@ -16,6 +24,24 @@ LLMコンポーネントは、Open AIやAnthropicのAPIを用いたストリー�
   height={300} 
 />
 ```
+
+ `<LLM />` コンポーネントを使うことで以下のような機能を実現できます。
+
+- AIチャット
+- コンテンツ生成
+- サイド・バイ・サイド
+
+## `<LLM />` のデータ仕様
+
+`<LLM />` コンポーネントは `postData` で指定されたPython関数に対して、以下のデータをデフォルトで送信します。
+
+- `prompt`: ユーザーが入力したテキスト
+
+- `thread_id`: AIとの会話のスレッドID。 "Start new thread" ボタンをユーザーが押した際などに新しい値に更新されます。
+
+- `is_new_conversation`: 新しい会話が始まったかどうか。 "Start new thread" ボタンをユーザーが押した際などに `true` に更新されます。
+
+これらのデータに加えて送りたいデータや、デフォルトのデータを上書きしたい場合には、 `vars` プロパティを使用してください。
 
 ## プロパティ
 
@@ -28,9 +54,10 @@ LLMコンポーネントは、Open AIやAnthropicのAPIを用いたストリー�
 </ParamField>
 
 <ParamField path="height" type="number">
-  テーブルの高さ。単位はpxです。
+  コンポーネントの高さ。単位はpxです。
 </ParamField>
 
-<ParamField path="headerKeys" type="string[]">
-  表示するカラムの名前。順番も指定できます。
+<ParamField path="layout" type="'chat' | 'single' | 'side-by-side'">
+  UIのレイアウト。 'chat' の場合にはチャットUIが、 'single' の場合にはコンテンツ生成UIが、 'side-by-side' の場合にはサイド・バイ・サイドUIが表示されます。
 </ParamField>
+
