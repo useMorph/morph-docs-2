@@ -270,7 +270,16 @@
       "group": "Advanced",
       "version": "日本語",
       "pages": [
-        "docs/ja/advanced/morphai",
+        {
+          "group": "Morph AI",
+          "icon": "brain",
+          "pages": [
+            "docs/ja/advanced/morph-ai/overview",
+            "docs/ja/advanced/morph-ai/data-pipeline-builder",
+            "docs/ja/advanced/morph-ai/code-generation",
+            "docs/ja/advanced/morph-ai/code-assistant"
+          ]
+        },
         "docs/ja/advanced/authentication",
         "docs/ja/advanced/canvas",
         {
