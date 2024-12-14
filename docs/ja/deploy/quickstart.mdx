@@ -1,48 +1,41 @@
 ---
-title: 'クイックスタート'
+title: 'デプロイ手順'
 icon: "rocket"
 ---
+
+Morphでは、構築したデータアプリを簡単にデプロイして、チームメンバーに共有することができます。
 
 <Tabs>
   <Tab title="クラウド版">
     <Steps>
-      <Step title="ワークスペースを作成する">
-        ワークスペースを作成して、Editorを開きます。
+      <Step title="デプロイダッシュボードから実行する">
+        Editorモードの「Code」タブからデプロイ用の画面を開きデプロイします。
+        <img src="/assets/images/docs/deploy-dashboard.png" alt="Deploy" />
       </Step>
-      <Step title="データ処理をPythonで実装する">
-        データの整形・データ分析の実行・チャートの作成などをPythonで実装します。必要に応じてSQLを使うこともできます。
-
-        ```python src/python/data.py
-        import pandas as pd
-
-        @morph.func(name='data')
-        def main():
-          df = pd.read_csv('data.csv')
-          return df
-
-        ```
-      </Step>
-      <Step title="MDXファイルを編集する">
-        MDXファイルに、説明文やコンポーネントを追加して、アプリを完成させます。
-      </Step>
-      <Step title="Pageタブ または Viewerモードでアプリを使う">
-        Editor画面の "Page" タブ または Viewerモードでアプリを使うことができます。
+      <Step title="クラウド版のViewerにアクセスする">
+        Viewerにアクセスをすると、デプロイしたデータアプリを使う事ができます!
       </Step>
     </Steps>
   </Tab>
   <Tab title="ローカル版">
     <Steps>
-      <Step title="Morphプロジェクトを作成する">
-        `morph new` コマンドを使って、Morphプロジェクトを作成します。
+      <Step title="クラウド版にログインしAPIキーを作成する">
+        Morphのホーム画面からAPIキーを作成します。
       </Step>
-      <Step title="データ処理をPythonで実装する">
-        データの整形・データ分析の実行・チャートの作成などをPythonで実装します。必要に応じてSQLを使うこともできます。
+      <Step title="CLIでAPIを設定する">
+        `morph config` コマンドでAPIキーとワークスペースを設定します。
+        ```shell
+        morph config
+        ```
       </Step>
-      <Step title="MDXファイルを編集する">
-        MDXファイルに、説明文やコンポーネントを追加して、アプリを完成させます。
+      <Step title="クラウドにデプロイする">
+        `morph sync` コマンドでクラウドにデプロイします。
+        ```shell
+        morph sync
+        ```
       </Step>
-      <Step title="ブラウザでアプリを開く">
-        `localhost:9002` にアクセスして、アプリを開きます。
+      <Step title="クラウド版のViewerにアクセスする">
+        クラウド版のViewerにアクセスをすると、デプロイしたデータアプリを使う事ができます!
       </Step>
     </Steps>
   </Tab>

@@ -235,26 +235,33 @@
       "version": "日本語",
       "pages": [
         "docs/ja/getting-started/why-morph",
-        "docs/ja/getting-started/quickstart"
+        "docs/ja/getting-started/quickstart",
+        "docs/ja/getting-started/database"
       ]
     },
     {
       "group": "Develop",
       "version": "日本語",
       "pages": [
-        "docs/ja/develop/framework",
+        {
+          "group": "ガイド",
+          "icon": "book",
+          "pages": [
+            "docs/ja/develop/guides/framework",
+            "docs/ja/develop/guides/variables",
+            "docs/ja/develop/guides/integration",
+            "docs/ja/develop/guides/job-schedule"
+          ]
+        },
         {
           "group": "チュートリアル",
-          "icon": "book",
+          "icon": "graduation-cap",
           "pages": [
             "docs/ja/develop/tutorials/visualize",
             "docs/ja/develop/tutorials/pygwalker",
             "docs/ja/develop/tutorials/langchain"
           ]
-        },
-        "docs/ja/develop/variables",
-        "docs/ja/develop/integration",
-        "docs/ja/develop/job-schedule"
+        }
       ]
     },
     {
@@ -280,7 +287,7 @@
             "docs/ja/advanced/morph-ai/code-assistant"
           ]
         },
-        "docs/ja/advanced/authentication",
+        "docs/ja/advanced/api_key",
         "docs/ja/advanced/canvas",
         {
           "group": "ビルトインPostgreSQL",
