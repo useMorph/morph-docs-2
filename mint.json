@@ -259,7 +259,7 @@
           "pages": [
             "docs/ja/develop/tutorials/visualize",
             "docs/ja/develop/tutorials/pygwalker",
-            "docs/ja/develop/tutorials/langchain"
+            "docs/ja/develop/tutorials/chatbot"
           ]
         }
       ]
