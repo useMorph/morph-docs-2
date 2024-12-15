@@ -4,15 +4,7 @@ icon: "message-dots"
 ---
 
 <Frame caption="layout='chat'">
-  <img src="/assets/images/pages/data-table.jpg" />
-</Frame>
-
-<Frame caption="layout='single'">
-  <img src="/assets/images/pages/data-table.jpg" />
-</Frame>
-
-<Frame caption="layout='side-by-side'">
-  <img src="/assets/images/pages/data-table.jpg" />
+  <img src="/assets/images/pages/llm-component.jpg" />
 </Frame>
 
 `<LLM />` コンポーネントは、Open AIやAnthropicのAPIを用いたストリーミング処理を実現するためのコンポーネントです。
@@ -27,9 +19,11 @@ icon: "message-dots"
 
  `<LLM />` コンポーネントを使うことで以下のような機能を実現できます。
 
-- AIチャット
-- コンテンツ生成
-- サイド・バイ・サイド
+- AIチャット ... ユーザーとAIのチャットが実現できます。スレッドの開始や終了、AIの返答の表示などが可能です。
+
+- コンテンツ生成 ... ユーザーが入力したテキストに対してAIがコンテンツを生成します。例えば、ユーザーが入力したテキストに対してAIがドキュメントを生成する際などに利用できます。
+
+- サイド・バイ・サイド ... ユーザーとAIのチャットと、コンテンツ生成を横並びで表示します。
 
 ## `<LLM />` のデータ仕様
 
