@@ -220,31 +220,42 @@
       "group": "Getting Started",
       "version": "English",
       "pages": [
-        "data-application/en/how-to-build-data-application"
+        "data-application/en/getting-started-introduction",
+        "data-application/en/getting-started-quickstart"
+      ]
+    },
+    {
+      "group": "Data Components",
+      "version": "English",
+      "pages": [
+        "data-application/en/data-component-table",
+        "data-application/en/data-component-embed",
+        "data-application/en/data-component-metrics"
+      ]
+    },
+    {
+      "group": "AI Components",
+      "version": "English",
+      "pages": [
+        "data-application/en/ai-component-llm"
+      ]
+    },
+    {
+      "group": "Advanced",
+      "version": "English",
+      "pages": [
+        "data-application/en/advanced-morph-data-basic",
+        "data-application/en/morph-data-getjson",
+        "data-application/en/morph-data-variables"
       ]
     },
     {
       "group": "MDX Deep Dive",
       "version": "English",
       "pages": [
-        "data-application/en/mdx-1-basic",
-        "data-application/en/mdx-2-styling",
-        "data-application/en/mdx-3-js"
-      ]
-    },
-    {
-      "group": "Using Morph Data",
-      "version": "English",
-      "pages": [
-        "data-application/en/morph-data-basic",
-        "data-application/en/morph-data-getjson",
-        "data-application/en/morph-data-data-table",
-        "data-application/en/morph-data-embed",
-        "data-application/en/morph-data-metrics",
-        "data-application/en/use-variables",
-        "data-application/en/morph-data-variable-input",
-        "data-application/en/morph-data-variable-date-picker",
-        "data-application/en/morph-data-variable-select"
+        "data-application/en/mdx/mdx-1-basic",
+        "data-application/en/mdx/mdx-2-styling",
+        "data-application/en/mdx/mdx-3-js"
       ]
     },
     {

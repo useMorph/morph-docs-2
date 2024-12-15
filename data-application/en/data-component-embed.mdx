@@ -1,5 +1,6 @@
 ---
 title: '<Embed />'
+icon: "code"
 ---
 
 <Frame>
@@ -21,18 +22,14 @@ The Embed component displays HTML when the result of executing a Python function
 
 ## Properties
 
-<ParamField path="alias" type="string" required>
+<ParamField path="loadData" type="string" required>
   Name of the Python function or SQL file.
 </ParamField>
 
-<ParamField path="varialbes" type="{ [key: string]: Variable }">
+<ParamField path="vars" type="{ [key: string]: Variable }">
   Variables to pass to the Python function or SQL file. Declare using the `variable()` function.
 </ParamField>
 
-<ParamField path="width" type="string">
-  Width of the element. Use CSS syntax. If not specified, it will be the same as the parent element.
-</ParamField>
-
-<ParamField path="height" type="string">
-  Height of the element. Use CSS syntax. If not specified, it will be the same as the parent element.
+<ParamField path="height" type="number">
+  Height of the component. Unit is px.
 </ParamField>
