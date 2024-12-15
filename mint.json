@@ -303,7 +303,9 @@
       "group": "フレームワーク",
       "version": "日本語",
       "pages": [
-        "reference/ja/framework/morph-project"
+        "reference/ja/framework/morph-project",
+        "reference/ja/framework/output-paths",
+        "reference/ja/framework/scheduled_jobs"
       ]
     },
     {
@@ -328,11 +330,36 @@
       "group": "morph_lib",
       "version": "日本語",
       "pages": [
-        "reference/ja/python/morphlib-execute_sql",
-        "reference/ja/python/morphlib-insert_records",
-        "reference/ja/python/morphlib-update_records",
-        "reference/ja/python/morphlib-insert_or_update_records",
-        "reference/ja/python/morphlib-delete_records"
+        {
+          "group": "AI",
+          "pages": [
+            "reference/ja/morph_lib/ai/text_to_sql",
+            "reference/ja/morph_lib/ai/text_to_plotly",
+            "reference/ja/morph_lib/ai/text_to_matplotlib"
+          ]
+        },
+        {
+          "group": "Database",
+          "pages": [
+            "reference/ja/morph_lib/database/execute_sql",
+            "reference/ja/morph_lib/database/insert_records",
+            "reference/ja/morph_lib/database/update_records",
+            "reference/ja/morph_lib/database/insert_or_update_records",
+            "reference/ja/morph_lib/database/delete_records"
+          ]
+        },
+        {
+          "group": "API",
+          "pages": [
+            "reference/ja/morph_lib/api/get_auth_token"
+          ]
+        },
+        {
+          "group": "Stream",
+          "pages": [
+            "reference/ja/morph_lib/stream/create_chunk"
+          ]
+        }
       ]
     },
     {
@@ -345,6 +372,9 @@
         "reference/ja/cli-commands/clean",
         "reference/ja/cli-commands/init",
         "reference/ja/cli-commands/new",
+        "reference/ja/cli-commands/config",
+        "reference/ja/cli-commands/sync",
+        "reference/ja/cli-commands/serve",
         "reference/ja/cli-commands/print"
       ]
     },

@@ -1,12 +1,10 @@
 ---
-title: 'morph_lib.database.update_records'
+title: 'update_records'
 ---
 
 Built-in PostgreSQLおよびSQL Connectionで接続しているデータベース上のテーブルのデータを更新します。
 
-```python
-from morph_lib.database import update_records
-
+```python morph_lib.database
 update_records(
 	data: pd.DataFrame,
 	primary_keys: List[str]
@@ -18,6 +16,10 @@ update_records(
 対応データベース
 
 - PostgreSQL
+- MySQL
+- Snowflake
+- BigQuery
+- Amazon Redshift
 
 ### Parameters
 

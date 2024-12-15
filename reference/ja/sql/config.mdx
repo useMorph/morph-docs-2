@@ -12,7 +12,8 @@ title: 'config'
 		output_paths=[
 			"/tmp/morph/{name}/{now()}{ext()}"
 		],
-		connection="your_connection_slug"
+		connection="your_connection_slug",
+		result_cache_ttl=60
 	)
 }}
 
@@ -39,4 +40,8 @@ select 1 as test
 画面で登録したbuiltin以外のconnectionの向き先 (optional)
 
 ※ 指定をしない場合はbuilt-in postgresqlに設定されます。
+</ParamField>
+
+<ParamField body="result_cache_ttl" type="integer" default="60">
+データパイプラインの実行結果のキャッシュの有効期限を秒単位で指定します。
 </ParamField>
