@@ -235,8 +235,7 @@
       "version": "日本語",
       "pages": [
         "docs/ja/getting-started/why-morph",
-        "docs/ja/getting-started/quickstart",
-        "docs/ja/getting-started/database"
+        "docs/ja/getting-started/quickstart"
       ]
     },
     {
@@ -248,8 +247,8 @@
           "icon": "book",
           "pages": [
             "docs/ja/develop/guides/framework",
-            "docs/ja/develop/guides/variables",
             "docs/ja/develop/guides/integration",
+            "docs/ja/develop/guides/variables",
             "docs/ja/develop/guides/job-schedule"
           ]
         },
