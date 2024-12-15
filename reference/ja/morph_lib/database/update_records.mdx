@@ -1,0 +1,58 @@
+---
+title: 'update_records'
+---
+
+Built-in PostgreSQLおよびSQL Connectionで接続しているデータベース上のテーブルのデータを更新します。
+
+```python morph_lib.database
+update_records(
+	data: pd.DataFrame,
+	primary_keys: List[str]
+	table_name: str,
+	connection: Optional[str]
+) -> None
+```
+
+対応データベース
+
+- PostgreSQL
+- MySQL
+- Snowflake
+- BigQuery
+- Amazon Redshift
+
+### Parameters
+
+<ParamField body="data" type="pd.DataFrame" required>
+関数に渡す実データ。primary_keysで指定するカラムは必ず存在している必要があります。
+</ParamField>
+
+<ParamField body="primary_keys" type="List[str]" required>
+テーブルのPrimary Keyとなるカラム名を指定する。
+</ParamField>
+
+<ParamField body="table_name" type="str" required>
+テーブル名を指定する。
+</ParamField>
+
+<ParamField body="connection" type="str">
+画面で登録したbuiltin以外のconnectionの向き先 (optional)
+
+※ 指定をしない場合はbuilt-in postgresqlに設定されます。
+</ParamField>
+
+### Example
+
+```python
+from morph_lib.database import update_records
+
+@morph.func
+@morph.load_data("user_data")
+def func_name(context):
+	user_data: pd.DataFrame = context.data["user_data"]
+	update_records(
+		user_data,
+		["user_id"]
+		"user",
+	)
+```

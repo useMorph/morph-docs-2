@@ -1,13 +1,12 @@
 ---
 title: 'load_data'
 ---
+By using the load_data function, you can treat the results of other cells as a table.
 
-The load_data function can be used to treat the results of other cells as if they were tables.
-
-You can access the result file after running the `users` cell as a table if you write.
+If you write as follows, you can access the result file after executing the `users` cell as a table.
 
 <Warning>
-If load_data is used in the from clause, the SQL syntax must use DuckDB syntax.
+When using load_data in the from clause, you need to use the SQL syntax of DuckDB.
 </Warning>
 
 ```sql

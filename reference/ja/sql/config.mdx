@@ -12,7 +12,8 @@ title: 'config'
 		output_paths=[
 			"/tmp/morph/{name}/{now()}{ext()}"
 		],
-		connection="your_connection_slug"
+		connection="your_connection_slug",
+		result_cache_ttl=60
 	)
 }}
 
@@ -32,11 +33,15 @@ select 1 as test
 <ParamField body="output_paths" type="array: string" default="['/tmp/morph/{name}/{now()}{ext()}']">
 結果ファイルの出力先。
 
-記述方法は[こちら](/sql-python/ja/framework/output-paths)を参照してください。
+記述方法は[こちら](/reference/ja/framework/output-paths)を参照してください。
 </ParamField>
 
 <ParamField body="connection" type="string" default="morph_project.ymlで設定したdefault_connection">
 画面で登録したbuiltin以外のconnectionの向き先 (optional)
 
 ※ 指定をしない場合はbuilt-in postgresqlに設定されます。
+</ParamField>
+
+<ParamField body="result_cache_ttl" type="integer" default="60">
+データパイプラインの実行結果のキャッシュの有効期限を秒単位で指定します。
 </ParamField>

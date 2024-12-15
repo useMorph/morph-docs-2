@@ -15,7 +15,7 @@ icon: "rocket"
         ```python src/python/data.py
         import pandas as pd
 
-        @morph.func(name='data')
+        @morph.func
         def main():
           df = pd.read_csv('data.csv')
           return df
@@ -29,8 +29,8 @@ icon: "rocket"
         Editor画面の "Page" タブ または Viewerモードでアプリを使うことができます。
 
         ※ Viewerモードに反映するには、以下の画面からデプロイをする必要があります。
-        <Card title="Deploy" icon="square-1" href="/docs/ja/deploy/quickstart">
-          デプロイ手順
+        <Card title="Deploy" icon="link" href="/docs/ja/deploy/quickstart">
+          <></>
         </Card>
       </Step>
     </Steps>
@@ -38,13 +38,13 @@ icon: "rocket"
   <Tab title="ローカル版">
     <Steps>
       <Step title="pipコマンドでmorphをインストールする">
-        ```shell
+        ```bash Shell
         pip install morph-data
         ```
       </Step>
       <Step title="Morphプロジェクトを作成する">
         `morph new` コマンドを使って、Morphプロジェクトを作成します。
-        ```shell
+        ```bash Shell
         morph new morph-starter-app
         ```
       </Step>
@@ -56,7 +56,7 @@ icon: "rocket"
       </Step>
       <Step title="Morphの開発サーバーを起動する">
         `morph serve` コマンドを使って、Morphの開発サーバーを起動します。
-        ```shell
+        ```bash Shell
         morph serve
         ```
       </Step>

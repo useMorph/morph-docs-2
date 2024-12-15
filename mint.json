@@ -73,107 +73,146 @@
       "version": "English",
       "pages": [
         "docs/en/getting-started/why-morph",
-        "docs/en/getting-started/how-morph-works"
+        "docs/en/getting-started/quickstart"
       ]
     },
     {
-      "group": "Workspace",
+      "group": "Develop",
       "version": "English",
       "pages": [
-        "docs/en/workspace/about-workspace",
-        "docs/en/workspace/environment",
-        "docs/en/workspace/vscode-extensions",
-        "docs/en/workspace/reference",
-        "docs/en/workspace/template",
-        "docs/en/workspace/visualization",
-        "docs/en/workspace/data-application",
-        "docs/en/workspace/about-canvas",
-        "docs/en/workspace/job-schedule"
+        {
+          "group": "Guides",
+          "icon": "book",
+          "pages": [
+            "docs/en/develop/guides/framework",
+            "docs/en/develop/guides/integration",
+            "docs/en/develop/guides/variables",
+            "docs/en/develop/guides/job-schedule"
+          ]
+        },
+        {
+          "group": "Tutorials",
+          "icon": "graduation-cap",
+          "pages": [
+            "docs/en/develop/tutorials/visualize",
+            "docs/en/develop/tutorials/pygwalker",
+            "docs/en/develop/tutorials/chatbot"
+          ]
+        }
       ]
     },
     {
-      "group": "Data Sources",
+      "group": "Deploy",
       "version": "English",
       "pages": [
-        "docs/en/data-sources/builtin-postgres",
-        "docs/en/data-sources/connectors"
+        "docs/en/deploy/quickstart",
+        "docs/en/deploy/environment",
+        "docs/en/deploy/how-to-install-pip"
       ]
     },
     {
-      "group": "Morph AI",
+      "group": "Advanced",
       "version": "English",
       "pages": [
-        "docs/en/morph-ai/features-of-morphai",
-        "docs/en/morph-ai/code-generation",
-        "docs/en/morph-ai/code-assistant",
-        "docs/en/morph-ai/data-pipeline-builder"
+        {
+          "group": "Morph AI",
+          "icon": "brain",
+          "pages": [
+            "docs/en/advanced/morph-ai/overview",
+            "docs/en/advanced/morph-ai/data-pipeline-builder",
+            "docs/en/advanced/morph-ai/code-generation",
+            "docs/en/advanced/morph-ai/code-assistant"
+          ]
+        },
+        "docs/en/advanced/api_key",
+        "docs/en/advanced/canvas",
+        {
+          "group": "ビルトインPostgreSQL",
+          "icon": "database",
+          "pages": [
+            "docs/en/advanced/builtin-postgres/builtin-postgres",
+            "docs/en/advanced/builtin-postgres/restapi"
+          ]
+        },
+        "docs/en/advanced/credit"
       ]
     },
     {
-      "group": "Rest API",
+      "group": "フレームワーク",
       "version": "English",
       "pages": [
-        "docs/en/rest-api/overview",
-        "docs/en/rest-api/authentication",
-        "docs/en/rest-api/quickstart"
-      ]
-    },
-    {
-      "group": "Team Setting",
-      "version": "English",
-      "pages": [
-        "docs/en/team-setting/credit",
-        "docs/en/team-setting/manage-members"
+        "reference/en/framework/morph-project",
+        "reference/en/framework/output-paths",
+        "reference/en/framework/scheduled_jobs"
       ]
     },
     {
       "group": "SQL",
       "version": "English",
       "pages": [
-        "reference/en/sql/quickstart-sql",
         "reference/en/sql/config",
-        "reference/en/sql/load_data",
-        "reference/en/sql/variables"
+        "reference/en/sql/load_data"
       ]
     },
     {
       "group": "Python",
       "version": "English",
       "pages": [
-        "reference/en/python/quickstart-python",
-        "reference/en/python/how-to-install-pip",
-        "reference/en/python/env-vars",
         "reference/en/python/morph-global-context",
         "reference/en/python/morph-func",
         "reference/en/python/morph-load_data",
-        "reference/en/python/morph-variables",
-        "reference/en/python/morphlib-execute_sql",
-        "reference/en/python/morphlib-insert_records",
-        "reference/en/python/morphlib-update_records",
-        "reference/en/python/morphlib-insert_or_update_records",
-        "reference/en/python/morphlib-delete_records"
+        "reference/en/python/morph-variables"
       ]
     },
     {
-      "group": "Framework",
+      "group": "morph_lib",
       "version": "English",
       "pages": [
-        "reference/en/framework/overview",
-        "reference/en/framework/morph-project",
-        "reference/en/framework/output-paths"
+        {
+          "group": "AI",
+          "pages": [
+            "reference/en/morph_lib/ai/text_to_sql",
+            "reference/en/morph_lib/ai/text_to_plotly",
+            "reference/en/morph_lib/ai/text_to_matplotlib"
+          ]
+        },
+        {
+          "group": "Database",
+          "pages": [
+            "reference/en/morph_lib/database/execute_sql",
+            "reference/en/morph_lib/database/insert_records",
+            "reference/en/morph_lib/database/update_records",
+            "reference/en/morph_lib/database/insert_or_update_records",
+            "reference/en/morph_lib/database/delete_records"
+          ]
+        },
+        {
+          "group": "API",
+          "pages": [
+            "reference/en/morph_lib/api/get_auth_token"
+          ]
+        },
+        {
+          "group": "Stream",
+          "pages": [
+            "reference/en/morph_lib/stream/create_chunk"
+          ]
+        }
       ]
     },
     {
-      "group": "CLI Commands",
+      "group": "CLI",
       "version": "English",
       "pages": [
         "reference/en/cli-commands/run",
         "reference/en/cli-commands/create",
         "reference/en/cli-commands/compile",
         "reference/en/cli-commands/clean",
-        "reference/en/cli-commands/template",
         "reference/en/cli-commands/init",
         "reference/en/cli-commands/new",
+        "reference/en/cli-commands/config",
+        "reference/en/cli-commands/sync",
+        "reference/en/cli-commands/serve",
         "reference/en/cli-commands/print"
       ]
     },
@@ -219,8 +258,7 @@
       "group": "Workspace",
       "version": "English",
       "pages": [
-        "troubleshooting/en/workspace/mdx-api-error",
-        "troubleshooting/en/workspace/mdx-bad-gateway"
+        "troubleshooting/en/workspace/mdx-api-error"
       ]
     },
     {
@@ -235,8 +273,7 @@
       "version": "日本語",
       "pages": [
         "docs/ja/getting-started/why-morph",
-        "docs/ja/getting-started/quickstart",
-        "docs/ja/getting-started/database"
+        "docs/ja/getting-started/quickstart"
       ]
     },
     {
@@ -248,8 +285,8 @@
           "icon": "book",
           "pages": [
             "docs/ja/develop/guides/framework",
-            "docs/ja/develop/guides/variables",
             "docs/ja/develop/guides/integration",
+            "docs/ja/develop/guides/variables",
             "docs/ja/develop/guides/job-schedule"
           ]
         },
@@ -304,7 +341,9 @@
       "group": "フレームワーク",
       "version": "日本語",
       "pages": [
-        "reference/ja/framework/morph-project"
+        "reference/ja/framework/morph-project",
+        "reference/ja/framework/output-paths",
+        "reference/ja/framework/scheduled_jobs"
       ]
     },
     {
@@ -329,11 +368,36 @@
       "group": "morph_lib",
       "version": "日本語",
       "pages": [
-        "reference/ja/python/morphlib-execute_sql",
-        "reference/ja/python/morphlib-insert_records",
-        "reference/ja/python/morphlib-update_records",
-        "reference/ja/python/morphlib-insert_or_update_records",
-        "reference/ja/python/morphlib-delete_records"
+        {
+          "group": "AI",
+          "pages": [
+            "reference/ja/morph_lib/ai/text_to_sql",
+            "reference/ja/morph_lib/ai/text_to_plotly",
+            "reference/ja/morph_lib/ai/text_to_matplotlib"
+          ]
+        },
+        {
+          "group": "Database",
+          "pages": [
+            "reference/ja/morph_lib/database/execute_sql",
+            "reference/ja/morph_lib/database/insert_records",
+            "reference/ja/morph_lib/database/update_records",
+            "reference/ja/morph_lib/database/insert_or_update_records",
+            "reference/ja/morph_lib/database/delete_records"
+          ]
+        },
+        {
+          "group": "API",
+          "pages": [
+            "reference/ja/morph_lib/api/get_auth_token"
+          ]
+        },
+        {
+          "group": "Stream",
+          "pages": [
+            "reference/ja/morph_lib/stream/create_chunk"
+          ]
+        }
       ]
     },
     {
@@ -346,6 +410,9 @@
         "reference/ja/cli-commands/clean",
         "reference/ja/cli-commands/init",
         "reference/ja/cli-commands/new",
+        "reference/ja/cli-commands/config",
+        "reference/ja/cli-commands/sync",
+        "reference/ja/cli-commands/serve",
         "reference/ja/cli-commands/print"
       ]
     },
@@ -402,8 +469,7 @@
       "group": "ワークスペース",
       "version": "日本語",
       "pages": [
-        "troubleshooting/ja/workspace/mdx-api-error",
-        "troubleshooting/ja/workspace/mdx-bad-gateway"
+        "troubleshooting/ja/workspace/mdx-api-error"
       ]
     },
     {

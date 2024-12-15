@@ -10,6 +10,21 @@ contextは、Morphのアノテーションからデータを自動で受け取�
 |---|---|
 |data|`@morph.load_data`のアノテーションをつけた関数の出力結果を格納します。|
 |vars|`@morph.variables`のアノテーションをつけた関数の引数を格納します。|
+|user_info|ログインしているユーザーの情報を格納します。(クラウドでのみ使用可能)|
+
+### ログインユーザーの情報
+
+`context.user_info`は、ログインしているユーザーの情報を格納します。
+これによりログインユーザーごとに異なるデータを表示するなど、フレキシブルなデータアプリを構築を行うことができます。
+
+```json context.user_info
+{
+	"email": "example@example.com",
+	"username": "shibata",
+	"first_name": "naoto",
+	"last_name": "shibata"
+}
+```
 
 ### 使用例
 

@@ -2,7 +2,7 @@
 title: '@morph.func'
 ---
 
-It can be registered as a function that can be executed in morph by annotating it with `@morph.func`.
+By adding the `@morph.func` annotation, you can register the function to be executed with morph.
 
 ```python
 @morph.func(
@@ -12,7 +12,7 @@ It can be registered as a function that can be executed in morph by annotating i
     output_type: Optional[
         Literal["dataframe", "csv", "visualization", "markdown", "json"]
     ] = None,
-    **kwargs: dict[str, Any],
+    result_cache_ttl: int = 60,
 )
 def func_name(context):
 	# write your code here
@@ -20,27 +20,31 @@ def func_name(context):
 
 ## Parameters
 
-<ParamField body="name" type="string" default="function name">
-Process name, can also be used as an alias when calling from another file.
+<ParamField body="name" type="string" default="Function name">
+The name of the process, which can also be used as an alias when called from other files.
 </ParamField>
 
 <ParamField body="description" type="string">
-Can describe the process
+A description of the process can be written.
 </ParamField>
 
 <ParamField body="output_paths" type="array: string" default="['/tmp/morph/{name}/{now()}{ext()}']">
-Output paths for the result files.
+The output destination of the result file.
 
-See [here](/sql-python/en/framework/output-paths) for description.
+Refer to [here](/reference/en/framework/output-paths) for the description method.
 </ParamField>
 
 <ParamField body="output_type" type="string">
-Specification of the format of the output results. If not specified, the system automatically estimates the result.
+Specifies the format of the output result. If not specified, the system will automatically infer it.
 
 Values: `dataframe`, `visualization`, `markdown`, `json`
 </ParamField>
 
-## Example
+<ParamField body="result_cache_ttl" type="integer" default="60">
+Specifies the cache expiration time of the data pipeline execution result in seconds.
+</ParamField>
+
+## 使用例
 
 ```python
 @morph.func(
