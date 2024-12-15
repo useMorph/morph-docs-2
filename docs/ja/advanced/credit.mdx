@@ -23,6 +23,21 @@ Morphのワークスペースは、Virtual Machine(VM)が稼働しています�
 | Large | 4vCPU | 8GB | 200 |
 | XLarge | 8vCPU | 16GB | 400 |
 
+### データ容量
+
+ビルトインPostgreSQLとVM上のディスク容量の大きさに応じて、月末にクレジット消費がされます。
+
+| サービス | 消費クレジット / GiB |
+| :--- | :--- |
+| ビルトインPostgreSQL | 300 |
+| VM容量 | 300 |
+
+<Warning>
+ビルトインPostgreSQLの容量は、無料プランでは0.5GiBまでの利用に制限されています。
+
+Proプランでは、5GiBまではクレジット消費はされません。
+</Warning>
+
 ### AI機能
 
 MorphAIの機能では、以下の表に従ってクレジットを消費します。

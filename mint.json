@@ -127,7 +127,7 @@
         "docs/en/advanced/api_key",
         "docs/en/advanced/canvas",
         {
-          "group": "ビルトインPostgreSQL",
+          "group": "Built-in PostgreSQL",
           "icon": "database",
           "pages": [
             "docs/en/advanced/builtin-postgres/builtin-postgres",
@@ -138,7 +138,7 @@
       ]
     },
     {
-      "group": "フレームワーク",
+      "group": "Framework",
       "version": "English",
       "pages": [
         "reference/en/framework/morph-project",

@@ -23,6 +23,21 @@ Morph's workspaces run on Virtual Machines (VMs). When a VM is running, credits 
 | Large | 4vCPU | 8GB | 200 |
 | XLarge | 8vCPU | 16GB | 400 |
 
+### Storage
+
+Credit consumption is applied based on the size of the built-in PostgreSQL and the VM disk capacity at the end of the month.
+
+| Service | Credit consumption / GiB |
+| :--- | :--- |
+| Built-in PostgreSQL | 300 |
+| VM capacity | 300 |
+
+<Warning>
+The built-in PostgreSQL capacity is limited to 0.5GiB for the free plan.
+
+For the Pro plan, the credit consumption is not applied up to 5GiB.
+</Warning>
+
 ### AI functions
 
 MorphAI functions consume credits according to the following table.
