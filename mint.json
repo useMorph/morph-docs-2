@@ -219,8 +219,7 @@
       "group": "Workspace",
       "version": "English",
       "pages": [
-        "troubleshooting/en/workspace/mdx-api-error",
-        "troubleshooting/en/workspace/mdx-bad-gateway"
+        "troubleshooting/en/workspace/mdx-api-error"
       ]
     },
     {
@@ -431,8 +430,7 @@
       "group": "ワークスペース",
       "version": "日本語",
       "pages": [
-        "troubleshooting/ja/workspace/mdx-api-error",
-        "troubleshooting/ja/workspace/mdx-bad-gateway"
+        "troubleshooting/ja/workspace/mdx-api-error"
       ]
     },
     {

@@ -19,6 +19,6 @@ Typically, the API server is set to automatically recover if it crashes, but thi
 
 To resolve this, run the following command in the terminal to restart the API server and fix the error:
 
-```shell
-supervisorctl -c /etc/supervisor/conf.d/supervisord.conf start morph-vm
+```bash Shell
+morph serve --restart
 ```
