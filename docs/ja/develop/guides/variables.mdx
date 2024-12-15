@@ -8,7 +8,7 @@ icon: "code"
 - `load_data`関数を使用して処理を連続させた場合は、全ての変数が全ての処理に対して渡されます。
 - SQlやPythonには、MDXから以下のように`variables`という引数で変数を渡す事ができます。
 
-```mdx
+```tsx
 
 export const dateRangeStart = variable(undefined);
 export const dateRangeEnd = variable(undefined);
@@ -30,7 +30,7 @@ Codeのタブで実行された場合には、この引数は追加されない�
 
 以下のように`-d`でvariablesを指定することができます。
 
-```bash
+```bash Shell
 morph run get_users -d user_type=admin
 ```
 

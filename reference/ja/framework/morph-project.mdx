@@ -5,12 +5,44 @@ title: 'morph_project.yml'
 `morph_project.yml`は、Morphのフレームワークを実行時に使用される設定ファイルです。Morphのプロジェクトを立ち上げると自動的にデフォルトの値が設定されたファイルが作成されます。
 
 ```yaml
+# connection
 default_connection: MORPH_BUILTIN_DB
+
+# src directory
 source_paths:
 - src
-template_paths:
-- templates
 
+# output paths where the result of the execution is saved
+output_paths:
+- /tmp/morph/{name}/{run_id}{ext()}
+
+# result cache(seconds)
+result_cache_ttl: 60
+
+# Scheduled Jobs
+scheduled_jobs:
+    function_name_1:
+        schedules:
+        - cron: "cron(0 0 * * 1,3,5)"
+            is_enabled: true
+            timezone: "Asia/Tokyo"
+            variables:
+                priority: "high"
+                retry: 3
+        - cron: "cron(0 12 * * 2)"
+            is_enabled: false
+            timezone: "UTC"
+            variables:
+                notify: true
+                email: "alert@example.com"
+    function_name_2:
+        schedules:
+        - cron: "cron(0 18 * * 6)"
+            is_enabled: true
+            timezone: "Europe/London"
+            variables:
+                type: "maintenance"
+                duration: "2h"
 ```
 
 ## Parameters

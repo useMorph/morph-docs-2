@@ -15,7 +15,7 @@ icon: "rocket"
         ```python src/python/data.py
         import pandas as pd
 
-        @morph.func(name='data')
+        @morph.func
         def main():
           df = pd.read_csv('data.csv')
           return df

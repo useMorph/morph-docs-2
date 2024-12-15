@@ -8,31 +8,29 @@ icon: "clock"
 SQLの`load_data`やPythonの`@morph.load_data()`などの関数を使うことで、複数の処理をパイプラインとして構築することができます。
 このパイプラインをスケジュール実行することで、毎日の売り上げの集計などの定期的なタスクを自動化することができます。
 
-以下のように、Jobsのタブを開くと、現在設定されているジョブの確認や新しいジョブの登録が行えます。
+`morph_project.yml`に以下のように設定をすることで、スケジュール実行を行うことができます。
 
-<iframe
-    src="https://www.loom.com/embed/4b608b640dc340ca8b730b600a6d8273?sid=9fe2ca61-bff5-4804-b556-738ebc12e83e"
-    controls
-    className="w-full aspect-video"
-></iframe>
+```yml morph_project.yml
+# Scheduled Jobs
+scheduled_jobs:
+    function_name_1:
+        schedules:
+        - cron: "cron(0 12 * * 2)"
+            is_enabled: false
+            timezone: "UTC"
+            variables:
+                notify: true
+                email: "alert@example.com"
+```
 
-詳細のページを開くと、ジョブが実行された際のログや実行結果を確認することができます。
+<Tip>
+`function_name_1`の部分は、SQL, Pythonの関数名を指定してください。
+パイプラインで処理が連続している場合は、処理の最後の関数を指定することでパイプラインの最初の関数から順番に実行されます。
+</Tip>
+
+デプロイをするとクラウド上の"Jobs"タブから、設定されているジョブの確認やログを確認する事ができます。
 
 <img
-    src="/assets/images/docs/workspace-job-schedule-detail.png"
-    alt="Job Schedule Detail"
+    src="/assets/images/docs/workspace-job-schedule.png"
+    alt="Job Schedule"
 />
-
-## ジョブスケジューリングの設定
-
-ジョブスケジューリングは、パイプラインの最後の関数に対して設定をしてください。
-`load_data`関数では実行時時に読み込み対象の関数も実行するため、データパイプラインの最後の関数を指定して定期実行することで任意のデータパイプラインを定期実行することができます。
-
-実行日時は、「毎日」「平日だけ」など柔軟に設定をすることができます。また、実行時間は15分単位の設定が可能です。
-
-<iframe
-    src="https://www.loom.com/embed/4177425642e941d0841dd31e152da289?sid=b3523927-36dd-4612-a705-a9866a8fb0f1"
-    controls
-    className="w-full aspect-video"
-></iframe>
-
