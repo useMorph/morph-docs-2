@@ -2,7 +2,7 @@
 title: '@morph.variables'
 ---
 
-Variables can be declared that are passed externally with the annotation `@morph.variables`.
+You can declare variables passed from outside with the `@morph.variables` annotation.
 
 ```python
 @morph.variables(
@@ -14,19 +14,19 @@ def func_name(context):
 
 ## Parameters
 
-<ParamField body="name" type="string" required>
-Additional arguments can be added when executing functions.
+<ParamField body="var_name" type="string" required>
+You can add arguments when executing the function.
 
-You can pass arguments from an mdx file or specify arguments when executing a command.
+You can pass arguments from the mdx file or specify arguments when executing the command.
 </ParamField>
 
 <ParamField body="default" type="any">
-Default value.
+You can set a default value.
 
-If not specified, the default value is None.
+If not specified, the default value will be None.
 </ParamField>
 
-## Example
+## 使用例
 
 ```python
 @morph.func

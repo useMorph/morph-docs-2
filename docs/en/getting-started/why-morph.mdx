@@ -1,66 +1,78 @@
 ---
-title: Why Morph?
+title: Why Morph
+icon: "lightbulb"
 ---
+Morph is a full-stack Python framework for building and sharing data applications.
 
-Morph is a data workspace that focuses on ‘using’ data rather than ‘storing’ it.
+As the importance of data utilization continues to grow, many companies are seeking efficient and rapid data analysis. However, traditional BI tools and data application construction methods do not sufficiently address technical and operational challenges.
 
-Today, the importance of collecting and storing data is well understood and many companies operate data warehouses and databases. However, making good use of the data collected is not an easy task.
+Morph is designed to fundamentally rethink these challenges and enable more flexible and team-centric data utilization.
 
-In an age where critical business data is collected on a daily basis and new actions are required on a daily or weekly basis, it is essential to build a quick, flexible, data utilization infrastructure to understand the true meaning of data.
+## Challenges of Traditional BI Tools
 
-This section confirms the importance of incorporating data analysis and insight extraction in an agile manner to your workflow, and using the power of AI to better understand data... and why Morph is the best tool for such workflows.
+BI tools have democratized data utilization by providing non-engineering users with access to and visualization of data. However, their design philosophy has limitations.
 
----
+1. Lack of Agility
 
-## Challenges of traditional data tools
+BI tools are fundamentally based on static dashboards and predefined flows, making it difficult to quickly iterate and experiment in response to rapidly changing business needs.
 
-Traditional data analysis and BI tools have:
+2. Insufficient Collaboration with Engineers
 
-1. **High learning costs and long build times.** Many data tools require high learning costs, with proprietary extended programming languages and very complex configurations. They also require engineering to build and that must also be taken into account.
-2. **Long lead times to make changes.** Suppose you have finally completed the build and have gained insights from your data. But if new indicators emerge from the learnings that you want to monitor, you have to build the analysis flow and dashboards from scratch. You need to convene the engineers again and get the dashboard to reflect the requirements from the business unit.
-3. **Complex workarounds.** The problem becomes instantly more complex when you try to do more than what the tool has been designed specifically to do. In many cases, you will be forced to ask an engineer to build a workaround for you.
+BI tools that emphasize no-code make it difficult for engineers to participate in the data analysis cycle, making it challenging to leverage their expertise to solve complex data issues.
 
-In other words, it is like a waterfall model. This may not be a problem if the sequence of requirements definition, design, construction, and operational testing can take weeks or months, and furthermore, if the system is built once and then used on an annual basis.
+3. Limitations in Scalability and Flexibility
 
-However, in an era of rapidly changing business environments, you may feel the need for faster data utilization cycles to make data-driven decisions.
+When trying to build advanced data applications beyond basic reporting, BI tools hit their limits and fail to meet business requirements.
 
-## Agile and flexible data analysis and BI
+## Current State and Challenges of Data Application Development
 
-Agile approaches have been widely adopted in software development, but the mindset can also be applied to data analysis and business intelligence (BI).
+Frameworks for building data applications for engineers are powerful in that they allow for the creation of advanced applications in a local environment. However, there are still challenges when it comes to actual business use.
+- Complexity of Deployment
 
-### Benefits of the agile approach
+To share applications internally and externally, it is necessary to set up hosting environments and authentication settings, which requires a lot of resources and time.
 
-1. **Rapid feedback loop:** agile methodologies allow for rapid feedback through a series of short iterations (sprints). This allows immediate validation of the results of the analysis and, if necessary, a change of direction.
-2. **User-centred development:** agility allows development to be based on the needs of the user, so that data analysis can be tailored to the specific requirements of the business scene. This enables users to quickly obtain the information they need and make decisions more smoothly.
-3. **Flexibility:** an agile approach can be flexible as the business environment and requirements change. New data sources can be added and analysis methods can be changed quickly, so that decisions are always based on the latest information.
+- Difficulty in Team Utilization
 
-### Specific methods of agile data analysis
+Because they are specialized for developers, there is a lack of mechanisms for non-engineering users to use and provide feedback on applications in real-time.
 
-1. **Incremental data collection and integration:** focus on the most important data sets in the early stages and adopt a phased approach to adding and integrating data. This allows for gradual expansion of data coverage while providing value early on.
-2. **Continuous communication and collaboration:** communicate frequently within and outside the team and actively incorporate stakeholder feedback. Share progress and make necessary adjustments through regular meetings and review sessions.
-3. **Data pipeline automation:** automates data collection, integration, cleaning and analysis, reducing the burden of manual work. This improves the efficiency of analytical work and makes agile processes more effective.
-4. **Deploy to the production environment:** deploy what you have tried in the sandbox environment smoothly to the production environment. This allows the results of data analysis to be quickly utilised in the next sprint.
+## What Morph Solves
 
-Agile data analytics and BI enable companies to extract value from their data more quickly and flexibly, giving their business a competitive edge, and Morph supports this approach, providing an environment where users can get the information they need in a timely manner.
+Morph is a framework that addresses these challenges and provides data applications that can be quickly built, shared, and utilized. By using Morph, you can break down the barriers surrounding data and achieve truly agile data utilization.
 
-## Morph Features:
+### Features of Morph
 
-### Complete cloud infrastructure for data utilization
+1. Fast Construction and Flexibility
 
-Morph has all the cloud infrastructure needed for data analysis. This includes cloud-based Postgres providing advanced computing power, scalable storage solutions and management of directed graph models to build data pipelines. Users can easily utilise these infrastructures and start analysing data quickly.
+Morph provides an environment where advanced data analysis and application construction can be quickly performed by combining Python, SQL, and MDX (extended Markdown). It is not constrained by the limitations of dashboards and can immediately respond to changing requirements.
 
-### SQL・Python
+2. Easy Deployment and Secure Sharing
 
-Morph supports both SQL and Python, the main languages of data analysis. This allows users to choose the language best suited to their own skill set and efficiently query and analyse data: they can perform simple queries using SQL or build advanced data science and machine learning models using Python. Furthermore, Morph seamlessly integrates these languages, allowing users to easily exchange data between different languages.
+Data applications created locally can be deployed to the cloud with a single `morph sync` command. User authentication and access restrictions are automatically set, allowing anyone to share applications securely.
 
-### Support for all file formats
+3. Team-Centric Collaboration
 
-Morph supports a variety of file formats, including CSV, JSON and Excel. This allows data from different sources to be easily imported and centrally managed. Users can integrate data from different formats and provide a unified view, significantly increasing the efficiency of data analysis. Data can also be exported flexibly and easily integrated with other systems and tools.
+Morph breaks down the barriers between engineers and business users, allowing data applications to be shared in real-time. The entire team can iterate on feedback and accelerate decision-making from data.
 
-### Data Applications
+4. Building Reusable Logic
 
-Build custom data apps for flaexible, performant useage of your data.
+By reusing the analysis logic and applications created in other projects, you can maximize operational efficiency and scale data utilization across the organization.
 
-### Morph AI
+## Data Utilization Environment in the AI Era
 
-Morph includes AI capabilities that help users gain a deeper understanding of their data and assist in the analysis process; Morph AI automatically detects patterns and trends in the data and provides key insights. In addition, an AI assistant helps users in creating queries and visualizing data, making it easier to perform complex analysis tasks. This allows users to perform sophisticated analyses and quickly obtain decision-useful information, even if they do not have specialist data knowledge.
+In today's data utilization environment, the presence of AI cannot be ignored. Morph is designed with the premise of leveraging AI, as it was born in the AI era.
+
+- Accelerating Construction with AI
+
+Morph's loosely coupled architecture centered around Python allows for maximum utilization of AI's code generation capabilities. By combining MorphAI's construction support with AI code assistance tools like Cursor/Github Copilot, data application construction can be achieved at unprecedented speeds.
+
+- Building Data Applications with Embedded AI
+
+The demand for data applications that leverage AI is also growing explosively. The Python ecosystem has the world's largest ecosystem for leveraging the latest AI models. By embedding these into data applications with Morph and deploying them to teams, you can leverage the latest AI technologies.
+
+## Why Morph is Needed Now
+
+To maintain competitiveness, companies must have the ability to utilize data quickly and accurately. Morph was born to solve challenges that traditional tools and frameworks could not address.
+
+Morph shortens the cycle from data analysis to decision-making and strengthens collaboration between the field and technical departments. It is not just a tool but a new framework to shape a data-driven future.
+
+Morph pioneers the future of agile data utilization.

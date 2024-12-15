@@ -2,7 +2,7 @@
 title: 'config'
 ---
 
-Configuration values can be written in jinja in SQL as follows:
+You can write configuration values in SQL using jinja as follows.
 
 ```sql
 {{
@@ -12,7 +12,8 @@ Configuration values can be written in jinja in SQL as follows:
 		output_paths=[
 			"/tmp/morph/{name}/{now()}{ext()}"
 		],
-		connection="your_connection_slug"
+		connection="your_connection_slug",
+		result_cache_ttl=60
 	)
 }}
 
@@ -21,22 +22,26 @@ select 1 as test
 
 ## Parameters
 
-<ParamField body="name" type="string" default="SQL filename">
-Process name, can also be used as an alias when calling from another file.
+<ParamField body="name" type="string" default="SQL file name">
+The process name, which can also be used as an alias when called from other files.
 </ParamField>
 
 <ParamField body="description" type="string">
-Description of the process
+You can describe the process.
 </ParamField>
 
 <ParamField body="output_paths" type="array: string" default="['/tmp/morph/{name}/{now()}{ext()}']">
-Output paths for the result files.
+The output destination of the result file.
 
-See [here](/sql-python/en/framework/output-paths) for description.
+Refer to [here](/reference/en/framework/output-paths) for the description method.
 </ParamField>
 
-<ParamField body="connection" type="string" default="default_connection configured in morph_project.yml">
-Destination of connections other than the builtin registered on the screen (optional).
+<ParamField body="connection" type="string" default="default_connection set in morph_project.yml">
+The destination of connections other than the built-in ones registered on the screen (optional).
 
-※ If not specified, it is set to built-in postgresql.
+※ If not specified, it will be set to the built-in PostgreSQL.
+</ParamField>
+
+<ParamField body="result_cache_ttl" type="integer" default="60">
+Specify the cache expiration time of the data pipeline execution result in seconds.
 </ParamField>

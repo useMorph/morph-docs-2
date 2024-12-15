@@ -1,35 +1,32 @@
 ---
 title: 'output_paths'
 ---
+The results of executing SQL and Python source code are saved so that they can be used as input for subsequent processes.
 
-The results of executing SQL and Python source code are temporarily stored in the VM so that they can be used as input for subsequent processing.
+The format of the saved results varies depending on the format of each process's result. Additionally, you can change the output destination and format by specifying the output_paths in the SQL config function or the Python `@morph.func` argument.
 
-The format of the stored results depends on the format of the result of the respective process. The output destination and format can also be changed by specifying the output_paths argument of the SQL config function or Python `@morph.func`.
-
-## Output format
+## Output Formats
 
 ### SQL
 
-By default, it is saved as a `.parquet` file. It is also possible to specify csv in the `output_paths`.
+By default, results are saved as `.parquet` files. You can also specify csv in `output_paths`.
 
 ### Python
 
-The format specified in the `@morph.func` argument output_type or, if not specified, automatically deduced from the return value.
-The format of the file to be saved depends on the type of the value returned by the function, as follows.
+The format specified in the output_type argument of `@morph.func` is used, or if not specified, it is automatically inferred from the return value.
+The format of the saved file changes depending on the type of value returned by the function, as shown below.
 
 #### DataFrame
 
-By default, it is saved as a `.parquet` file. It is also possible to specify csv in `output_paths`.
+By default, results are saved as `.parquet` files. You can also specify csv in `output_paths`.
 
-### Plotly and Matplotlib charts.
+### Plotly and Matplotlib Charts
 
-By default, both `.html` and `.png` files are saved. It is also possible to limit the extension to be saved with `output_paths`.
+By default, both `.html` and `.png` files are saved. You can also limit the file extensions saved by specifying them in `output_paths`.
 
 <Tip>
-By specifying an output extension, such as `output_paths=[‘_private/sample.png’]`, it can be changed so that only files with the specified extension are output.
+By specifying the output extension like `output_paths=["_private/sample.png"]`, you can change it to output only files with the specified extension.
 </Tip>
-
-For more information on how to code in the case of visualisation, see [documentation here](/sql-python/en/python/quickstart-python).
 
 ### JSON
 
@@ -37,15 +34,15 @@ If the return value is a dict or list, it is saved as a `.json` file.
 
 ### markdown
 
-If the return value is str and `output_type` is `markdown`, the file is saved as a `.md` file.
+If the return value is a str and `output_type` is `markdown`, it is saved as a `.md` file.
 
 ### Text
 
-If the return value is str and no `output_type` is specified in particular, it is saved as a `.txt` file.
+If the return value is a str and no specific `output_type` is specified, it is saved as a `.txt` file.
 
-## How to specify `output_paths`
+## How to Specify `output_paths`
 
-You can specify output paths by specifying paths in `output_paths` as follows.
+You can specify the path in `output_paths` to designate the output destination path as shown below.
 
 ```sql
 {{
@@ -64,11 +61,11 @@ select * from sample;
 
 ### Placeholders
 
-In output_paths, the following placeholder can be used to allow dynamic specification of output destinations.
+In `output_paths`, you can use the following placeholders to specify dynamic output destinations.
 
-|Placeholder|Description|
+|placeholder|description|
 |---|---|
-|`name`|Value of `name` specified in `config`, `@morph.func`|
-|`now()`|Output date in the format Y/M/D - H/M/S|
-|`unix()`|Time stamp (in milliseconds)|
-|`ext()`|Auto-estimated extensions|
+|`name`|The value of `name` specified in `config` or `@morph.func`|
+|`now()`|Outputs the date in the format (%Y%m%d_%H%M%S)|
+|`unix()`|Timestamp in milliseconds|
+|`ext()`|Automatically inferred extension|

@@ -2,21 +2,21 @@
 title: 'print'
 ---
 
-The `morph print` command is used to display the compiled data on the terminal.
+The `morph print` command is used to display compiled data in the terminal.
 
-It can be used in cases such as:
+- Check the list of configured functions
+- Search for files by name
+- Search for names from file paths
 
-- Check the list of configured functions.
-- Searching for a file by name
-- Searching for name from a file path.
+It can be used in such cases.
 
 ## Options
 
 ### --alias
 
-Get various values compiled from the set name values.
+Retrieve various values compiled from the set name values
 
-```shell
+```bash Shell
 workdir $ morph print --alias example_sql_cell
 {
   "resources": [
@@ -37,9 +37,9 @@ workdir $ morph print --alias example_sql_cell
 
 ### --file
 
-Get post-compilation data from file paths
+Retrieve compiled data from the file path
 
-```shell
+```bash Shell
 workdir $ morph print --file /home/morph/workdir/src/example_sql_cell.sql
 {
   "resources": [
