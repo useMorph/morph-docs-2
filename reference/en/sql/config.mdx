@@ -13,7 +13,7 @@ You can write configuration values in SQL using jinja as follows.
 			"/tmp/morph/{name}/{now()}{ext()}"
 		],
 		connection="your_connection_slug",
-		result_cache_ttl=60
+		result_cache_ttl=0
 	)
 }}
 
@@ -42,6 +42,6 @@ The destination of connections other than the built-in ones registered on the sc
 ※ If not specified, it will be set to the built-in PostgreSQL.
 </ParamField>
 
-<ParamField body="result_cache_ttl" type="integer" default="60">
+<ParamField body="result_cache_ttl" type="integer" default="0">
 Specify the cache expiration time of the data pipeline execution result in seconds.
 </ParamField>
