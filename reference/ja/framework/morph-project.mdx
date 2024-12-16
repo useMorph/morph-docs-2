@@ -17,7 +17,7 @@ output_paths:
 - /tmp/morph/{name}/{run_id}{ext()}
 
 # result cache(seconds)
-result_cache_ttl: 60
+result_cache_ttl: 0
 
 # Scheduled Jobs
 scheduled_jobs:
@@ -71,7 +71,7 @@ scheduled_jobs:
 データパイプラインの実行結果を保存するパスを指定します。
 </ParamField>
 
-<ParamField body="result_cache_ttl" type="integer" default="60">
+<ParamField body="result_cache_ttl" type="integer" default="0">
 データパイプラインの実行結果のキャッシュの有効期限を秒単位で指定します。
 </ParamField>
 
