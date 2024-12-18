@@ -89,15 +89,6 @@
             "docs/en/develop/guides/variables",
             "docs/en/develop/guides/job-schedule"
           ]
-        },
-        {
-          "group": "Tutorials",
-          "icon": "graduation-cap",
-          "pages": [
-            "docs/en/develop/tutorials/visualize",
-            "docs/en/develop/tutorials/pygwalker",
-            "docs/en/develop/tutorials/chatbot"
-          ]
         }
       ]
     },
@@ -267,6 +258,7 @@
     },
     {
       "group": "Workspace",
+
       "version": "English",
       "pages": [
         "troubleshooting/en/workspace/mdx-api-error"
@@ -299,15 +291,6 @@
             "docs/ja/develop/guides/integration",
             "docs/ja/develop/guides/variables",
             "docs/ja/develop/guides/job-schedule"
-          ]
-        },
-        {
-          "group": "チュートリアル",
-          "icon": "graduation-cap",
-          "pages": [
-            "docs/ja/develop/tutorials/visualize",
-            "docs/ja/develop/tutorials/pygwalker",
-            "docs/ja/develop/tutorials/chatbot"
           ]
         }
       ]
