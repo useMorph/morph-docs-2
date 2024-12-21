@@ -1,30 +1,28 @@
 ---
-title: 'text_to_plotly'
+title: 'text_to_markdown'
 ---
 
-プロンプトを受け取ってPlotlyのグラフを生成します。
+プロンプトを受け取ってMarkdownを生成します。
 
 <CodeGroup>
 ```python OpenAI
 # 📦 Package: morph_lib.ai.openai.code_generation
-# 🛠️ Function: text_to_plotly
+# 🛠️ Function: text_to_markdown
 
-def text_to_plotly(
+def text_to_markdown(
     prompt: str,
     api_key: str,
-    table_names: List[str],
     model: Optional[str] = "gpt-4o",
 ) -> TextConversionResponse:
 ```
 
 ```python Anthropic
 # 📦 Package: morph_lib.ai.anthropic.code_generation
-# 🛠️ Function: text_to_plotly
+# 🛠️ Function: text_to_markdown
 
-def text_to_plotly(
+def text_to_markdown(
     prompt: str,
     api_key: str,
-    table_names: List[str],
     model: Optional[str] = "claude-3-5-haiku-latest",
     max_tokens: Optional[int] = 1024,
 ) -> TextConversionResponse:
@@ -32,12 +30,11 @@ def text_to_plotly(
 
 ```python Azure
 # 📦 Package: morph_lib.ai.azure.code_generation
-# 🛠️ Function: text_to_plotly
+# 🛠️ Function: text_to_markdown
 
-def text_to_plotly(
+def text_to_markdown(
     prompt: str,
     api_key: str,
-    table_names: List[str],
     azure_endpoint: str,
     deployment_name: Optional[str] = "gpt4",
     api_version: Optional[str] = "2024-10-01-preview",
@@ -46,12 +43,11 @@ def text_to_plotly(
 
 ```python Groq
 # 📦 Package: morph_lib.ai.groq.code_generation
-# 🛠️ Function: text_to_plotly
+# 🛠️ Function: text_to_markdown
 
-def text_to_plotly(
+def text_to_markdown(
     prompt: str,
     api_key: str,
-    table_names: List[str],
     model: Optional[str] = "llama-3.1-70b-versatile",
 ) -> TextConversionResponse:
 ```
@@ -70,10 +66,6 @@ OpenAIの場合のパラメータです。上記の関数定義から適宜他�
 LLMのモデルを使用するためのAPIキー
 </ParamField>
 
-<ParamField body="table_names" type="list" required>
-生成するために使用するテーブル名のリスト
-</ParamField>
-
 <ParamField body="model" type="string" optional>
 使用するLLMのモデル
 </ParamField>
@@ -81,16 +73,15 @@ LLMのモデルを使用するためのAPIキー
 ### Example
 
 ```python
-from morph_lib.ai.openai.code_generation import text_to_plotly
+from morph_lib.ai.openai.code_generation import text_to_markdown
 import os
 
 @morph.func
 def func_name(context):
     prompt = context.vars["prompt"]
-	fig = text_to_plotly(
+    fig = text_to_markdown(
 		prompt,
 		os.environ["OPENAI_API_KEY"],
-		["user"],
 		"gpt-4o",
 	)
 	code = fig.code
