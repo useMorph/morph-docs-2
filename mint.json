@@ -159,7 +159,9 @@
           "pages": [
             "reference/en/morph_lib/ai/text_to_sql",
             "reference/en/morph_lib/ai/text_to_plotly",
-            "reference/en/morph_lib/ai/text_to_matplotlib"
+            "reference/en/morph_lib/ai/text_to_matplotlib",
+            "reference/en/morph_lib/ai/text_to_markdown",
+            "reference/en/morph_lib/ai/text_to_html"
           ]
         },
         {
@@ -362,7 +364,9 @@
           "pages": [
             "reference/ja/morph_lib/ai/text_to_sql",
             "reference/ja/morph_lib/ai/text_to_plotly",
-            "reference/ja/morph_lib/ai/text_to_matplotlib"
+            "reference/ja/morph_lib/ai/text_to_matplotlib",
+            "reference/ja/morph_lib/ai/text_to_markdown",
+            "reference/ja/morph_lib/ai/text_to_html"
           ]
         },
         {
