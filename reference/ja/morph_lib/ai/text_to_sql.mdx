@@ -5,7 +5,10 @@ title: 'text_to_sql'
 プロンプトを受け取ってSQLを生成します。
 
 <CodeGroup>
-```python morph_lib.ai.openai
+```python OpenAI
+# 📦 Package: morph_lib.ai.openai.code_generation
+# 🛠️ Function: text_to_sql
+
 def text_to_sql(
     prompt: str,
     api_key: str,
@@ -16,7 +19,10 @@ def text_to_sql(
 ) -> TextConversionResponse:
 ```
 
-```python morph_lib.ai.anthropic
+```python Anthropic
+# 📦 Package: morph_lib.ai.anthropic.code_generation
+# 🛠️ Function: text_to_sql
+
 def text_to_sql(
     prompt: str,
     api_key: str,
@@ -28,7 +34,10 @@ def text_to_sql(
 ) -> TextConversionResponse:
 ```
 
-```python morph_lib.ai.azure
+```python Azure
+# 📦 Package: morph_lib.ai.azure.code_generation
+# 🛠️ Function: text_to_sql
+
 def text_to_sql(
     prompt: str,
     api_key: str,
@@ -41,7 +50,10 @@ def text_to_sql(
 ) -> TextConversionResponse:
 ```
 
-```python morph_lib.ai.groq
+```python Groq
+# 📦 Package: morph_lib.ai.groq.code_generation
+# 🛠️ Function: text_to_sql
+
 def text_to_sql(
     prompt: str,
     api_key: str,
@@ -84,11 +96,12 @@ LLMのモデルを使用するためのAPIキー
 ### Example
 
 ```python
-from morph_lib.ai.openai import text_to_sql
+from morph_lib.ai.openai.code_generation import text_to_sql
 import os
 
 @morph.func
 def func_name(context):
+    prompt = context.vars["prompt"]
     sql = text_to_sql(
 		prompt,
 		os.environ["OPENAI_API_KEY"],

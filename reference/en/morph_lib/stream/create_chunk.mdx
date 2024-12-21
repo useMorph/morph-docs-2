@@ -4,19 +4,13 @@ title: 'create_chunk'
 This function creates a chat stream.
 By using the `MorphChatStreamChunk` returned by this function and passing it to `<LLM/>`, you can build a chat application utilizing LLM.
 
-```python
+```python morph_lib.stream
+# 📦 Package: morph_lib.stream
+# 🛠️ Function: create_chunk
+
 def create_chunk(
     text: Optional[str] = None, content: Optional[str] = None
 ) -> MorphChatStreamChunk:
-    """
-    Create a MorphChatStreamChunk object with the given text and content.
-    @param text: The text of the chunk.
-    @param content: The additional content of the chunk. ex.) html, markdown, etc.
-    """
-    return MorphChatStreamChunk(
-        text=text,
-        content=content,
-    )
 ```
 
 ### Parameters
