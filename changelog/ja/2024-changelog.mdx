@@ -2,6 +2,56 @@
 title: '2024 changelog'
 ---
 
+<Update label="2024-12-20">
+### 新規インテグレーションの追加
+
+- SQL Connectionの接続先として**MS SQL Server**を追加しました。
+
+### 定期実行のサポート
+
+- これまでクラウド版のみで利用可能だった定期実行機能をフレームワークのmorph_project.ymlで設定することができるようになりました。 [該当ドキュメント](/docs/ja/develop/guides/job-schedule)
+
+</Update>
+
+<Update label="2024-12-18">
+
+### OSS版の公開
+
+Morphのフレームワークをローカル環境で使用するためのOSS版を公開しました。
+
+[Github repository](https://github.com/morph-data/morph)
+
+- SQL, PythonのフレームワークとPagesのフレームワークを統合し一つのフレームワークとして使用できるようになりました。
+- `morph serve`コマンドによってローカル環境で開発モードとしてデータアプリを起動することができるようになりました。
+- `morph sync`コマンドによってローカル環境で構築したデータアプリをクラウドにデプロイすることができるようになりました。
+
+</Update>
+
+<Update label="2024-12-17">
+### AI活用をするための新ヘルパー関数
+
+AI活用を簡単に構築するためのショートハンド関数を追加しました。
+
+- `text_to_sql` 関数を追加しました。 [該当ドキュメント](/reference/ja/morph_lib/ai/text_to_sql)
+- `text_to_matplotlib` 関数を追加しました。 [該当ドキュメント](/reference/ja/morph_lib/ai/text_to_matplotlib)
+- `text_to_plotly` 関数を追加しました。 [該当ドキュメント](/reference/ja/morph_lib/ai/text_to_plotly)
+- `text_to_html` 関数を追加しました。 [該当ドキュメント](/reference/ja/morph_lib/ai/text_to_html)
+- `text_to_markdown` 関数を追加しました。 [該当ドキュメント](/reference/ja/morph_lib/ai/text_to_markdown)
+
+</Update>
+
+<Update label="2024-12-16">
+### Pagesの新コンポーネント
+
+- チャットやテキスト生成などのLLMアプリを構築するための `LLM` コンポーネントを追加しました。 [該当ドキュメント](/data-application/ja/ai-component-llm)
+
+### Python SDKにストリーミング用の関数を追加
+
+- 関数の返り値をテキストのストリミーング形式で返却する`morph_lib.stream.create_chunk` 関数を追加しました。 [該当ドキュメント](/reference/ja/morph_lib/stream/create_chunk)
+
+</Update>
+
+
 <Update label="2024-10-24">
 ### Pagesの新コンポーネントとアップデート v0.4.19
 
@@ -12,6 +62,7 @@ title: '2024 changelog'
 - `VariableSelect` に `withClearButton` 属性を追加しました。 [該当ドキュメント](/data-application/ja/use-variables)
 
 </Update>
+
 <Update label="2024-10-22">
 ### Pagesの新コンポーネント v0.4.15
 

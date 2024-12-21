@@ -2,6 +2,55 @@
 title: '2024 changelog'
 ---
 
+<Update label="2024-12-20">
+### New Integration
+
+- Added **MS SQL Server** as a connection destination for SQL Connection.
+
+### Support for Scheduled Jobs
+
+- The scheduled Jobs feature, previously available only in the cloud version, can now be configured in the framework's morph_project.yml. [Documentation](/docs/en/develop/guides/job-schedule)
+
+</Update>
+
+<Update label="2024-12-18">
+
+### OSS Version Released
+
+Released the OSS version of the Morph framework for use in local environments.
+
+[Github repository](https://github.com/morph-data/morph)
+
+- Integrated the SQL, Python, and Pages frameworks into a single framework.
+- Enabled the `morph serve` command to launch data apps in development mode in local environments.
+- Enabled the `morph sync` command to deploy data apps built in local environments to the cloud.
+
+</Update>
+
+<Update label="2024-12-17">
+### New AI Functions
+
+Added shorthand functions to easily build AI pipelines.
+
+- Added `text_to_sql` function. [Documentation](/reference/en/morph_lib/ai/text_to_sql)
+- Added `text_to_matplotlib` function. [Documentation](/reference/en/morph_lib/ai/text_to_matplotlib)
+- Added `text_to_plotly` function. [Documentation](/reference/en/morph_lib/ai/text_to_plotly)
+- Added `text_to_html` function. [Documentation](/reference/en/morph_lib/ai/text_to_html)
+- Added `text_to_markdown` function. [Documentation](/reference/en/morph_lib/ai/text_to_markdown)
+
+</Update>
+
+<Update label="2024-12-16">
+### New Components for Pages
+
+- Added `LLM` component for building LLM apps such as chat and text generation. [Documentation](/data-application/en/ai-component-llm)
+
+### Added Streaming Function to Python SDK
+
+- Added `morph_lib.stream.create_chunk` function to return function results in text streaming format. [Documentation](/reference/en/morph_lib/stream/create_chunk)
+
+</Update>
+
 <Update label="2024-10-24">
 
 ### New Component and updates for Pages v0.4.19
