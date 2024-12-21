@@ -60,11 +60,6 @@
       "name": "Blog",
       "icon": "newspaper",
       "url": "https://www.morphdb.io/blogs"
-    },
-    {
-      "name": "Data App Example",
-      "icon": "code",
-      "url": "https://stackblitz.com/edit/vitejs-vite-7fyrdn?file=src%2Findex.mdx"
     }
   ],
   "navigation": [
