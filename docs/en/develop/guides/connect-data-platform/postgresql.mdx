@@ -121,8 +121,31 @@ icon: "database"
         Once the credentials are saved, the following message will be displayed:
         ```bash shell
         Successfully initialized! 🎉
-        You can edit your connection details in `path_to_connections.yaml`
+        You can edit your connection details in `path_to_connections.yml`
         ```
+
+        The `connections.yml` file is saved as follows. If you create other connections, they will be added under `connections`.
+        ```bash shell
+        cat ~/.morph/connections.yml
+        ```
+
+        ```yaml
+        connections:
+          postgresql-connection: # connection name
+            dbname: your_database_name
+            host: localhost
+            password: your_password
+            port: 5432
+            schema_: public
+            ssh_host: null
+            ssh_password: null
+            ssh_port: null
+            ssh_private_key: null
+            ssh_user: null
+            type: postgres
+            user: your_user_name
+        ```        
+
       </Step>
       <Step title="Use the Connection in Code to Retrieve Data">
         Enter the created connection name in SQL or Python code to retrieve data.

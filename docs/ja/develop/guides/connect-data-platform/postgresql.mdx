@@ -78,7 +78,7 @@ icon: "database"
   <Tab title="ローカル版">
     <Steps>
       <Step title="morph initコマンドを実行する">
-        `morph init`コマンドを実行してDBの接続情報を`~/.morph/connections.yaml`に保存します。
+        `morph init`コマンドを実行してDBの接続情報を`~/.morph/connections.yml`に保存します。
         ```bash Shell
         morph init
         ```
@@ -121,7 +121,29 @@ icon: "database"
         認証情報の保存が完了すると以下のメッセージが表示されます。
         ```bash shell
         Successfully initialized! 🎉
-        You can edit your connection details in `path_to_connections.yaml`
+        You can edit your connection details in `path_to_connections.yml`
+        ```
+
+        `connections.yml`は以下のように保存されています。他のコネクションを作成した場合は`connections`以下に追加されます。
+        ```bash shell
+        cat ~/.morph/connections.yml
+        ```
+
+        ```yaml
+        connections:
+          postgresql-connection: # コネクション名
+            dbname: your_database_name
+            host: localhost
+            password: your_password
+            port: 5432
+            schema_: public
+            ssh_host: null
+            ssh_password: null
+            ssh_port: null
+            ssh_private_key: null
+            ssh_user: null
+            type: postgres
+            user: your_user_name
         ```
       </Step>
       <Step title="コード上でコネクションを使いデータを取得する">
