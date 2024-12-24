@@ -56,6 +56,20 @@ By connecting to a database, you can directly retrieve data processed in Python 
   </Tab>
 </Tabs>
 
+### Supported Databases
+
+The following databases are supported on Morph. For detailed connection methods and input parameters, please refer to the links provided.
+
+| Database Name                                                                | Cloud | Local | Notes                                                                                     |
+|------------------------------------------------------------------------------|---------------|---------------|-------------------------------------------------------------------------------------------|
+| [PostgreSQL](/docs/ja/develop/guides/connect-data-platform/postgresql)       | ✅            | ✅            |                                                                                           |
+| MySQL                                                                        | ✅            | ✅            |                                                                                           |
+| SQL Server                                                                   | ✅            | ✅            |                                                                                           |
+| Redshift                                                                     | ✅            | ✅            |                                                                                           |
+| BigQuery                                                                     | ✅            | ✅            | In the local version, connections use the Service Account method. In the cloud version, connections use either OAuth or the Service Account method. |
+| Snowflake                                                                    | ✅            | ✅            | In the local version, connections use the User-Password method. In the cloud version, connections use either OAuth or the Private Key method.        |
+
+
 ## Connecting to SaaS
 
 <Warning>SaaS connections are only available in the cloud version.</Warning>

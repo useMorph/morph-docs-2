@@ -82,7 +82,14 @@
             "docs/en/develop/guides/framework",
             "docs/en/develop/guides/integration",
             "docs/en/develop/guides/variables",
-            "docs/en/develop/guides/job-schedule"
+            "docs/en/develop/guides/job-schedule",
+            {
+              "group": "Connect data platform",
+              "icon": "database",
+              "pages": [
+                "docs/en/develop/guides/connect-data-platform/postgresql"
+              ]
+            }
           ]
         }
       ]
@@ -287,7 +294,14 @@
             "docs/ja/develop/guides/framework",
             "docs/ja/develop/guides/integration",
             "docs/ja/develop/guides/variables",
-            "docs/ja/develop/guides/job-schedule"
+            "docs/ja/develop/guides/job-schedule",
+            {
+              "group": "Connect data platform",
+              "icon": "database",
+              "pages": [
+                "docs/ja/develop/guides/connect-data-platform/postgresql"
+              ]
+            }
           ]
         }
       ]

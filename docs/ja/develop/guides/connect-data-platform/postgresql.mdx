@@ -1,0 +1,159 @@
+---
+title: "PostgreSQL"
+icon: "database"
+---
+
+## PostgreSQL に接続する
+
+<Tabs>
+  <Tab title="クラウド版">
+    <Steps>
+      <Step title="SQL Connectionを作成する">
+        ワークスペースの「Data」タブからSQL Connectionを選択し 「Create」ボタンを押下します。
+        <img src="/assets/images/docs/connect-data-platform-connection.png" alt="Connection" />
+      </Step>
+
+      <Step title="PostgreSQLの認証情報を入力する">
+        表示されたフォームに接続するデータベースの認証情報を入力します。
+        リモートサーバー経由で接続する場合は「SSH」の欄にチェックを入れ任意の項目も入力します。
+
+        入力後Createボタンを押下すると作成が完了します。パラメータに不備がある場合はエラーが表示されるため接続内容が正しいか再度ご確認ください。
+        <img src="/assets/images/docs/connect-data-platform-postgresql-create.png" alt="PostgreSQL Connection Create" />
+
+        | 項目名            | 説明                                      | 必須  | 例                            |
+        |-------------------|-------------------------------------------|-------|-------------------------------|
+        | `Host`           | データベースのホスト名を入力します。      | ✅    | `example.com`                |
+        | `Port`           | データベースの接続ポートを入力します。    | ✅    | `5432`                       |
+        | `Database`       | データベース名を入力します。              | ✅    | `my_database`                |
+        | `Username`       | データベースのユーザー名を入力します。    | ✅    | `db_user`                    |
+        | `Password`       | データベースのユーザーのパスワードを入力します。 | ✅    | `mypassword`                 |
+        | `SSH`            | SSH接続を使用する場合に指定します。        |       |                               |
+        | `SSH Host`       | リモートサーバーのホスト名を入力します。  |     | `ssh.example.com`            |
+        | `SSH Port`       | リモートサーバーの接続ポートを入力します。|     | `22`                         |
+        | `SSH Username`   | リモートサーバーのユーザー名を入力します。|     | `ssh_user`                   |
+        | `SSH Password`   | リモートサーバーのユーザーのパスワードを入力します。 |     | `sshpassword`                |
+        | `SSH Private Key`| リモートサーバーの秘密鍵を入力します。    |     | `-----BEGIN RSA PRIVATE KEY-----` |
+        | `SSH Passphrase` | リモートサーバーの秘密鍵のパスフレーズを入力します。 |     | `my_passphrase`              |
+
+
+        <Warning>接続先のデータベースの IP ホワイトリストに必ず`54.150.149.0/32`からのアクセスを許可するように設定してください。</Warning>
+
+      </Step>
+      <Step title="作成したデータベースに接続する">
+        作成が成功すると一覧表示からコネクション名を取得することができます。アイコン横の文字列が`connection_name`です。これを使用することでコード上でデータベースに接続可能です。
+
+        <img src="/assets/images/docs/connect-data-platform-postgresql-complete.png" alt="PostgreSQL Connection Create Complete" />
+
+        SQLまたはPythonのコードに作成したコネクション名を入力しデータを取得します。
+        <CodeGroup>
+        ```sql SQL
+        {{
+            config(
+                connection="connection_name"
+            )
+        }}
+
+        select * from table_name
+        ```
+
+        ```python Python
+        import morph
+        from morph import MorphGlobalContext
+        from morph_lib.database import execute_sql
+
+
+        @morph.func
+        def main(context: MorphGlobalContext):
+            df = execute_sql(
+                sql="SELECT * from table_name"
+                connection="connection_name"
+            )
+            return df
+        ```
+        </CodeGroup>
+      </Step>
+    </Steps>
+
+  </Tab>
+  <Tab title="ローカル版">
+    <Steps>
+      <Step title="morph initコマンドを実行する">
+        `morph init`コマンドを実行してDBの接続情報を`~/.morph/connections.yaml`に保存します。
+        ```bash Shell
+        morph init
+        ```
+
+        <Warning>
+        morphパッケージのインストールを行なっていない場合は事前に下記のコマンドでインストールしてからお進みください。
+        ```bash shell
+        pip install morph-data
+        ```
+        </Warning>
+
+        対話式のインターフェースでどのデータベースの認証情報を入力するか聞かれるのでPostgreSQLを選択します。
+        ```bash Shell
+        Select your database type:
+        1. PostgreSQL
+        2. MySQL
+        3. Redshift
+        4. SQLServer
+        5. Snowflake (User/Password)
+        6. BigQuery (Service Account)
+        Enter the number corresponding to your database type: 1
+
+        PostgreSQL selected.
+        ```
+
+        続いてデータベースの認証情報を入力します。`slug`はコネクション名として扱うもので、この名前をSQLもしくはPythonで指定します。
+
+        以下の入力例は実際に接続できる値に置き換えてください。
+        ```bash shell
+        Create a slug for your connection: postgresql-connection
+        Enter your PostgreSQL host (default: localhost): localhost
+        Enter your PostgreSQL username: your_user_name
+        Enter your PostgreSQL password: your_password
+        Enter your PostgreSQL port (default: 5432): 5432
+        Enter your PostgreSQL database name: your_database_name
+        Enter your PostgreSQL schema name (default: public): public
+        Select if you are using SSH tunneling (y/n): n
+        ```
+
+        認証情報の保存が完了すると以下のメッセージが表示されます。
+        ```bash shell
+        Successfully initialized! 🎉
+        You can edit your connection details in `path_to_connections.yaml`
+        ```
+      </Step>
+      <Step title="コード上でコネクションを使いデータを取得する">
+        SQLまたはPythonのコードに作成したコネクション名を入力しデータを取得します。
+        <CodeGroup>
+        ```sql SQL
+        {{
+            config(
+                connection="connection_name"
+            )
+        }}
+
+        select * from table_name
+        ```
+
+        ```python Python
+        import morph
+        from morph import MorphGlobalContext
+        from morph_lib.database import execute_sql
+
+
+        @morph.func
+        def main(context: MorphGlobalContext):
+            df = execute_sql(
+                sql="SELECT * from table_name"
+                connection="connection_name"
+            )
+            return df
+        ```
+        </CodeGroup>
+      </Step>
+    </Steps>
+
+  </Tab>  
+</Tabs>
