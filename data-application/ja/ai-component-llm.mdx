@@ -13,7 +13,7 @@ icon: "message-dots"
 <LLM
   postData="ai-chat"
   layout="chat"
-  height={300} 
+  height={300}
 />
 ```
 
@@ -39,7 +39,7 @@ icon: "message-dots"
 
 ## プロパティ
 
-<ParamField path="loadData" type="string" required>
+<ParamField path="postData" type="string" required>
   Python関数やSQLファイルの name
 </ParamField>
 
@@ -53,5 +53,9 @@ icon: "message-dots"
 
 <ParamField path="layout" type="'chat' | 'single' | 'side-by-side'">
   UIのレイアウト。 'chat' の場合にはチャットUIが、 'single' の場合にはコンテンツ生成UIが、 'side-by-side' の場合にはサイド・バイ・サイドUIが表示されます。
+</ParamField>
+
+<ParamField path="inputType" type="'default' | 'button'">
+  入力フォームの形式。 'default' の場合にはデフォルトの入力フォームが、 'button' の場合にはボタンだけが表示されます。
 </ParamField>
 
