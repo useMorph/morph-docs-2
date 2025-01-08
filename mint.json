@@ -208,6 +208,7 @@
       "group": "CLI",
       "version": "English",
       "pages": [
+        "reference/en/cli-commands/version",
         "reference/en/cli-commands/run",
         "reference/en/cli-commands/create",
         "reference/en/cli-commands/compile",
@@ -426,6 +427,7 @@
       "group": "CLI",
       "version": "日本語",
       "pages": [
+        "reference/ja/cli-commands/version",
         "reference/ja/cli-commands/run",
         "reference/ja/cli-commands/create",
         "reference/ja/cli-commands/compile",
